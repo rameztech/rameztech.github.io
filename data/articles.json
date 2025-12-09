@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "hello",
+    "category": "IMEI",
+    "content": "hi hi",
+    "excerpt": "hi hi...",
+    "date": "2025-12-09",
+    "views": 0,
+    "author": "مدير النظام",
+    "status": "published"
+  }
+]
