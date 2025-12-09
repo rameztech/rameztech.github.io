@@ -1,0 +1,12 @@
+{
+    "site": {
+        "title": "Ramez Tech",
+        "description": "دليلك الشامل لإصلاح الهواتف",
+        "logo": "/assets/logo.png",
+        "theme": "default"
+    },
+    "features": {
+        "registration": true,
+        "search": true
+    }
+}
