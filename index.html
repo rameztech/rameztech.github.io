@@ -16,6 +16,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
 
         /* Navigation */
@@ -34,6 +35,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .logo {
@@ -63,6 +65,7 @@
             display: flex;
             gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
@@ -74,6 +77,75 @@
 
         .nav-links a:hover {
             color: #667eea;
+        }
+
+        .user-auth-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-container {
+            display: flex;
+            margin-left: 1rem;
+        }
+
+        #searchInput {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            width: 200px;
+            font-family: inherit;
+        }
+
+        #searchButton {
+            padding: 0.5rem 1rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .auth-btn {
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .avatar {
+            width: 35px;
+            height: 35px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logout-btn {
+            padding: 0.3rem 1rem;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
         }
 
         .menu-toggle {
@@ -104,11 +176,12 @@
             opacity: 0.9;
         }
 
-        .hero-buttons {
+        .quick-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
         .btn {
@@ -118,6 +191,7 @@
             font-weight: bold;
             transition: all 0.3s;
             border: 2px solid transparent;
+            display: inline-block;
         }
 
         .btn-primary {
@@ -139,6 +213,106 @@
         .btn-secondary:hover {
             background: white;
             color: #667eea;
+        }
+
+        /* Auth Modal */
+        .auth-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 450px;
+            animation: fadeInUp 0.3s;
+        }
+
+        .auth-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .auth-submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .auth-switch {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .auth-switch a {
+            color: #667eea;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .close-auth {
+            float: left;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        /* Protected Content */
+        .protected-content {
+            display: none;
+        }
+
+        .protected-content.visible {
+            display: block;
+        }
+
+        .login-message {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 600px;
         }
 
         /* Container */
@@ -166,6 +340,7 @@
             padding: 2rem;
             border-radius: 12px;
             transition: all 0.3s;
+            background: #f8f9fa;
         }
 
         .feature-card:hover {
@@ -197,6 +372,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            color: #333;
         }
 
         .section-subtitle {
@@ -222,6 +398,7 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
+            font-family: inherit;
         }
 
         .category-btn:hover {
@@ -514,12 +691,29 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-links, .user-auth-section {
                 display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .nav-links.active, .user-auth-section.active {
+                display: flex;
             }
 
             .menu-toggle {
                 display: block;
+            }
+
+            .search-container {
+                margin: 1rem 0 0 0;
+                width: 100%;
+            }
+
+            #searchInput {
+                width: 100%;
             }
 
             .hero h1 {
@@ -533,10 +727,42 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .auth-box {
+                padding: 2rem;
+                width: 95%;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Auth Modal -->
+    <div id="authModal" class="auth-modal">
+        <div class="auth-box">
+            <button class="close-auth" onclick="closeAuthModal()">×</button>
+            <h2 class="auth-title" id="authModalTitle">تسجيل الدخول</h2>
+            <form id="authForm">
+                <div class="form-group">
+                    <label for="authUsername">اسم المستخدم</label>
+                    <input type="text" id="authUsername" required>
+                </div>
+                <div class="form-group" id="authEmailGroup">
+                    <label for="authEmail">البريد الإلكتروني</label>
+                    <input type="email" id="authEmail">
+                </div>
+                <div class="form-group">
+                    <label for="authPassword">كلمة المرور</label>
+                    <input type="password" id="authPassword" required>
+                </div>
+                <button type="submit" class="auth-submit" id="authSubmitBtn">تسجيل الدخول</button>
+            </form>
+            <div class="auth-switch">
+                <span id="authSwitchText">ليس لديك حساب؟</span>
+                <a onclick="switchAuthMode()" id="authSwitchLink">إنشاء حساب</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -544,12 +770,24 @@
                 <div class="logo-icon">📱</div>
                 <span>Ramez Tech</span>
             </div>
+            
             <ul class="nav-links">
                 <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#articles">المقالات</a></li>
-                <li><a href="#services">خدمات السيرفر</a></li>
+                <li><a href="#articles" onclick="checkAuth(event, '#articles')">المقالات</a></li>
+                <li><a href="#services" onclick="checkAuth(event, '#services')">خدمات السيرفر</a></li>
                 <li><a href="#contact">اتصل بنا</a></li>
             </ul>
+            
+            <div class="user-auth-section">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="ابحث في المقالات...">
+                    <button id="searchButton">🔍</button>
+                </div>
+                <div id="userStatus">
+                    <!-- سيتم ملؤها بالجافاسكريبت -->
+                </div>
+            </div>
+            
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         </div>
     </nav>
@@ -559,222 +797,580 @@
         <h1>مرحباً بك في Ramez Tech</h1>
         <p>دليلك الشامل لإصلاح الهواتف وحل مشاكل السوفتوير</p>
         <p style="font-size: 1.1rem; margin-bottom: 2rem;">نوفر لك شروحات مجانية مفصلة لحل جميع مشاكل الهواتف، بالإضافة إلى خدمات سيرفر احترافية لإصلاح IMEI وفتح الشبكة وتجاوز حساب جوجل</p>
-        <div class="hero-buttons">
-            <a href="#articles" class="btn btn-primary">تصفح المقالات</a>
-            <a href="#services" class="btn btn-secondary">خدمات السيرفر</a>
+        
+        <!-- أزرار سريعة تحت الوصف -->
+        <div class="quick-buttons">
+            <a href="#articles" class="btn btn-primary" onclick="checkAuth(event, '#articles')">تصفح المقالات</a>
+            <a href="#services" class="btn btn-secondary" onclick="checkAuth(event, '#services')">خدمات السيرفر</a>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon icon-blue">🔧</div>
-                    <h3>شروحات مجانية</h3>
-                    <p>حلول مفصلة لجميع مشاكل الهواتف مع صور توضيحية</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon icon-green">🖥️</div>
-                    <h3>خدمات احترافية</h3>
-                    <p>سيرفرات موثوقة لإصلاح IMEI وفتح الشبكة</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon icon-purple">💬</div>
-                    <h3>دعم فني سريع</h3>
-                    <p>نرد على استفساراتك خلال 24 ساعة</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Articles Section -->
-    <section id="articles" class="articles">
-        <div class="container">
-            <h2 class="section-title">أحدث المقالات</h2>
-            <p class="section-subtitle">شروحات مفصلة لحل مشاكل الهواتف</p>
-
-            <div class="category-filter">
-                <button class="category-btn active" onclick="filterArticles('all')">الكل</button>
-                <button class="category-btn" onclick="filterArticles('imei')">إصلاح IMEI</button>
-                <button class="category-btn" onclick="filterArticles('software')">مشاكل السوفتوير</button>
-                <button class="category-btn" onclick="filterArticles('server')">خدمات السيرفر</button>
-                <button class="category-btn" onclick="filterArticles('tutorials')">شروحات تقنية</button>
-            </div>
-
-            <div class="articles-grid" id="articlesGrid">
-                <div class="article-card" data-category="imei">
-                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=250&fit=crop" alt="إصلاح IMEI" class="article-image">
-                    <div class="article-content">
-                        <div class="article-category">إصلاح IMEI</div>
-                        <h3 class="article-title">طريقة إصلاح IMEI Null في هواتف سامسونج</h3>
-                        <p class="article-excerpt">حل شامل لمشكلة IMEI Null التي تواجه مستخدمي هواتف سامسونج بطرق مجربة وفعالة...</p>
-                        <a href="#" class="read-more">اقرأ المزيد ←</a>
+    <!-- محتوى للمستخدمين المسجلين فقط -->
+    <div id="protectedContent">
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon icon-blue">🔧</div>
+                        <h3>شروحات مجانية</h3>
+                        <p>حلول مفصلة لجميع مشاكل الهواتف مع صور توضيحية</p>
                     </div>
-                </div>
-
-                <div class="article-card" data-category="software">
-                    <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=250&fit=crop" alt="Bootloop" class="article-image">
-                    <div class="article-content">
-                        <div class="article-category">مشاكل السوفتوير</div>
-                        <h3 class="article-title">حل مشكلة Bootloop في الأندرويد</h3>
-                        <p class="article-excerpt">دليل كامل لحل مشكلة التشغيل المتكرر في أجهزة الأندرويد بخطوات بسيطة...</p>
-                        <a href="#" class="read-more">اقرأ المزيد ←</a>
+                    <div class="feature-card">
+                        <div class="feature-icon icon-green">🖥️</div>
+                        <h3>خدمات احترافية</h3>
+                        <p>سيرفرات موثوقة لإصلاح IMEI وفتح الشبكة</p>
                     </div>
-                </div>
-
-                <div class="article-card" data-category="server">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" alt="فتح شبكة" class="article-image">
-                    <div class="article-content">
-                        <div class="article-category">خدمات السيرفر</div>
-                        <h3 class="article-title">فتح شبكة الهواتف باستخدام السيرفر</h3>
-                        <p class="article-excerpt">شرح مفصل لطريقة فتح شبكة جميع أنواع الهواتف عبر خدمات السيرفر الاحترافية...</p>
-                        <a href="#" class="read-more">اقرأ المزيد ←</a>
-                    </div>
-                </div>
-
-                <div class="article-card" data-category="software">
-                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=400&h=250&fit=crop" alt="iPhone" class="article-image">
-                    <div class="article-content">
-                        <div class="article-category">مشاكل السوفتوير</div>
-                        <h3 class="article-title">إصلاح مشكلة No Service في الآيفون</h3>
-                        <p class="article-excerpt">أسباب وحلول مشكلة عدم التقاط الشبكة في أجهزة آيفون مع طرق الإصلاح المجربة...</p>
-                        <a href="#" class="read-more">اقرأ المزيد ←</a>
-                    </div>
-                </div>
-
-                <div class="article-card" data-category="imei">
-                    <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=400&h=250&fit=crop" alt="FRP Lock" class="article-image">
-                    <div class="article-content">
-                        <div class="article-category">إصلاح IMEI</div>
-                        <h3 class="article-title">حل مشكلة Google Account Lock</h3>
-                        <p class="article-excerpt">طرق فعالة لتجاوز قفل حساب جوجل FRP في هواتف سامسونج وهواوي وغيرها...</p>
-                        <a href="#" class="read-more">اقرأ المزيد ←</a>
-                    </div>
-                </div>
-
-                <div class="article-card" data-category="tutorials">
-                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=250&fit=crop" alt="Flash" class="article-image">
-                    <div class="article-content">
-                        <div class="article-category">شروحات تقنية</div>
-                        <h3 class="article-title">كيفية عمل Flash للهواتف الصينية</h3>
-                        <p class="article-excerpt">دليل شامل لتثبيت الرومات على الهواتف الصينية باستخدام أدوات SP Flash Tool...</p>
-                        <a href="#" class="read-more">اقرأ المزيد ←</a>
+                    <div class="feature-card">
+                        <div class="feature-icon icon-purple">💬</div>
+                        <h3>دعم فني سريع</h3>
+                        <p>نرد على استفساراتك خلال 24 ساعة</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">خدمات السيرفر</h2>
-            <p class="section-subtitle">خدمات احترافية بأسعار منافسة</p>
+        <!-- Articles Section -->
+        <section id="articles" class="articles protected-content">
+            <div class="container">
+                <h2 class="section-title">أحدث المقالات</h2>
+                <p class="section-subtitle">شروحات مفصلة لحل مشاكل الهواتف</p>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🖥️</div>
-                    <h3 class="service-title">فتح شبكة الهواتف</h3>
-                    <p class="service-description">فتح شبكة جميع أنواع الهواتف (سامسونج، آيفون، هواوي، شاومي) باستخدام سيرفرات احترافية</p>
-                    <div class="service-price">ابتداءً من 10$</div>
-                    <a href="#contact" class="service-cta">اطلب الخدمة</a>
+                <div class="category-filter">
+                    <button class="category-btn active" onclick="filterArticles('all')">الكل</button>
+                    <button class="category-btn" onclick="filterArticles('imei')">إصلاح IMEI</button>
+                    <button class="category-btn" onclick="filterArticles('software')">مشاكل السوفتوير</button>
+                    <button class="category-btn" onclick="filterArticles('server')">خدمات السيرفر</button>
+                    <button class="category-btn" onclick="filterArticles('tutorials')">شروحات تقنية</button>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3 class="service-title">إصلاح IMEI</h3>
-                    <p class="service-description">إصلاح IMEI Null والـ Baseband Unknown لجميع أنواع الهواتف</p>
-                    <div class="service-price">ابتداءً من 15$</div>
-                    <a href="#contact" class="service-cta">اطلب الخدمة</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3 class="service-title">تجاوز حساب جوجل FRP</h3>
-                    <p class="service-description">إزالة قفل حساب جوجل من الهواتف بطرق آمنة ومضمونة</p>
-                    <div class="service-price">ابتداءً من 8$</div>
-                    <a href="#contact" class="service-cta">اطلب الخدمة</a>
+                <div class="articles-grid" id="articlesGrid">
+                    <!-- المقالات ستضاف هنا بالجافاسكريبت -->
                 </div>
             </div>
+        </section>
 
-            <div class="why-us">
-                <h3 class="section-title" style="font-size: 2rem;">لماذا تختار خدماتنا؟</h3>
-                <div class="stats">
-                    <div class="stat">
-                        <div class="stat-number stat-blue">24/7</div>
-                        <p>دعم على مدار الساعة</p>
+        <!-- Services Section -->
+        <section id="services" class="services protected-content">
+            <div class="container">
+                <h2 class="section-title">خدمات السيرفر</h2>
+                <p class="section-subtitle">خدمات احترافية بأسعار منافسة</p>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🖥️</div>
+                        <h3 class="service-title">فتح شبكة الهواتف</h3>
+                        <p class="service-description">فتح شبكة جميع أنواع الهواتف (سامسونج، آيفون، هواوي، شاومي) باستخدام سيرفرات احترافية</p>
+                        <div class="service-price">ابتداءً من 10$</div>
+                        <a href="#contact" class="service-cta">اطلب الخدمة</a>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number stat-green">100%</div>
-                        <p>نسبة نجاح عالية</p>
+
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3 class="service-title">إصلاح IMEI</h3>
+                        <p class="service-description">إصلاح IMEI Null والـ Baseband Unknown لجميع أنواع الهواتف</p>
+                        <div class="service-price">ابتداءً من 15$</div>
+                        <a href="#contact" class="service-cta">اطلب الخدمة</a>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number stat-purple">سريع</div>
-                        <p>إنجاز خلال ساعات</p>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number stat-orange">آمن</div>
-                        <p>حماية بياناتك</p>
+
+                    <div class="service-card">
+                        <div class="service-icon">📱</div>
+                        <h3 class="service-title">تجاوز حساب جوجل FRP</h3>
+                        <p class="service-description">إزالة قفل حساب جوجل من الهواتف بطرق آمنة ومضمونة</p>
+                        <div class="service-price">ابتداءً من 8$</div>
+                        <a href="#contact" class="service-cta">اطلب الخدمة</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">تواصل معنا</h2>
-            <p class="section-subtitle">نحن هنا لمساعدتك في أي وقت</p>
-
-            <div class="contact-grid">
-                <div>
-                    <div class="contact-card contact-green">
-                        <div class="contact-icon">💬</div>
-                        <div>
-                            <h3>واتساب</h3>
-                            <p>+90 XXX XXX XX XX</p>
+                <div class="why-us">
+                    <h3 class="section-title" style="font-size: 2rem;">لماذا تختار خدماتنا؟</h3>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number stat-blue">24/7</div>
+                            <p>دعم على مدار الساعة</p>
                         </div>
-                    </div>
-
-                    <div class="contact-card contact-blue" style="margin-top: 1rem;">
-                        <div class="contact-icon">📞</div>
-                        <div>
-                            <h3>تيليجرام</h3>
-                            <p>@rameztech</p>
+                        <div class="stat">
+                            <div class="stat-number stat-green">100%</div>
+                            <p>نسبة نجاح عالية</p>
                         </div>
-                    </div>
-
-                    <div class="contact-card contact-purple" style="margin-top: 1rem;">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <h3>البريد الإلكتروني</h3>
-                            <p>info@rameztech.com</p>
+                        <div class="stat">
+                            <div class="stat-number stat-purple">سريع</div>
+                            <p>إنجاز خلال ساعات</p>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number stat-orange">آمن</div>
+                            <p>حماية بياناتك</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="working-hours">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">ساعات العمل</h3>
-                    <div class="hours-item">
-                        <span style="font-weight: 600;">السبت - الخميس</span>
-                        <span>9:00 ص - 10:00 م</span>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">تواصل معنا</h2>
+                <p class="section-subtitle">نحن هنا لمساعدتك في أي وقت</p>
+
+                <div class="contact-grid">
+                    <div>
+                        <div class="contact-card contact-green">
+                            <div class="contact-icon">💬</div>
+                            <div>
+                                <h3>واتساب</h3>
+                                <p>+90 XXX XXX XX XX</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card contact-blue" style="margin-top: 1rem;">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h3>تيليجرام</h3>
+                                <p>@rameztech</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card contact-purple" style="margin-top: 1rem;">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h3>البريد الإلكتروني</h3>
+                                <p>info@rameztech.com</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hours-item">
-                        <span style="font-weight: 600;">الجمعة</span>
-                        <span>2:00 م - 10:00 م</span>
+
+                    <div class="working-hours">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">ساعات العمل</h3>
+                        <div class="hours-item">
+                            <span style="font-weight: 600;">السبت - الخميس</span>
+                            <span>9:00 ص - 10:00 م</span>
+                        </div>
+                        <div class="hours-item">
+                            <span style="font-weight: 600;">الجمعة</span>
+                            <span>2:00 م - 10:00 م</span>
+                        </div>
+                        <p style="text-align: center; margin-top: 1.5rem; color: #666;">
+                            نرد على الاستفسارات خلال 24 ساعة كحد أقصى
+                        </p>
                     </div>
-                    <p style="text-align: center; margin-top: 1.5rem; color: #666;">
-                        نرد على الاستفسارات خلال 24 ساعة كحد أقصى
-                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h4>عن Ramez Tech</h4>
+                        <p>دليلك الشامل لإصلاح الهواتف وحل مشاكل السوفتوير. نوفر شروحات مجانية وخدمات احترافية.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>روابط سريعة</h4>
+                        <ul class="footer-links">
+                            <li><a href="#home">الرئيسية</a></li>
+                            <li><a href="#articles" onclick="checkAuth(event, '#articles')">المقالات</a></li>
+                            <li><a href="#services" onclick="checkAuth(event, '#services')">خدمات السيرفر</a></li>
+                            <li><a href="#contact">اتصل بنا</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>تابعنا</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-icon">📘</a>
+                            <a href="#" class="social-icon">🐦</a>
+                            <a href="#" class="social-icon">📷</a>
+                            <a href="#" class="social-icon">▶️</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2024 Ramez Tech. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- رسالة للمستخدمين غير المسجلين -->
+    <div id="loginMessage" class="login-message" style="display: none;">
+        <h2>🔒 محتوى محمي</h2>
+        <p>يرجى تسجيل الدخول للوصول إلى مقالات وخدمات Ramez Tech</p>
+        <button onclick="showAuthModal('login')" class="auth-btn" style="margin-top: 1rem;">تسجيل الدخول</button>
+        <p style="margin-top: 1rem;">ليس لديك حساب؟ <a onclick="showAuthModal('register')" style="color: #667eea; cursor: pointer;">إنشاء حساب جديد</a></p>
+    </div>
+
+    <script>
+        // حالة التطبيق
+        let isAuthModalOpen = false;
+        let isLoginMode = true;
+        let isLoggedIn = false;
+        let currentUser = null;
+        let allUsers = [];
+
+        // بيانات المقالات
+        const articles = [
+            {
+                id: 1,
+                category: "imei",
+                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=250&fit=crop",
+                title: "طريقة إصلاح IMEI Null في هواتف سامسونج",
+                excerpt: "حل شامل لمشكلة IMEI Null التي تواجه مستخدمي هواتف سامسونج بطرق مجربة وفعالة...",
+                content: "المحتوى الكامل للمقال..."
+            },
+            {
+                id: 2,
+                category: "software",
+                image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=250&fit=crop",
+                title: "حل مشكلة Bootloop في الأندرويد",
+                excerpt: "دليل كامل لحل مشكلة التشغيل المتكرر في أجهزة الأندرويد بخطوات بسيطة...",
+                content: "المحتوى الكامل للمقال..."
+            },
+            {
+                id: 3,
+                category: "server",
+                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop",
+                title: "فتح شبكة الهواتف باستخدام السيرفر",
+                excerpt: "شرح مفصل لطريقة فتح شبكة جميع أنواع الهواتف عبر خدمات السيرفر الاحترافية...",
+                content: "المحتوى الكامل للمقال..."
+            },
+            {
+                id: 4,
+                category: "software",
+                image: "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=400&h=250&fit=crop",
+                title: "إصلاح مشكلة No Service في الآيفون",
+                excerpt: "أسباب وحلول مشكلة عدم التقاط الشبكة في أجهزة آيفون مع طرق الإصلاح المجربة...",
+                content: "المحتوى الكامل للمقال..."
+            },
+            {
+                id: 5,
+                category: "imei",
+                image: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=400&h=250&fit=crop",
+                title: "حل مشكلة Google Account Lock",
+                excerpt: "طرق فعالة لتجاوز قفل حساب جوجل FRP في هواتف سامسونج وهواوي وغيرها...",
+                content: "المحتوى الكامل للمقال..."
+            },
+            {
+                id: 6,
+                category: "tutorials",
+                image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=250&fit=crop",
+                title: "كيفية عمل Flash للهواتف الصينية",
+                excerpt: "دليل شامل لتثبيت الرومات على الهواتف الصينية باستخدام أدوات SP Flash Tool...",
+                content: "المحتوى الكامل للمقال..."
+            }
+        ];
+
+        // تهيئة التطبيق
+        function initApp() {
+            // تحميل المستخدمين من localStorage
+            const savedUsers = localStorage.getItem('ramezUsers');
+            if (savedUsers) {
+                allUsers = JSON.parse(savedUsers);
+            }
+
+            // تحميل حالة تسجيل الدخول
+            const savedLogin = localStorage.getItem('ramezLoggedIn');
+            const savedUser = localStorage.getItem('ramezCurrentUser');
+            
+            if (savedLogin === 'true' && savedUser) {
+                isLoggedIn = true;
+                currentUser = JSON.parse(savedUser);
+            }
+
+            updateUI();
+            loadArticles();
+        }
+
+        // تحديث واجهة المستخدم
+        function updateUI() {
+            const userStatus = document.getElementById('userStatus');
+            const protectedContent = document.getElementById('protectedContent');
+            const loginMessage = document.getElementById('loginMessage');
+
+            if (isLoggedIn && currentUser) {
+                // حالة مسجل دخول
+                userStatus.innerHTML = `
+                    <div class="user-profile">
+                        <div class="avatar">${currentUser.username.charAt(0).toUpperCase()}</div>
+                        <span>${currentUser.username}</span>
+                        <button class="logout-btn" onclick="logout()">تسجيل خروج</button>
+                    </div>
+                `;
+
+                // إظهار المحتوى المحمي
+                if (protectedContent) {
+                    protectedContent.style.display = 'block';
+                    const protectedSections = document.querySelectorAll('.protected-content');
+                    protectedSections.forEach(section => {
+                        section.classList.add('visible');
+                    });
+                }
+
+                // إخفاء رسالة التسجيل
+                if (loginMessage) {
+                    loginMessage.style.display = 'none';
+                }
+            } else {
+                // حالة غير مسجل دخول
+                userStatus.innerHTML = `
+                    <button class="auth-btn" onclick="showAuthModal('login')">تسجيل الدخول</button>
+                `;
+
+                // إخفاء المحتوى المحمي
+                if (protectedContent) {
+                    protectedContent.style.display = 'none';
+                }
+
+                // إظهار رسالة التسجيل
+                if (loginMessage) {
+                    loginMessage.style.display = 'block';
+                }
+            }
+        }
+
+        // عرض نافذة المصادقة
+        function showAuthModal(mode = 'login') {
+            const modal = document.getElementById('authModal');
+            const title = document.getElementById('authModalTitle');
+            const submitBtn = document.getElementById('authSubmitBtn');
+            const emailGroup = document.getElementById('authEmailGroup');
+            const switchText = document.getElementById('authSwitchText');
+            const switchLink = document.getElementById('authSwitchLink');
+
+            isAuthModalOpen = true;
+            isLoginMode = mode === 'login';
+
+            if (isLoginMode) {
+                title.textContent = 'تسجيل الدخول';
+                submitBtn.textContent = 'تسجيل الدخول';
+                emailGroup.style.display = 'none';
+                switchText.textContent = 'ليس لديك حساب؟';
+                switchLink.textContent = 'إنشاء حساب';
+            } else {
+                title.textContent = 'إنشاء حساب جديد';
+                submitBtn.textContent = 'إنشاء حساب';
+                emailGroup.style.display = 'block';
+                switchText.textContent = 'لديك حساب بالفعل؟';
+                switchLink.textContent = 'تسجيل دخول';
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        // إغلاق نافذة المصادقة
+        function closeAuthModal() {
+            const modal = document.getElementById('authModal');
+            modal.style.display = 'none';
+            isAuthModalOpen = false;
+            document.getElementById('authForm').reset();
+        }
+
+        // التبديل بين وضعي التسجيل والدخول
+        function switchAuthMode() {
+            showAuthModal(isLoginMode ? 'register' : 'login');
+        }
+
+        // معالجة تسجيل الدخول/التسجيل
+        document.getElementById('authForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('authUsername').value.trim();
+            const email = document.getElementById('authEmail').value.trim();
+            const password = document.getElementById('authPassword').value;
+
+            if (isLoginMode) {
+                // تسجيل الدخول
+                const user = allUsers.find(u => 
+                    (u.username === username || u.email === username) && u.password === password
+                );
+
+                if (user) {
+                    isLoggedIn = true;
+                    currentUser = user;
+                    localStorage.setItem('ramezLoggedIn', 'true');
+                    localStorage.setItem('ramezCurrentUser', JSON.stringify(user));
+                    
+                    updateUI();
+                    closeAuthModal();
+                    alert('تم تسجيل الدخول بنجاح!');
+                } else {
+                    alert('اسم المستخدم أو كلمة المرور غير صحيحة');
+                }
+            } else {
+                // إنشاء حساب جديد
+                if (!email) {
+                    alert('يرجى إدخال البريد الإلكتروني');
+                    return;
+                }
+
+                const existingUser = allUsers.find(u => u.username === username || u.email === email);
+                
+                if (existingUser) {
+                    alert('اسم المستخدم أو البريد الإلكتروني موجود مسبقاً');
+                    return;
+                }
+
+                const newUser = {
+                    id: Date.now(),
+                    username,
+                    email,
+                    password,
+                    joinedDate: new Date().toISOString()
+                };
+
+                allUsers.push(newUser);
+                localStorage.setItem('ramezUsers', JSON.stringify(allUsers));
+
+                isLoggedIn = true;
+                currentUser = newUser;
+                localStorage.setItem('ramezLoggedIn', 'true');
+                localStorage.setItem('ramezCurrentUser', JSON.stringify(newUser));
+
+                updateUI();
+                closeAuthModal();
+                alert('تم إنشاء الحساب بنجاح!');
+            }
+        });
+
+        // تسجيل الخروج
+        function logout() {
+            isLoggedIn = false;
+            currentUser = null;
+            localStorage.removeItem('ramezLoggedIn');
+            localStorage.removeItem('ramezCurrentUser');
+            
+            updateUI();
+            alert('تم تسجيل الخروج');
+        }
+
+        // التحقق من المصادقة قبل الوصول إلى المحتوى
+        function checkAuth(event, target) {
+            if (!isLoggedIn) {
+                event.preventDefault();
+                alert('يرجى تسجيل الدخول للوصول إلى هذا المحتوى');
+                showAuthModal('login');
+                return false;
+            }
+            return true;
+        }
+
+        // تحميل المقالات
+        function loadArticles(filter = 'all') {
+            const articlesGrid = document.getElementById('articlesGrid');
+            if (!articlesGrid) return;
+
+            let filteredArticles = articles;
+            if (filter !== 'all') {
+                filteredArticles = articles.filter(article => article.category === filter);
+            }
+
+            articlesGrid.innerHTML = filteredArticles.map(article => `
+                <div class="article-card" data-category="${article.category}">
+                    <img src="${article.image}" alt="${article.title}" class="article-image">
+                    <div class="article-content">
+                        <div class="article-category">${getCategoryName(article.category)}</div>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <a href="#" class="read-more" onclick="return checkAuth(event, '#articles')">اقرأ المزيد ←</a>
+                    </div>
+                </div>
+            `).join('');
+
+            // تحديث الأزرار النشطة
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === 'الكل' && filter === 'all') {
+                    btn.classList.add('active');
+                } else if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${filter}'`)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // تصفية المقالات
+        function filterArticles(category) {
+            if (!isLoggedIn) {
+                showAuthModal('login');
+                return;
+            }
+            loadArticles(category);
+        }
+
+        // البحث في المقالات
+        document.getElementById('searchButton').addEventListener('click', performSearch);
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') performSearch();
+        });
+
+        function performSearch() {
+            if (!isLoggedIn) {
+                showAuthModal('login');
+                return;
+            }
+
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!searchTerm) {
+                loadArticles('all');
+                return;
+            }
+
+            const filteredArticles = articles.filter(article => 
+                article.title.toLowerCase().includes(searchTerm) || 
+                article.excerpt.toLowerCase().includes(searchTerm) ||
+                article.content.toLowerCase().includes(searchTerm)
+            );
+
+            const articlesGrid = document.getElementById('articlesGrid');
+            if (filteredArticles.length === 0) {
+                articlesGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                        <h3>لم يتم العثور على نتائج</h3>
+                        <p>جرب استخدام كلمات بحث مختلفة</p>
+                    </div>
+                `;
+            } else {
+                articlesGrid.innerHTML = filteredArticles.map(article => `
+                    <div class="article-card" data-category="${article.category}">
+                        <img src="${article.image}" alt="${article.title}" class="article-image">
+                        <div class="article-content">
+                            <div class="article-category">${getCategoryName(article.category)}</div>
+                            <h3 class="article-title">${article.title}</h3>
+                            <p class="article-excerpt">${article.excerpt}</p>
+                            <a href="#" class="read-more" onclick="return checkAuth(event, '#articles')">اقرأ المزيد ←</a>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // الحصول على اسم القسم بالعربية
+        function getCategoryName(category) {
+            const categories = {
+                'imei': 'إصلاح IMEI',
+                'software': 'مشاكل السوفتوير',
+                'server': 'خدمات السيرفر',
+                'tutorials': 'شروحات تقنية'
+            };
+            return categories[category] || category;
+        }
+
+        // تبديل القائمة في الجوال
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const userAuth = document.querySelector('.user-auth-section');
+            
+            navLinks.classList.toggle('active');
+            userAuth.classList.toggle('active');
+        }
+
+        // إغلاق نافذة المصادقة عند النقر خارجها
+        document.getElementById('authModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAuthModal();
+            }
+        });
+
+        // تهيئة التطبيق عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>
