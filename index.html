@@ -3,562 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramez Tech - حلول الهواتف المحمولة والبرمجيات</title>
-    
+    <title>Ramez Tech - حلول الهواتف المحمولة</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 
     <style>
-        /* إعدادات الخط الأساسية وإعادة التعيين */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-            text-align: right;
-        }
+        /* --- تنسيقات عامة --- */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* --- الرأس (Header) --- */
+        header { background-color: #2c3e50; color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .logo h1 { margin: 0; font-size: 24px; font-weight: bold; }
+        .auth-nav a { background: #34495e; padding: 8px 15px; border-radius: 4px; margin-left: 10px; font-size: 14px; transition: 0.3s; cursor: pointer;}
+        .auth-nav a:hover { background: #2980b9; }
+        
+        /* --- البحث --- */
+        .search-section { background: white; padding: 30px 0; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .search-box { max-width: 600px; margin: 0 auto; display: flex; position: relative; }
+        .search-box input { flex: 1; padding: 15px; border: 2px solid #eee; border-radius: 0 4px 4px 0; font-size: 16px; outline: none; }
+        .search-box button { padding: 15px 30px; background: #2980b9; color: white; border: none; border-radius: 4px 0 0 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        
+        /* --- المحتوى --- */
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        
+        /* بطاقة المقال */
+        .article-card { background: white; border-radius: 8px; overflow: hidden; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); }
+        .article-header { padding: 20px; border-bottom: 1px solid #f0f0f0; }
+        .article-meta { font-size: 12px; color: #7f8c8d; margin-bottom: 5px; }
+        .article-title { margin: 0; color: #2c3e50; font-size: 20px; }
+        
+        /* محتوى المقال */
+        .article-body { padding: 20px; }
+        .article-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 4px; margin-bottom: 15px; display: none; } /* مخفي افتراضياً حتى يتم تحميل الصورة */
+        .article-text { color: #555; margin-bottom: 15px; }
 
-        /* شريط التنقل العلوي (مثال بسيط) */
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        header a {
-            color: #ecf0f1;
-            text-decoration: none;
-            margin-right: 20px;
-            cursor: pointer;
-        }
-
-        /* تنسيق البحث الجديد */
-        .search-section {
-            background-color: #ffffff;
-            padding: 40px 0;
+        /* --- الميزات المحجوبة (الروابط) --- */
+        .locked-content {
+            background-color: #f8f9fa;
+            border: 1px dashed #bdc3c7;
+            padding: 15px;
             text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-
-        .search-container {
-            max-width: 700px;
-            margin: 0 auto;
-            display: flex;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            direction: rtl; /* لضمان ترتيب العناصر بشكل صحيح */
-        }
-
-        #searchInput {
-            flex-grow: 1;
-            padding: 15px 20px;
-            font-size: 16px;
-            border: none;
-            outline: none;
-            text-align: right;
-        }
-
-        #searchButton {
-            background-color: #667eea;
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        #searchButton:hover {
-            background-color: #5a6edb;
-        }
-
-        /* تنسيق منطقة المقالات */
-        #articles-list {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-
-        .article-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 25px;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s;
-        }
-
-        .article-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .article-card h3 {
-            color: #667eea;
-            font-size: 22px;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        
-        .article-card img {
-            max-width: 100%;
-            height: auto;
             border-radius: 4px;
-            margin-bottom: 15px;
-        }
-
-        .article-card .category {
-            font-size: 0.9em;
-            color: #7f8c8d;
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        .article-card button {
-            transition: background-color 0.3s;
-        }
-        
-        .article-card button:hover {
-            background-color: #5a6edb !important;
-        }
-
-        /* تنسيق النافذة المنبثقة (Modal) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding-top: 50px;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 30px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 400px;
-            border-radius: 10px;
-            position: relative;
-            text-align: center;
-        }
-
-        .close-button {
-            color: #aaa;
-            float: left; /* تغيير الاتجاه ليناسب RTL */
-            font-size: 28px;
-            font-weight: bold;
-            line-height: 1;
-        }
-
-        .close-button:hover, .close-button:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        #login-form input, #register-form input {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            text-align: right;
-        }
-
-        #login-btn, #register-btn {
-            background-color: #2ecc71;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        #login-btn:hover, #register-btn:hover {
-            background-color: #27ae60;
-        }
-
-        /* تنسيق المحتوى الداخلي للمقالات */
-        .article-body h2 {
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-            margin-top: 25px;
-            font-size: 26px;
-        }
-        
-        .article-body code, .article-body pre {
-            display: block;
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 4px;
-            margin: 15px 0;
-            overflow-x: auto;
-            text-align: left; /* الأكواد باللاتينية */
-        }
-
-        /* تنسيق حاوية فيديو يوتيوب (للاستجابة) */
-        .video-embed-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* نسبة 16:9 */
-            height: 0;
             margin: 20px 0;
+            color: #7f8c8d;
+        }
+        .locked-icon { font-size: 24px; display: block; margin-bottom: 5px; }
+        .login-trigger { color: #2980b9; font-weight: bold; cursor: pointer; text-decoration: underline; }
+
+        .unlocked-link {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin: 5px;
+            font-weight: bold;
         }
 
-        .video-embed-container iframe {
-            position: absolute;
-            top: 0;
-            right: 0; /* تم التعديل ليناسب RTL */
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+        /* --- النوافذ المنبثقة (Modals) --- */
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+        .modal-content { background-color: white; margin: 10% auto; padding: 30px; border-radius: 8px; width: 90%; max-width: 400px; position: relative; text-align: center; }
+        .close { position: absolute; left: 20px; top: 10px; font-size: 28px; cursor: pointer; color: #aaa; }
+        .modal h2 { margin-top: 0; color: #2c3e50; }
+        
+        .form-group { margin-bottom: 15px; text-align: right; }
+        .form-group input { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ddd; border-radius: 4px; }
+        .btn-submit { width: 100%; padding: 12px; background: #2c3e50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        .btn-submit:hover { background: #34495e; }
+        .switch-form { margin-top: 15px; font-size: 14px; }
+        .switch-form span { color: #2980b9; cursor: pointer; font-weight: bold; }
+
+        /* فيديو يوتيوب */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 20px 0; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Ramez Tech</h1>
-        <nav>
-            <a href="#" id="auth-link">دخول / تسجيل</a>
-        </nav>
+        <div class="logo">
+            <h1>Ramez Tech</h1>
+        </div>
+        <div class="auth-nav" id="authNav">
+            <a onclick="openModal('login')">تسجيل الدخول</a>
+            <a onclick="openModal('register')">اشترك مجاناً</a>
+        </div>
     </header>
 
-    <section id="search-bar" class="search-section">
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="ابحث عن حلول IMEI، FRP، سوفت وير..." aria-label="Search">
-            <button id="searchButton">🔍 بحث</button>
+    <section class="search-section">
+        <div class="search-box">
+            <button onclick="performSearch()">بحث</button>
+            <input type="text" id="searchInput" placeholder="ابحث عن ملفات FRP، حلول IMEI، روت...">
         </div>
     </section>
 
-    <main>
-        <div id="protected-alert" style="display:none; text-align:center; padding:50px; background:#f8d7da; border:1px solid #f5c6cb; color:#721c24; margin-top:30px; border-radius:8px; max-width: 800px; margin: 30px auto;">
-            <h2>🔒 محتوى حصري</h2>
-            <p>للاطلاع على المقالات والروابط الكاملة، يرجى تسجيل الدخول أو إنشاء حساب.</p>
-            <button id="protected-login-btn" style="background:#007bff; color:white; padding:10px 20px; border:none; border-radius:5px; margin-top:15px; cursor:pointer;">تسجيل الدخول / التسجيل</button>
-        </div>
+    <div class="container" id="articlesContainer">
+        <div style="text-align:center; padding: 40px; color:#777;">جاري تحميل المقالات...</div>
+    </div>
 
-        <section id="articles-list" style="display:none;">
-            </section>
-    </main>
-
-    <div id="auth-modal" class="modal">
+    <div id="authModal" class="modal">
         <div class="modal-content">
-            <span class="close-button" onclick="hideModal()">&times;</span>
-            <h2 id="modal-title">تسجيل الدخول</h2>
+            <span class="close" onclick="closeModal()">&times;</span>
             
-            <form id="login-form">
-                <input type="email" id="login-email" placeholder="البريد الإلكتروني" required>
-                <input type="password" id="login-password" placeholder="كلمة المرور" required>
-                <button type="submit" id="login-btn">دخول</button>
-            </form>
-
-            <form id="register-form" style="display:none;">
-                <input type="text" id="register-username" placeholder="اسم المستخدم" required>
-                <input type="email" id="register-email" placeholder="البريد الإلكتروني" required>
-                <input type="password" id="register-password" placeholder="كلمة المرور" required>
-                <button type="submit" id="register-btn">تسجيل</button>
-            </form>
-
-            <p id="toggle-link-container">
-                ليس لديك حساب؟ <a href="#" id="toggle-register">سجل الآن</a>
-            </p>
-        </div>
-    </div>
-    
-    <div id="full-article-modal" class="modal">
-        <div class="modal-content" style="max-width: 700px; text-align: right;">
-            <span class="close-button" onclick="hideFullArticle()">&times;</span>
-            <div id="full-article-content">
+            <div id="loginForm">
+                <h2>تسجيل الدخول</h2>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="loginPass" placeholder="كلمة المرور" required>
+                    </div>
+                    <button type="submit" class="btn-submit">دخول</button>
+                </form>
+                <div class="switch-form">
+                    ليس لديك حساب؟ <span onclick="switchView('register')">أنشئ حساباً الآن</span>
                 </div>
+            </div>
+
+            <div id="registerForm" style="display:none;">
+                <h2>حساب جديد</h2>
+                <form onsubmit="handleRegister(event)">
+                    <div class="form-group">
+                        <input type="text" id="regName" placeholder="الاسم الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="regEmail" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="regPass" placeholder="كلمة المرور" required>
+                    </div>
+                    <button type="submit" class="btn-submit">تسجيل واشتراك</button>
+                </form>
+                <div class="switch-form">
+                    لديك حساب بالفعل؟ <span onclick="switchView('login')">سجل دخول</span>
+                </div>
+            </div>
         </div>
     </div>
-    
 
     <script>
-        
-        let articlesData = [];
-        let usersData = [];
-        let currentUser = null; 
-        const ARTICLES_JSON = 'data/articles.json';
-        const USERS_JSON = 'data/users.json';
-        
-        // ----------------------------------------------------
-        // الدوال المساعدة
-        // ----------------------------------------------------
+        // --- إعدادات ومتغيرات ---
+        let articles = [];
+        let isLoggedIn = false;
+        let currentUser = null;
 
-        // دالة لجلب البيانات من ملف JSON
-        async function fetchGitHubFile(filename) {
-            try {
-                const response = await fetch(filename);
-                if (!response.ok) {
-                    console.error(`Failed to fetch ${filename}: Status ${response.status}`);
-                    return []; 
-                }
-                return await response.json();
-            } catch (error) {
-                console.error(`Error loading ${filename}:`, error);
-                return [];
-            }
-        }
+        // --- عند تحميل الصفحة ---
+        document.addEventListener('DOMContentLoaded', () => {
+            checkLoginStatus();
+            loadArticlesFromGitHub();
+        });
 
-        // دالة تشفير كلمة المرور (تطابق دالة SHA256 في Python)
-        function hashPassword(password) {
-            if (typeof sha256 === 'function') {
-                return sha256(password);
-            }
-            console.error("SHA256 library not loaded! Cannot hash password.");
-            return password; 
-        }
-
-        function showModal(formType = 'login') {
-            document.getElementById('auth-modal').style.display = 'block';
-            
-            const modalTitle = document.getElementById('modal-title');
-            const loginForm = document.getElementById('login-form');
-            const registerForm = document.getElementById('register-form');
-            const toggleContainer = document.getElementById('toggle-link-container');
-            
-            // تحديث محتوى النافذة المنبثقة
-            if (formType === 'login') {
-                modalTitle.textContent = 'تسجيل الدخول';
-                loginForm.style.display = 'block';
-                registerForm.style.display = 'none';
-                toggleContainer.innerHTML = 'ليس لديك حساب؟ <a href="#" id="toggle-register">سجل الآن</a>';
-            } else {
-                modalTitle.textContent = 'تسجيل حساب جديد';
-                loginForm.style.display = 'none';
-                registerForm.style.display = 'block';
-                toggleContainer.innerHTML = 'لديك حساب؟ <a href="#" id="toggle-login">دخول</a>';
-            }
-
-            // إعادة ربط أحداث التبديل
-            document.getElementById('toggle-register')?.addEventListener('click', (e) => { e.preventDefault(); showModal('register'); });
-            document.getElementById('toggle-login')?.addEventListener('click', (e) => { e.preventDefault(); showModal('login'); });
-        }
-
-        function hideModal() {
-            document.getElementById('auth-modal').style.display = 'none';
-        }
-
-        function showFullArticle() {
-             document.getElementById('full-article-modal').style.display = 'block';
-        }
-        
-        function hideFullArticle() {
-             document.getElementById('full-article-modal').style.display = 'none';
-        }
-        
-        // ----------------------------------------------------
-        // 3. التحكم في حالة الدخول والمحتوى
-        // ----------------------------------------------------
-        
+        // --- 1. إدارة المستخدمين (محلياً للمتصفح) ---
         function checkLoginStatus() {
-            const storedUser = localStorage.getItem('currentUser');
-            const authLink = document.getElementById('auth-link');
-            
-            if (storedUser) {
-                const user = JSON.parse(storedUser);
-                const validUser = usersData.find(u => 
-                    u.email === user.email && 
-                    u.status === 'active'
-                );
-                
-                if (validUser) {
-                    currentUser = validUser;
-                    authLink.textContent = `مرحباً، ${currentUser.username} (خروج)`;
-                    authLink.onclick = logout;
-                    showProtectedContent(articlesData); 
-                    return;
-                }
+            const userStr = localStorage.getItem('ramez_user');
+            if (userStr) {
+                isLoggedIn = true;
+                currentUser = JSON.parse(userStr);
+                updateNav();
             }
+        }
+
+        function updateNav() {
+            const nav = document.getElementById('authNav');
+            if (isLoggedIn) {
+                nav.innerHTML = `
+                    <span>مرحباً، ${currentUser.name}</span>
+                    <a onclick="logout()" style="background:#c0392b;">خروج</a>
+                `;
+                // إعادة رسم المقالات لإظهار الروابط
+                renderArticles();
+            } else {
+                nav.innerHTML = `
+                    <a onclick="openModal('login')">تسجيل الدخول</a>
+                    <a onclick="openModal('register')" style="background:#27ae60;">اشترك مجاناً</a>
+                `;
+            }
+        }
+
+        function handleRegister(e) {
+            e.preventDefault();
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
             
-            // إذا لم يكن مسجل دخول
-            currentUser = null;
-            authLink.textContent = 'دخول / تسجيل';
-            authLink.onclick = () => showModal('login');
-            hideProtectedContent();
+            // تسجيل فوري وحفظ في المتصفح
+            const user = { name: name, email: email };
+            localStorage.setItem('ramez_user', JSON.stringify(user));
+            
+            isLoggedIn = true;
+            currentUser = user;
+            
+            closeModal();
+            updateNav();
+            alert('تم إنشاء الحساب بنجاح! يمكنك الآن رؤية جميع الروابط.');
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            
+            // محاكاة تسجيل الدخول (يقبل أي شيء حالياً طالما هناك بريد محفوظ، أو ينشئ جلسة جديدة)
+            // للتبسيط: سنعتبره مسجل دخول فوراً
+            const user = { name: email.split('@')[0], email: email };
+            localStorage.setItem('ramez_user', JSON.stringify(user));
+            
+            isLoggedIn = true;
+            currentUser = user;
+            
+            closeModal();
+            updateNav();
         }
 
         function logout() {
-            localStorage.removeItem('currentUser');
+            localStorage.removeItem('ramez_user');
+            isLoggedIn = false;
             currentUser = null;
-            checkLoginStatus(); // تحديث الواجهة
-            alert("تم تسجيل الخروج بنجاح.");
+            updateNav();
+            renderArticles(); // لإخفاء الروابط مرة أخرى
         }
 
-        function showProtectedContent(articles) {
-            document.getElementById('protected-alert').style.display = 'none';
-            document.getElementById('articles-list').style.display = 'block'; 
-            renderArticles(articles);
+        // --- 2. جلب البيانات من GitHub ---
+        async function loadArticlesFromGitHub() {
+            try {
+                // استخدام رابط مباشر لمنع مشاكل الكاش
+                const timestamp = new Date().getTime();
+                const response = await fetch(`data/articles.json?t=${timestamp}`);
+                
+                if (!response.ok) throw new Error("لم يتم العثور على الملف");
+                
+                articles = await response.json();
+                renderArticles();
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById('articlesContainer').innerHTML = '<p style="text-align:center">لا توجد مقالات منشورة حالياً، أو هناك مشكلة في الاتصال.</p>';
+            }
         }
 
-        function hideProtectedContent() {
-            document.getElementById('protected-alert').style.display = 'block';
-            document.getElementById('articles-list').style.display = 'none';
-        }
+        // --- 3. عرض المقالات ومعالجة الروابط ---
+        function renderArticles(filterText = '') {
+            const container = document.getElementById('articlesContainer');
+            container.innerHTML = '';
 
-        // ----------------------------------------------------
-        // 4. عرض المقالات والبحث
-        // ----------------------------------------------------
+            // تصفية وعكس الترتيب (الأحدث أولاً)
+            const displayArticles = articles.filter(a => 
+                !filterText || a.title.toLowerCase().includes(filterText.toLowerCase())
+            ).reverse();
 
-        function renderArticles(articles) {
-            const container = document.getElementById('articles-list');
-            container.innerHTML = ''; 
-
-            if (articles.length === 0) {
-                container.innerHTML = '<p style="text-align:center; font-size:18px;">لم يتم العثور على مقالات تطابق البحث.</p>';
+            if (displayArticles.length === 0) {
+                container.innerHTML = '<p style="text-align:center">لا توجد نتائج.</p>';
                 return;
             }
-            
-            // عرض المقالات (الأحدث أولاً)
-            articles.slice().reverse().forEach(article => {
+
+            displayArticles.forEach(article => {
+                // معالجة المحتوى: البحث عن الروابط واستبدالها إذا لم يكن مسجلاً
+                let processedContent = article.content;
                 
-                // المحتوى التمهيدي
-                const contentPreview = article.excerpt || article.content.substring(0, 150).replace(/<[^>]*>?/gm, '') + '...';
+                // تحويل روابط الصور إلى HTML
+                if(article.coverImage) {
+                   // تضاف كصورة بارزة يدوياً في القالب بالأسفل
+                }
                 
-                const articleHTML = `
-                    <div class="article-card" id="article-${article.id}">
-                        <p class="category">${article.category} | ${new Date(article.date).toLocaleDateString('ar-EG')}</p>
-                        <h3>${article.title}</h3>
-                        ${article.coverImage ? `<img src="${article.coverImage}" alt="${article.title}">` : ''}
-                        <p>${contentPreview}</p>
-                        <button onclick="viewArticle(${article.id})" style="background:#667eea; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer; margin-top:10px;">قراءة المزيد</button>
+                // معالجة بسيطة لتحويل Markdown للصور إلى HTML
+                processedContent = processedContent.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" style="max-width:100%; border-radius:4px;">');
+                
+                // معالجة روابط يوتيوب (iframe) - تبقى كما هي لأنها محتوى
+                
+                // *** الجزء الأهم: معالجة الروابط [رابط](url) ***
+                // نستخدم Regex للبحث عن الروابط في نص Markdown
+                processedContent = processedContent.replace(/\[(.*?)\]\((.*?)\)/g, (match, text, url) => {
+                    if (isLoggedIn) {
+                        // إذا مسجل دخول -> اعرض الرابط
+                        return `<a href="${url}" target="_blank" class="unlocked-link">🔗 ${text}</a>`;
+                    } else {
+                        // غير مسجل -> اعرض القفل
+                        return `
+                            <div class="locked-content">
+                                <span class="locked-icon">🔒</span>
+                                الرابط: <strong>${text}</strong> مخفي.<br>
+                                <span class="login-trigger" onclick="openModal('register')">سجل اشتراك مجاني</span> لرؤية رابط التحميل.
+                            </div>
+                        `;
+                    }
+                });
+
+                // إنشاء كرت المقال
+                const card = document.createElement('div');
+                card.className = 'article-card';
+                card.innerHTML = `
+                    <div class="article-header">
+                        <div class="article-meta">
+                            <span style="background:#eee; padding:2px 8px; border-radius:4px;">${article.category}</span>
+                            • ${new Date(article.date).toLocaleDateString('ar-EG')}
+                        </div>
+                        <h2 class="article-title">${article.title}</h2>
+                    </div>
+                    <div class="article-body">
+                        ${article.coverImage ? `<img src="${article.coverImage}" class="article-image" style="display:block">` : ''}
+                        <div class="article-text">
+                            ${processedContent.replace(/\n/g, '<br>')} </div>
                     </div>
                 `;
-                container.innerHTML += articleHTML;
+                container.appendChild(card);
             });
         }
 
-        function viewArticle(articleId) {
-            const article = articlesData.find(a => a.id === articleId);
-            if (!article) return;
-            
-            const articleContentDiv = document.getElementById('full-article-content');
-            
-            let finalContent = article.content;
-            
-            // معالجة أكواد تضمين اليوتيوب الخاصة بك
-            finalContent = finalContent.replace(
-                /iframe src="https:\/\/www\.youtube\.com\/embed\/([^"]+)"/g, 
-                (match) => {
-                    // نُعيد وسم التضمين كاملاً داخل الحاوية الاستجابية
-                    return `<div class="video-embed-container"><${match} frameborder="0" allowfullscreen></iframe></div>`;
-                }
-            );
-
-            const fullContentHTML = `
-                <h2>${article.title}</h2>
-                <p class="category">القسم: ${article.category} | التاريخ: ${new Date(article.date).toLocaleDateString('ar-EG')}</p>
-                ${article.coverImage ? `<img src="${article.coverImage}" style="max-width:100%; height:auto; margin-bottom:20px;">` : ''}
-                
-                <div class="article-body" dir="rtl" style="text-align: right;">
-                    ${finalContent}
-                </div>
-            `;
-            
-            articleContentDiv.innerHTML = fullContentHTML;
-            showFullArticle();
+        // --- 4. وظائف الواجهة (البحث والنوافذ) ---
+        function performSearch() {
+            const text = document.getElementById('searchInput').value;
+            renderArticles(text);
         }
 
-
-        // ----------------------------------------------------
-        // 5. معالجة الأحداث عند تحميل الصفحة
-        // ----------------------------------------------------
-
-        async function loadAllData() {
-            // تحميل البيانات عند بدء تشغيل الموقع
-            articlesData = await fetchGitHubFile(ARTICLES_JSON);
-            usersData = await fetchGitHubFile(USERS_JSON);
-            checkLoginStatus(); 
+        function openModal(type) {
+            document.getElementById('authModal').style.display = 'block';
+            switchView(type);
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. بدء تحميل البيانات
-            loadAllData(); 
+        function closeModal() {
+            document.getElementById('authModal').style.display = 'none';
+        }
 
-            // 2. ربط أزرار النموذج
-            document.getElementById('protected-login-btn')?.addEventListener('click', () => showModal('login'));
+        function switchView(type) {
+            if (type === 'login') {
+                document.getElementById('loginForm').style.display = 'block';
+                document.getElementById('registerForm').style.display = 'none';
+            } else {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('registerForm').style.display = 'block';
+            }
+        }
 
-            // 3. معالجة تسجيل الدخول (Login Form)
-            document.getElementById('login-form').addEventListener('submit', (e) => {
-                e.preventDefault();
-                const email = document.getElementById('login-email').value;
-                const password = document.getElementById('login-password').value;
-                
-                if (typeof sha256 === 'undefined') {
-                    alert('خطأ: مكتبة التشفير SHA256 لم تُحمل. تأكد من اتصال الإنترنت.');
-                    return;
-                }
-                
-                const hashedPassword = hashPassword(password);
-                
-                const user = usersData.find(u => 
-                    u.email === email && 
-                    u.passwordHash === hashedPassword &&
-                    u.status === 'active'
-                ); 
-                
-                if (user) {
-                    localStorage.setItem('currentUser', JSON.stringify({username: user.username, email: user.email})); 
-                    checkLoginStatus();
-                    hideModal();
-                } else {
-                    alert('بيانات الدخول غير صحيحة أو حسابك غير نشط. تأكد من تطابق كلمة المرور مع ما هو مسجل في users.json.');
-                }
-            });
-
-            // 4. معالجة التسجيل (Register Form)
-            document.getElementById('register-form').addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert("التسجيل مغلق حالياً! يرجى التواصل مع المدير لإضافة حساب.");
-            });
-            
-            // 5. وظيفة البحث
-            document.getElementById('searchButton').addEventListener('click', () => {
-                const query = document.getElementById('searchInput').value.toLowerCase();
-                
-                if (!currentUser) {
-                    alert("يرجى تسجيل الدخول للبحث في المحتوى.");
-                    showModal('login');
-                    return;
-                }
-                
-                const filteredArticles = articlesData.filter(article => 
-                    (article.title && article.title.toLowerCase().includes(query)) ||
-                    (article.content && article.content.toLowerCase().includes(query)) ||
-                    (article.category && article.category.toLowerCase().includes(query))
-                );
-                
-                if (filteredArticles.length > 0) {
-                    showProtectedContent(filteredArticles); 
-                } else {
-                    alert("لم يتم العثور على نتائج مطابقة. عرض كل المقالات بدلاً من ذلك.");
-                    showProtectedContent(articlesData); 
-                }
-            });
-        });
+        // إغلاق النافذة عند النقر خارجها
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('authModal')) {
+                closeModal();
+            }
+        }
     </script>
 </body>
 </html>
