@@ -1,0 +1,17 @@
+{
+    "site": {
+        "title": "Ramez Tech",
+        "description": "دليلك الشامل لإصلاح الهواتف",
+        "logo": "assets/logo.png",
+        "favicon": "assets/favicon.ico"
+    },
+    "theme": {
+        "primary": "#667eea",
+        "secondary": "#764ba2"
+    },
+    "contact": {
+        "whatsapp": "https://wa.me/xxxxxxxxxx",
+        "telegram": "https://t.me/yourusername",
+        "email": "info@rameztech.com"
+    }
+}
