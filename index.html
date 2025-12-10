@@ -3,1374 +3,562 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramez Tech - دليلك الشامل لإصلاح الهواتف</title>
-    <meta name="description" content="موقع Ramez Tech متخصص في شروحات إصلاح الهواتف، حل مشاكل IMEI، خدمات السيرفر، وحلول السوفتوير">
+    <title>Ramez Tech - حلول الهواتف المحمولة والبرمجيات</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+
     <style>
-        * {
+        /* إعدادات الخط الأساسية وإعادة التعيين */
+        body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
             line-height: 1.6;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
+            text-align: right;
         }
 
-        /* Navigation */
-        nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
+        /* شريط التنقل العلوي (مثال بسيط) */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        header h1 {
+            margin: 0;
+            font-size: 24px;
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
+        header a {
+            color: #ecf0f1;
             text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
+            margin-right: 20px;
+            cursor: pointer;
         }
 
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        .user-auth-section {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        /* تنسيق البحث الجديد */
+        .search-section {
+            background-color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
         }
 
         .search-container {
+            max-width: 700px;
+            margin: 0 auto;
             display: flex;
-            margin-left: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            direction: rtl; /* لضمان ترتيب العناصر بشكل صحيح */
         }
 
         #searchInput {
-            padding: 0.5rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px 0 0 4px;
-            width: 200px;
-            font-family: inherit;
+            flex-grow: 1;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            text-align: right;
         }
 
         #searchButton {
-            padding: 0.5rem 1rem;
-            background: #667eea;
+            background-color: #667eea;
             color: white;
             border: none;
-            border-radius: 0 4px 4px 0;
+            padding: 15px 25px;
+            font-size: 16px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .auth-btn {
-            padding: 0.5rem 1.5rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            font-family: inherit;
-            font-size: 0.9rem;
+        #searchButton:hover {
+            background-color: #5a6edb;
         }
 
-        .user-profile {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .avatar {
-            width: 35px;
-            height: 35px;
-            background: #667eea;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-
-        .logout-btn {
-            padding: 0.3rem 1rem;
-            background: #f44336;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 0.8s;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .quick-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #667eea;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border-color: white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #667eea;
-        }
-
-        /* Auth Modal */
-        .auth-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .auth-box {
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 450px;
-            animation: fadeInUp 0.3s;
-        }
-
-        .auth-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #333;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #555;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .auth-submit {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            margin-top: 1rem;
-        }
-
-        .auth-switch {
-            text-align: center;
-            margin-top: 1.5rem;
-            color: #666;
-        }
-
-        .auth-switch a {
-            color: #667eea;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .close-auth {
-            float: left;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #666;
-        }
-
-        /* Protected Content */
-        .protected-content {
-            display: none;
-        }
-
-        .protected-content.visible {
-            display: block;
-        }
-
-        .login-message {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-            margin: 2rem auto;
-            max-width: 600px;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Features */
-        .features {
-            padding: 4rem 2rem;
-            background: white;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 12px;
-            transition: all 0.3s;
-            background: #f8f9fa;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 1rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
-
-        .icon-blue { background: #e3f2fd; color: #2196F3; }
-        .icon-green { background: #e8f5e9; color: #4CAF50; }
-        .icon-purple { background: #f3e5f5; color: #9C27B0; }
-
-        /* Articles Section */
-        .articles {
-            padding: 4rem 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
-        }
-
-        .category-filter {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .category-btn {
-            padding: 0.7rem 1.5rem;
-            border: none;
-            border-radius: 25px;
-            background: white;
-            color: #333;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: inherit;
-        }
-
-        .category-btn:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .category-btn.active {
-            background: #667eea;
-            color: white;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
+        /* تنسيق منطقة المقالات */
+        #articles-list {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
         }
 
         .article-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
             background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s;
         }
 
         .article-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
         }
 
-        .article-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .article-content {
-            padding: 1.5rem;
-        }
-
-        .article-category {
+        .article-card h3 {
             color: #667eea;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .article-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
         }
 
-        .article-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: #333;
-        }
-
-        .article-excerpt {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .read-more {
-            color: #667eea;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .read-more:hover {
-            gap: 1rem;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-description {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .service-price {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #667eea;
-            margin: 1.5rem 0;
-        }
-
-        .service-cta {
-            background: #667eea;
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .service-cta:hover {
-            background: #764ba2;
-        }
-
-        .why-us {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-top: 3rem;
-            text-align: center;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat {
-            padding: 1rem;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-blue { color: #2196F3; }
-        .stat-green { color: #4CAF50; }
-        .stat-purple { color: #9C27B0; }
-        .stat-orange { color: #FF9800; }
-
-        /* Contact Section */
-        .contact {
-            padding: 4rem 2rem;
-            background: white;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .contact-card {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateX(-10px);
-        }
-
-        .contact-green { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); }
-        .contact-blue { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); }
-        .contact-purple { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); }
-
-        .contact-icon {
-            font-size: 2.5rem;
-        }
-
-        .working-hours {
-            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-            padding: 2rem;
-            border-radius: 12px;
-        }
-
-        .hours-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 3rem 2rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
+        .article-card .category {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 15px;
             display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s;
+        }
+        
+        .article-card button {
+            transition: background-color 0.3s;
+        }
+        
+        .article-card button:hover {
+            background-color: #5a6edb !important;
         }
 
-        .footer-links a:hover {
-            color: white;
+        /* تنسيق النافذة المنبثقة (Modal) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding-top: 50px;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .social-icon:hover {
-            background: white;
-            color: #1e3c72;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            position: relative;
             text-align: center;
-            color: rgba(255,255,255,0.7);
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .close-button {
+            color: #aaa;
+            float: left; /* تغيير الاتجاه ليناسب RTL */
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 1;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links, .user-auth-section {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                gap: 1rem;
-                margin-top: 1rem;
-            }
+        .close-button:hover, .close-button:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-            .nav-links.active, .user-auth-section.active {
-                display: flex;
-            }
+        #login-form input, #register-form input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            text-align: right;
+        }
 
-            .menu-toggle {
-                display: block;
-            }
+        #login-btn, #register-btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        #login-btn:hover, #register-btn:hover {
+            background-color: #27ae60;
+        }
 
-            .search-container {
-                margin: 1rem 0 0 0;
-                width: 100%;
-            }
+        /* تنسيق المحتوى الداخلي للمقالات */
+        .article-body h2 {
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-top: 25px;
+            font-size: 26px;
+        }
+        
+        .article-body code, .article-body pre {
+            display: block;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 15px 0;
+            overflow-x: auto;
+            text-align: left; /* الأكواد باللاتينية */
+        }
 
-            #searchInput {
-                width: 100%;
-            }
+        /* تنسيق حاوية فيديو يوتيوب (للاستجابة) */
+        .video-embed-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* نسبة 16:9 */
+            height: 0;
+            margin: 20px 0;
+        }
 
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .auth-box {
-                padding: 2rem;
-                width: 95%;
-            }
+        .video-embed-container iframe {
+            position: absolute;
+            top: 0;
+            right: 0; /* تم التعديل ليناسب RTL */
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
     </style>
 </head>
 <body>
-    <!-- Auth Modal -->
-    <div id="authModal" class="auth-modal">
-        <div class="auth-box">
-            <button class="close-auth" onclick="closeAuthModal()">×</button>
-            <h2 class="auth-title" id="authModalTitle">تسجيل الدخول</h2>
-            <form id="authForm">
-                <div class="form-group">
-                    <label for="authUsername">اسم المستخدم</label>
-                    <input type="text" id="authUsername" required>
-                </div>
-                <div class="form-group" id="authEmailGroup">
-                    <label for="authEmail">البريد الإلكتروني</label>
-                    <input type="email" id="authEmail">
-                </div>
-                <div class="form-group">
-                    <label for="authPassword">كلمة المرور</label>
-                    <input type="password" id="authPassword" required>
-                </div>
-                <button type="submit" class="auth-submit" id="authSubmitBtn">تسجيل الدخول</button>
-            </form>
-            <div class="auth-switch">
-                <span id="authSwitchText">ليس لديك حساب؟</span>
-                <a onclick="switchAuthMode()" id="authSwitchLink">إنشاء حساب</a>
-            </div>
-        </div>
-    </div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <div class="logo-icon">📱</div>
-                <span>Ramez Tech</span>
-            </div>
-            
-            <ul class="nav-links">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#articles" onclick="checkAuth(event, '#articles')">المقالات</a></li>
-                <li><a href="#services" onclick="checkAuth(event, '#services')">خدمات السيرفر</a></li>
-                <li><a href="#contact">اتصل بنا</a></li>
-            </ul>
-            
-            <div class="user-auth-section">
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="ابحث في المقالات...">
-                    <button id="searchButton">🔍</button>
-                </div>
-                <div id="userStatus">
-                    <!-- سيتم ملؤها بالجافاسكريبت -->
-                </div>
-            </div>
-            
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        </div>
-    </nav>
+    <header>
+        <h1>Ramez Tech</h1>
+        <nav>
+            <a href="#" id="auth-link">دخول / تسجيل</a>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>مرحباً بك في Ramez Tech</h1>
-        <p>دليلك الشامل لإصلاح الهواتف وحل مشاكل السوفتوير</p>
-        <p style="font-size: 1.1rem; margin-bottom: 2rem;">نوفر لك شروحات مجانية مفصلة لحل جميع مشاكل الهواتف، بالإضافة إلى خدمات سيرفر احترافية لإصلاح IMEI وفتح الشبكة وتجاوز حساب جوجل</p>
-        
-        <!-- أزرار سريعة تحت الوصف -->
-        <div class="quick-buttons">
-            <a href="#articles" class="btn btn-primary" onclick="checkAuth(event, '#articles')">تصفح المقالات</a>
-            <a href="#services" class="btn btn-secondary" onclick="checkAuth(event, '#services')">خدمات السيرفر</a>
+    <section id="search-bar" class="search-section">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="ابحث عن حلول IMEI، FRP، سوفت وير..." aria-label="Search">
+            <button id="searchButton">🔍 بحث</button>
         </div>
     </section>
 
-    <!-- محتوى للمستخدمين المسجلين فقط -->
-    <div id="protectedContent">
-        <!-- Features -->
-        <section class="features">
-            <div class="container">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon icon-blue">🔧</div>
-                        <h3>شروحات مجانية</h3>
-                        <p>حلول مفصلة لجميع مشاكل الهواتف مع صور توضيحية</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon icon-green">🖥️</div>
-                        <h3>خدمات احترافية</h3>
-                        <p>سيرفرات موثوقة لإصلاح IMEI وفتح الشبكة</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon icon-purple">💬</div>
-                        <h3>دعم فني سريع</h3>
-                        <p>نرد على استفساراتك خلال 24 ساعة</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <main>
+        <div id="protected-alert" style="display:none; text-align:center; padding:50px; background:#f8d7da; border:1px solid #f5c6cb; color:#721c24; margin-top:30px; border-radius:8px; max-width: 800px; margin: 30px auto;">
+            <h2>🔒 محتوى حصري</h2>
+            <p>للاطلاع على المقالات والروابط الكاملة، يرجى تسجيل الدخول أو إنشاء حساب.</p>
+            <button id="protected-login-btn" style="background:#007bff; color:white; padding:10px 20px; border:none; border-radius:5px; margin-top:15px; cursor:pointer;">تسجيل الدخول / التسجيل</button>
+        </div>
 
-        <!-- Articles Section -->
-        <section id="articles" class="articles protected-content">
-            <div class="container">
-                <h2 class="section-title">أحدث المقالات</h2>
-                <p class="section-subtitle">شروحات مفصلة لحل مشاكل الهواتف</p>
+        <section id="articles-list" style="display:none;">
+            </section>
+    </main>
 
-                <div class="category-filter">
-                    <button class="category-btn active" onclick="filterArticles('all')">الكل</button>
-                    <button class="category-btn" onclick="filterArticles('imei')">إصلاح IMEI</button>
-                    <button class="category-btn" onclick="filterArticles('software')">مشاكل السوفتوير</button>
-                    <button class="category-btn" onclick="filterArticles('server')">خدمات السيرفر</button>
-                    <button class="category-btn" onclick="filterArticles('tutorials')">شروحات تقنية</button>
-                </div>
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="hideModal()">&times;</span>
+            <h2 id="modal-title">تسجيل الدخول</h2>
+            
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="البريد الإلكتروني" required>
+                <input type="password" id="login-password" placeholder="كلمة المرور" required>
+                <button type="submit" id="login-btn">دخول</button>
+            </form>
 
-                <div class="articles-grid" id="articlesGrid">
-                    <!-- المقالات ستضاف هنا بالجافاسكريبت -->
-                </div>
-            </div>
-        </section>
+            <form id="register-form" style="display:none;">
+                <input type="text" id="register-username" placeholder="اسم المستخدم" required>
+                <input type="email" id="register-email" placeholder="البريد الإلكتروني" required>
+                <input type="password" id="register-password" placeholder="كلمة المرور" required>
+                <button type="submit" id="register-btn">تسجيل</button>
+            </form>
 
-        <!-- Services Section -->
-        <section id="services" class="services protected-content">
-            <div class="container">
-                <h2 class="section-title">خدمات السيرفر</h2>
-                <p class="section-subtitle">خدمات احترافية بأسعار منافسة</p>
-
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🖥️</div>
-                        <h3 class="service-title">فتح شبكة الهواتف</h3>
-                        <p class="service-description">فتح شبكة جميع أنواع الهواتف (سامسونج، آيفون، هواوي، شاومي) باستخدام سيرفرات احترافية</p>
-                        <div class="service-price">ابتداءً من 10$</div>
-                        <a href="#contact" class="service-cta">اطلب الخدمة</a>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">🔧</div>
-                        <h3 class="service-title">إصلاح IMEI</h3>
-                        <p class="service-description">إصلاح IMEI Null والـ Baseband Unknown لجميع أنواع الهواتف</p>
-                        <div class="service-price">ابتداءً من 15$</div>
-                        <a href="#contact" class="service-cta">اطلب الخدمة</a>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">📱</div>
-                        <h3 class="service-title">تجاوز حساب جوجل FRP</h3>
-                        <p class="service-description">إزالة قفل حساب جوجل من الهواتف بطرق آمنة ومضمونة</p>
-                        <div class="service-price">ابتداءً من 8$</div>
-                        <a href="#contact" class="service-cta">اطلب الخدمة</a>
-                    </div>
-                </div>
-
-                <div class="why-us">
-                    <h3 class="section-title" style="font-size: 2rem;">لماذا تختار خدماتنا؟</h3>
-                    <div class="stats">
-                        <div class="stat">
-                            <div class="stat-number stat-blue">24/7</div>
-                            <p>دعم على مدار الساعة</p>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number stat-green">100%</div>
-                            <p>نسبة نجاح عالية</p>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number stat-purple">سريع</div>
-                            <p>إنجاز خلال ساعات</p>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number stat-orange">آمن</div>
-                            <p>حماية بياناتك</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">تواصل معنا</h2>
-                <p class="section-subtitle">نحن هنا لمساعدتك في أي وقت</p>
-
-                <div class="contact-grid">
-                    <div>
-                        <div class="contact-card contact-green">
-                            <div class="contact-icon">💬</div>
-                            <div>
-                                <h3>واتساب</h3>
-                                <p>+90 XXX XXX XX XX</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-card contact-blue" style="margin-top: 1rem;">
-                            <div class="contact-icon">📞</div>
-                            <div>
-                                <h3>تيليجرام</h3>
-                                <p>@rameztech</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-card contact-purple" style="margin-top: 1rem;">
-                            <div class="contact-icon">📧</div>
-                            <div>
-                                <h3>البريد الإلكتروني</h3>
-                                <p>info@rameztech.com</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="working-hours">
-                        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">ساعات العمل</h3>
-                        <div class="hours-item">
-                            <span style="font-weight: 600;">السبت - الخميس</span>
-                            <span>9:00 ص - 10:00 م</span>
-                        </div>
-                        <div class="hours-item">
-                            <span style="font-weight: 600;">الجمعة</span>
-                            <span>2:00 م - 10:00 م</span>
-                        </div>
-                        <p style="text-align: center; margin-top: 1.5rem; color: #666;">
-                            نرد على الاستفسارات خلال 24 ساعة كحد أقصى
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-section">
-                        <h4>عن Ramez Tech</h4>
-                        <p>دليلك الشامل لإصلاح الهواتف وحل مشاكل السوفتوير. نوفر شروحات مجانية وخدمات احترافية.</p>
-                    </div>
-                    <div class="footer-section">
-                        <h4>روابط سريعة</h4>
-                        <ul class="footer-links">
-                            <li><a href="#home">الرئيسية</a></li>
-                            <li><a href="#articles" onclick="checkAuth(event, '#articles')">المقالات</a></li>
-                            <li><a href="#services" onclick="checkAuth(event, '#services')">خدمات السيرفر</a></li>
-                            <li><a href="#contact">اتصل بنا</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>تابعنا</h4>
-                        <div class="social-links">
-                            <a href="#" class="social-icon">📘</a>
-                            <a href="#" class="social-icon">🐦</a>
-                            <a href="#" class="social-icon">📷</a>
-                            <a href="#" class="social-icon">▶️</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>© 2024 Ramez Tech. جميع الحقوق محفوظة.</p>
-                </div>
-            </div>
-        </footer>
+            <p id="toggle-link-container">
+                ليس لديك حساب؟ <a href="#" id="toggle-register">سجل الآن</a>
+            </p>
+        </div>
     </div>
-
-    <!-- رسالة للمستخدمين غير المسجلين -->
-    <div id="loginMessage" class="login-message" style="display: none;">
-        <h2>🔒 محتوى محمي</h2>
-        <p>يرجى تسجيل الدخول للوصول إلى مقالات وخدمات Ramez Tech</p>
-        <button onclick="showAuthModal('login')" class="auth-btn" style="margin-top: 1rem;">تسجيل الدخول</button>
-        <p style="margin-top: 1rem;">ليس لديك حساب؟ <a onclick="showAuthModal('register')" style="color: #667eea; cursor: pointer;">إنشاء حساب جديد</a></p>
+    
+    <div id="full-article-modal" class="modal">
+        <div class="modal-content" style="max-width: 700px; text-align: right;">
+            <span class="close-button" onclick="hideFullArticle()">&times;</span>
+            <div id="full-article-content">
+                </div>
+        </div>
     </div>
+    
 
     <script>
-        // حالة التطبيق
-        let isAuthModalOpen = false;
-        let isLoginMode = true;
-        let isLoggedIn = false;
-        let currentUser = null;
-        let allUsers = [];
+        
+        let articlesData = [];
+        let usersData = [];
+        let currentUser = null; 
+        const ARTICLES_JSON = 'data/articles.json';
+        const USERS_JSON = 'data/users.json';
+        
+        // ----------------------------------------------------
+        // الدوال المساعدة
+        // ----------------------------------------------------
 
-        // بيانات المقالات
-        const articles = [
-            {
-                id: 1,
-                category: "imei",
-                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=250&fit=crop",
-                title: "طريقة إصلاح IMEI Null في هواتف سامسونج",
-                excerpt: "حل شامل لمشكلة IMEI Null التي تواجه مستخدمي هواتف سامسونج بطرق مجربة وفعالة...",
-                content: "المحتوى الكامل للمقال..."
-            },
-            {
-                id: 2,
-                category: "software",
-                image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=250&fit=crop",
-                title: "حل مشكلة Bootloop في الأندرويد",
-                excerpt: "دليل كامل لحل مشكلة التشغيل المتكرر في أجهزة الأندرويد بخطوات بسيطة...",
-                content: "المحتوى الكامل للمقال..."
-            },
-            {
-                id: 3,
-                category: "server",
-                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop",
-                title: "فتح شبكة الهواتف باستخدام السيرفر",
-                excerpt: "شرح مفصل لطريقة فتح شبكة جميع أنواع الهواتف عبر خدمات السيرفر الاحترافية...",
-                content: "المحتوى الكامل للمقال..."
-            },
-            {
-                id: 4,
-                category: "software",
-                image: "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=400&h=250&fit=crop",
-                title: "إصلاح مشكلة No Service في الآيفون",
-                excerpt: "أسباب وحلول مشكلة عدم التقاط الشبكة في أجهزة آيفون مع طرق الإصلاح المجربة...",
-                content: "المحتوى الكامل للمقال..."
-            },
-            {
-                id: 5,
-                category: "imei",
-                image: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=400&h=250&fit=crop",
-                title: "حل مشكلة Google Account Lock",
-                excerpt: "طرق فعالة لتجاوز قفل حساب جوجل FRP في هواتف سامسونج وهواوي وغيرها...",
-                content: "المحتوى الكامل للمقال..."
-            },
-            {
-                id: 6,
-                category: "tutorials",
-                image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=250&fit=crop",
-                title: "كيفية عمل Flash للهواتف الصينية",
-                excerpt: "دليل شامل لتثبيت الرومات على الهواتف الصينية باستخدام أدوات SP Flash Tool...",
-                content: "المحتوى الكامل للمقال..."
+        // دالة لجلب البيانات من ملف JSON
+        async function fetchGitHubFile(filename) {
+            try {
+                const response = await fetch(filename);
+                if (!response.ok) {
+                    console.error(`Failed to fetch ${filename}: Status ${response.status}`);
+                    return []; 
+                }
+                return await response.json();
+            } catch (error) {
+                console.error(`Error loading ${filename}:`, error);
+                return [];
             }
-        ];
+        }
 
-        // تهيئة التطبيق
-        function initApp() {
-            // تحميل المستخدمين من localStorage
-            const savedUsers = localStorage.getItem('ramezUsers');
-            if (savedUsers) {
-                allUsers = JSON.parse(savedUsers);
+        // دالة تشفير كلمة المرور (تطابق دالة SHA256 في Python)
+        function hashPassword(password) {
+            if (typeof sha256 === 'function') {
+                return sha256(password);
             }
+            console.error("SHA256 library not loaded! Cannot hash password.");
+            return password; 
+        }
 
-            // تحميل حالة تسجيل الدخول
-            const savedLogin = localStorage.getItem('ramezLoggedIn');
-            const savedUser = localStorage.getItem('ramezCurrentUser');
+        function showModal(formType = 'login') {
+            document.getElementById('auth-modal').style.display = 'block';
             
-            if (savedLogin === 'true' && savedUser) {
-                isLoggedIn = true;
-                currentUser = JSON.parse(savedUser);
-            }
-
-            updateUI();
-            loadArticles();
-        }
-
-        // تحديث واجهة المستخدم
-        function updateUI() {
-            const userStatus = document.getElementById('userStatus');
-            const protectedContent = document.getElementById('protectedContent');
-            const loginMessage = document.getElementById('loginMessage');
-
-            if (isLoggedIn && currentUser) {
-                // حالة مسجل دخول
-                userStatus.innerHTML = `
-                    <div class="user-profile">
-                        <div class="avatar">${currentUser.username.charAt(0).toUpperCase()}</div>
-                        <span>${currentUser.username}</span>
-                        <button class="logout-btn" onclick="logout()">تسجيل خروج</button>
-                    </div>
-                `;
-
-                // إظهار المحتوى المحمي
-                if (protectedContent) {
-                    protectedContent.style.display = 'block';
-                    const protectedSections = document.querySelectorAll('.protected-content');
-                    protectedSections.forEach(section => {
-                        section.classList.add('visible');
-                    });
-                }
-
-                // إخفاء رسالة التسجيل
-                if (loginMessage) {
-                    loginMessage.style.display = 'none';
-                }
+            const modalTitle = document.getElementById('modal-title');
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const toggleContainer = document.getElementById('toggle-link-container');
+            
+            // تحديث محتوى النافذة المنبثقة
+            if (formType === 'login') {
+                modalTitle.textContent = 'تسجيل الدخول';
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                toggleContainer.innerHTML = 'ليس لديك حساب؟ <a href="#" id="toggle-register">سجل الآن</a>';
             } else {
-                // حالة غير مسجل دخول
-                userStatus.innerHTML = `
-                    <button class="auth-btn" onclick="showAuthModal('login')">تسجيل الدخول</button>
-                `;
-
-                // إخفاء المحتوى المحمي
-                if (protectedContent) {
-                    protectedContent.style.display = 'none';
-                }
-
-                // إظهار رسالة التسجيل
-                if (loginMessage) {
-                    loginMessage.style.display = 'block';
-                }
-            }
-        }
-
-        // عرض نافذة المصادقة
-        function showAuthModal(mode = 'login') {
-            const modal = document.getElementById('authModal');
-            const title = document.getElementById('authModalTitle');
-            const submitBtn = document.getElementById('authSubmitBtn');
-            const emailGroup = document.getElementById('authEmailGroup');
-            const switchText = document.getElementById('authSwitchText');
-            const switchLink = document.getElementById('authSwitchLink');
-
-            isAuthModalOpen = true;
-            isLoginMode = mode === 'login';
-
-            if (isLoginMode) {
-                title.textContent = 'تسجيل الدخول';
-                submitBtn.textContent = 'تسجيل الدخول';
-                emailGroup.style.display = 'none';
-                switchText.textContent = 'ليس لديك حساب؟';
-                switchLink.textContent = 'إنشاء حساب';
-            } else {
-                title.textContent = 'إنشاء حساب جديد';
-                submitBtn.textContent = 'إنشاء حساب';
-                emailGroup.style.display = 'block';
-                switchText.textContent = 'لديك حساب بالفعل؟';
-                switchLink.textContent = 'تسجيل دخول';
+                modalTitle.textContent = 'تسجيل حساب جديد';
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                toggleContainer.innerHTML = 'لديك حساب؟ <a href="#" id="toggle-login">دخول</a>';
             }
 
-            modal.style.display = 'flex';
+            // إعادة ربط أحداث التبديل
+            document.getElementById('toggle-register')?.addEventListener('click', (e) => { e.preventDefault(); showModal('register'); });
+            document.getElementById('toggle-login')?.addEventListener('click', (e) => { e.preventDefault(); showModal('login'); });
         }
 
-        // إغلاق نافذة المصادقة
-        function closeAuthModal() {
-            const modal = document.getElementById('authModal');
-            modal.style.display = 'none';
-            isAuthModalOpen = false;
-            document.getElementById('authForm').reset();
+        function hideModal() {
+            document.getElementById('auth-modal').style.display = 'none';
         }
 
-        // التبديل بين وضعي التسجيل والدخول
-        function switchAuthMode() {
-            showAuthModal(isLoginMode ? 'register' : 'login');
+        function showFullArticle() {
+             document.getElementById('full-article-modal').style.display = 'block';
         }
-
-        // معالجة تسجيل الدخول/التسجيل
-        document.getElementById('authForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const username = document.getElementById('authUsername').value.trim();
-            const email = document.getElementById('authEmail').value.trim();
-            const password = document.getElementById('authPassword').value;
-
-            if (isLoginMode) {
-                // تسجيل الدخول
-                const user = allUsers.find(u => 
-                    (u.username === username || u.email === username) && u.password === password
+        
+        function hideFullArticle() {
+             document.getElementById('full-article-modal').style.display = 'none';
+        }
+        
+        // ----------------------------------------------------
+        // 3. التحكم في حالة الدخول والمحتوى
+        // ----------------------------------------------------
+        
+        function checkLoginStatus() {
+            const storedUser = localStorage.getItem('currentUser');
+            const authLink = document.getElementById('auth-link');
+            
+            if (storedUser) {
+                const user = JSON.parse(storedUser);
+                const validUser = usersData.find(u => 
+                    u.email === user.email && 
+                    u.status === 'active'
                 );
-
-                if (user) {
-                    isLoggedIn = true;
-                    currentUser = user;
-                    localStorage.setItem('ramezLoggedIn', 'true');
-                    localStorage.setItem('ramezCurrentUser', JSON.stringify(user));
-                    
-                    updateUI();
-                    closeAuthModal();
-                    alert('تم تسجيل الدخول بنجاح!');
-                } else {
-                    alert('اسم المستخدم أو كلمة المرور غير صحيحة');
-                }
-            } else {
-                // إنشاء حساب جديد
-                if (!email) {
-                    alert('يرجى إدخال البريد الإلكتروني');
-                    return;
-                }
-
-                const existingUser = allUsers.find(u => u.username === username || u.email === email);
                 
-                if (existingUser) {
-                    alert('اسم المستخدم أو البريد الإلكتروني موجود مسبقاً');
+                if (validUser) {
+                    currentUser = validUser;
+                    authLink.textContent = `مرحباً، ${currentUser.username} (خروج)`;
+                    authLink.onclick = logout;
+                    showProtectedContent(articlesData); 
                     return;
                 }
-
-                const newUser = {
-                    id: Date.now(),
-                    username,
-                    email,
-                    password,
-                    joinedDate: new Date().toISOString()
-                };
-
-                allUsers.push(newUser);
-                localStorage.setItem('ramezUsers', JSON.stringify(allUsers));
-
-                isLoggedIn = true;
-                currentUser = newUser;
-                localStorage.setItem('ramezLoggedIn', 'true');
-                localStorage.setItem('ramezCurrentUser', JSON.stringify(newUser));
-
-                updateUI();
-                closeAuthModal();
-                alert('تم إنشاء الحساب بنجاح!');
             }
-        });
-
-        // تسجيل الخروج
-        function logout() {
-            isLoggedIn = false;
-            currentUser = null;
-            localStorage.removeItem('ramezLoggedIn');
-            localStorage.removeItem('ramezCurrentUser');
             
-            updateUI();
-            alert('تم تسجيل الخروج');
+            // إذا لم يكن مسجل دخول
+            currentUser = null;
+            authLink.textContent = 'دخول / تسجيل';
+            authLink.onclick = () => showModal('login');
+            hideProtectedContent();
         }
 
-        // التحقق من المصادقة قبل الوصول إلى المحتوى
-        function checkAuth(event, target) {
-            if (!isLoggedIn) {
-                event.preventDefault();
-                alert('يرجى تسجيل الدخول للوصول إلى هذا المحتوى');
-                showAuthModal('login');
-                return false;
-            }
-            return true;
+        function logout() {
+            localStorage.removeItem('currentUser');
+            currentUser = null;
+            checkLoginStatus(); // تحديث الواجهة
+            alert("تم تسجيل الخروج بنجاح.");
         }
 
-        // تحميل المقالات
-        function loadArticles(filter = 'all') {
-            const articlesGrid = document.getElementById('articlesGrid');
-            if (!articlesGrid) return;
+        function showProtectedContent(articles) {
+            document.getElementById('protected-alert').style.display = 'none';
+            document.getElementById('articles-list').style.display = 'block'; 
+            renderArticles(articles);
+        }
 
-            let filteredArticles = articles;
-            if (filter !== 'all') {
-                filteredArticles = articles.filter(article => article.category === filter);
+        function hideProtectedContent() {
+            document.getElementById('protected-alert').style.display = 'block';
+            document.getElementById('articles-list').style.display = 'none';
+        }
+
+        // ----------------------------------------------------
+        // 4. عرض المقالات والبحث
+        // ----------------------------------------------------
+
+        function renderArticles(articles) {
+            const container = document.getElementById('articles-list');
+            container.innerHTML = ''; 
+
+            if (articles.length === 0) {
+                container.innerHTML = '<p style="text-align:center; font-size:18px;">لم يتم العثور على مقالات تطابق البحث.</p>';
+                return;
             }
-
-            articlesGrid.innerHTML = filteredArticles.map(article => `
-                <div class="article-card" data-category="${article.category}">
-                    <img src="${article.image}" alt="${article.title}" class="article-image">
-                    <div class="article-content">
-                        <div class="article-category">${getCategoryName(article.category)}</div>
-                        <h3 class="article-title">${article.title}</h3>
-                        <p class="article-excerpt">${article.excerpt}</p>
-                        <a href="#" class="read-more" onclick="return checkAuth(event, '#articles')">اقرأ المزيد ←</a>
+            
+            // عرض المقالات (الأحدث أولاً)
+            articles.slice().reverse().forEach(article => {
+                
+                // المحتوى التمهيدي
+                const contentPreview = article.excerpt || article.content.substring(0, 150).replace(/<[^>]*>?/gm, '') + '...';
+                
+                const articleHTML = `
+                    <div class="article-card" id="article-${article.id}">
+                        <p class="category">${article.category} | ${new Date(article.date).toLocaleDateString('ar-EG')}</p>
+                        <h3>${article.title}</h3>
+                        ${article.coverImage ? `<img src="${article.coverImage}" alt="${article.title}">` : ''}
+                        <p>${contentPreview}</p>
+                        <button onclick="viewArticle(${article.id})" style="background:#667eea; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer; margin-top:10px;">قراءة المزيد</button>
                     </div>
-                </div>
-            `).join('');
-
-            // تحديث الأزرار النشطة
-            document.querySelectorAll('.category-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent === 'الكل' && filter === 'all') {
-                    btn.classList.add('active');
-                } else if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${filter}'`)) {
-                    btn.classList.add('active');
-                }
+                `;
+                container.innerHTML += articleHTML;
             });
         }
 
-        // تصفية المقالات
-        function filterArticles(category) {
-            if (!isLoggedIn) {
-                showAuthModal('login');
-                return;
-            }
-            loadArticles(category);
-        }
-
-        // البحث في المقالات
-        document.getElementById('searchButton').addEventListener('click', performSearch);
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') performSearch();
-        });
-
-        function performSearch() {
-            if (!isLoggedIn) {
-                showAuthModal('login');
-                return;
-            }
-
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
-            if (!searchTerm) {
-                loadArticles('all');
-                return;
-            }
-
-            const filteredArticles = articles.filter(article => 
-                article.title.toLowerCase().includes(searchTerm) || 
-                article.excerpt.toLowerCase().includes(searchTerm) ||
-                article.content.toLowerCase().includes(searchTerm)
+        function viewArticle(articleId) {
+            const article = articlesData.find(a => a.id === articleId);
+            if (!article) return;
+            
+            const articleContentDiv = document.getElementById('full-article-content');
+            
+            let finalContent = article.content;
+            
+            // معالجة أكواد تضمين اليوتيوب الخاصة بك
+            finalContent = finalContent.replace(
+                /iframe src="https:\/\/www\.youtube\.com\/embed\/([^"]+)"/g, 
+                (match) => {
+                    // نُعيد وسم التضمين كاملاً داخل الحاوية الاستجابية
+                    return `<div class="video-embed-container"><${match} frameborder="0" allowfullscreen></iframe></div>`;
+                }
             );
 
-            const articlesGrid = document.getElementById('articlesGrid');
-            if (filteredArticles.length === 0) {
-                articlesGrid.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
-                        <h3>لم يتم العثور على نتائج</h3>
-                        <p>جرب استخدام كلمات بحث مختلفة</p>
-                    </div>
-                `;
-            } else {
-                articlesGrid.innerHTML = filteredArticles.map(article => `
-                    <div class="article-card" data-category="${article.category}">
-                        <img src="${article.image}" alt="${article.title}" class="article-image">
-                        <div class="article-content">
-                            <div class="article-category">${getCategoryName(article.category)}</div>
-                            <h3 class="article-title">${article.title}</h3>
-                            <p class="article-excerpt">${article.excerpt}</p>
-                            <a href="#" class="read-more" onclick="return checkAuth(event, '#articles')">اقرأ المزيد ←</a>
-                        </div>
-                    </div>
-                `).join('');
-            }
-        }
-
-        // الحصول على اسم القسم بالعربية
-        function getCategoryName(category) {
-            const categories = {
-                'imei': 'إصلاح IMEI',
-                'software': 'مشاكل السوفتوير',
-                'server': 'خدمات السيرفر',
-                'tutorials': 'شروحات تقنية'
-            };
-            return categories[category] || category;
-        }
-
-        // تبديل القائمة في الجوال
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const userAuth = document.querySelector('.user-auth-section');
+            const fullContentHTML = `
+                <h2>${article.title}</h2>
+                <p class="category">القسم: ${article.category} | التاريخ: ${new Date(article.date).toLocaleDateString('ar-EG')}</p>
+                ${article.coverImage ? `<img src="${article.coverImage}" style="max-width:100%; height:auto; margin-bottom:20px;">` : ''}
+                
+                <div class="article-body" dir="rtl" style="text-align: right;">
+                    ${finalContent}
+                </div>
+            `;
             
-            navLinks.classList.toggle('active');
-            userAuth.classList.toggle('active');
+            articleContentDiv.innerHTML = fullContentHTML;
+            showFullArticle();
         }
 
-        // إغلاق نافذة المصادقة عند النقر خارجها
-        document.getElementById('authModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeAuthModal();
-            }
-        });
 
-        // تهيئة التطبيق عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', initApp);
+        // ----------------------------------------------------
+        // 5. معالجة الأحداث عند تحميل الصفحة
+        // ----------------------------------------------------
+
+        async function loadAllData() {
+            // تحميل البيانات عند بدء تشغيل الموقع
+            articlesData = await fetchGitHubFile(ARTICLES_JSON);
+            usersData = await fetchGitHubFile(USERS_JSON);
+            checkLoginStatus(); 
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. بدء تحميل البيانات
+            loadAllData(); 
+
+            // 2. ربط أزرار النموذج
+            document.getElementById('protected-login-btn')?.addEventListener('click', () => showModal('login'));
+
+            // 3. معالجة تسجيل الدخول (Login Form)
+            document.getElementById('login-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+                
+                if (typeof sha256 === 'undefined') {
+                    alert('خطأ: مكتبة التشفير SHA256 لم تُحمل. تأكد من اتصال الإنترنت.');
+                    return;
+                }
+                
+                const hashedPassword = hashPassword(password);
+                
+                const user = usersData.find(u => 
+                    u.email === email && 
+                    u.passwordHash === hashedPassword &&
+                    u.status === 'active'
+                ); 
+                
+                if (user) {
+                    localStorage.setItem('currentUser', JSON.stringify({username: user.username, email: user.email})); 
+                    checkLoginStatus();
+                    hideModal();
+                } else {
+                    alert('بيانات الدخول غير صحيحة أو حسابك غير نشط. تأكد من تطابق كلمة المرور مع ما هو مسجل في users.json.');
+                }
+            });
+
+            // 4. معالجة التسجيل (Register Form)
+            document.getElementById('register-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert("التسجيل مغلق حالياً! يرجى التواصل مع المدير لإضافة حساب.");
+            });
+            
+            // 5. وظيفة البحث
+            document.getElementById('searchButton').addEventListener('click', () => {
+                const query = document.getElementById('searchInput').value.toLowerCase();
+                
+                if (!currentUser) {
+                    alert("يرجى تسجيل الدخول للبحث في المحتوى.");
+                    showModal('login');
+                    return;
+                }
+                
+                const filteredArticles = articlesData.filter(article => 
+                    (article.title && article.title.toLowerCase().includes(query)) ||
+                    (article.content && article.content.toLowerCase().includes(query)) ||
+                    (article.category && article.category.toLowerCase().includes(query))
+                );
+                
+                if (filteredArticles.length > 0) {
+                    showProtectedContent(filteredArticles); 
+                } else {
+                    alert("لم يتم العثور على نتائج مطابقة. عرض كل المقالات بدلاً من ذلك.");
+                    showProtectedContent(articlesData); 
+                }
+            });
+        });
     </script>
 </body>
 </html>
