@@ -1,11 +1,1 @@
-[
-  {
-    "id": 1,
-    "username": "RamezAdmin",
-    "email": "test@rameztech.com",
-    "passwordHash": "a1b5b3a4c0a5d4e1f7a0b8a3b2c1d0e9f8a7b6a5c4d3e2f1a0b9c8d7e6f5a4b3", 
-    "status": "active",
-    "subscription": "admin",
-    "registered_date": "2025-12-10T00:00:00"
-  }
-]
+[]
