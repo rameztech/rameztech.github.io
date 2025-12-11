@@ -3,416 +3,1328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramez Tech</title>
+    <title>Ramez Tech - دليلك الشامل لإصلاح الهواتف</title>
+    <meta name="description" content="موقع Ramez Tech متخصص في شروحات إصلاح الهواتف، حل مشاكل IMEI، خدمات السيرفر، وحلول السوفتوير">
+    <meta name="keywords" content="إصلاح هواتف, IMEI, FRP, فلاش, فتح شبكة, سوفتوير">
+    <meta name="author" content="Ramez Tech">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ramez Tech - دليلك الشامل لإصلاح الهواتف">
+    <meta property="og:description" content="شروحات مجانية وخدمات احترافية">
+    <meta property="og:type" content="website">
+    
     <style>
-        /* --- 1. التنسيق العام (نظيف وبسيط) --- */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
+        * {
             margin: 0;
             padding: 0;
-            color: #333;
+            box-sizing: border-box;
         }
 
-        /* --- 2. الشريط العلوي --- */
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 15px 20px;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .user-area button {
-            padding: 8px 15px;
-            border-radius: 5px;
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .user-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .auth-btn {
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .avatar {
+            width: 38px;
+            height: 38px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .logout-btn {
+            padding: 0.4rem 1rem;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Search Hero */
+        .search-hero {
+            background: white;
+            padding: 3rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .search-box-large {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        #mainSearch {
+            flex: 1;
+            padding: 1.2rem 1.5rem;
+            border: none;
+            font-size: 1.1rem;
+            font-family: inherit;
+            outline: none;
+        }
+
+        #mainSearchBtn {
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             border: none;
             cursor: pointer;
-            font-weight: bold;
-            font-size: 14px;
-            transition: 0.3s;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
         }
 
-        .btn-login { background-color: #3498db; color: white; }
-        .btn-login:hover { background-color: #2980b9; }
-        
-        .btn-logout { background-color: #e74c3c; color: white; }
-        
-        /* --- 3. البحث --- */
-        .search-container {
-            background: #fff;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .search-container input {
-            width: 90%;
-            max-width: 500px;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            outline: none;
-            font-size: 16px;
-            text-align: center;
+        #mainSearchBtn:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
         }
 
-        /* --- 4. عرض المقالات --- */
+        .popular-searches {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .popular-searches a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 0.8rem;
+            font-weight: 500;
+        }
+
+        .popular-searches a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container */
         .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 0 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Features */
+        .features {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+            background: #f8f9fa;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .icon-blue { background: #e3f2fd; color: #2196F3; }
+        .icon-green { background: #e8f5e9; color: #4CAF50; }
+        .icon-purple { background: #f3e5f5; color: #9C27B0; }
+
+        /* Articles Section */
+        .articles {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .category-filter {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .category-btn {
+            padding: 0.7rem 1.8rem;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            background: white;
+            color: #667eea;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
         .article-card {
             background: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .article-title {
-            color: #2c3e50;
-            margin-top: 0;
-            font-size: 22px;
-        }
-
-        .article-meta {
-            color: #7f8c8d;
-            font-size: 13px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .article-img {
-            width: 100%;
-            max-height: 350px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            display: none; /* مخفي إذا لم توجد صورة */
-        }
-
-        .article-content {
-            line-height: 1.8;
-            font-size: 16px;
-        }
-
-        /* --- 5. الروابط المقفلة والمفتوحة --- */
-        /* تنسيق الرابط المخفي (لغير المسجلين) */
-        .locked-link {
-            background-color: #f8d7da;
-            color: #721c24;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px dashed #f5c6cb;
-            text-align: center;
-            margin: 10px 0;
-            display: block;
-            text-decoration: none;
-        }
-        
-        .locked-link span {
-            font-weight: bold;
-            text-decoration: underline;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
             cursor: pointer;
         }
 
-        /* تنسيق الرابط المفتوح (للمسجلين) */
-        .unlocked-link {
-            background-color: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #c3e6cb;
-            text-align: center;
-            margin: 10px 0;
-            display: block;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .unlocked-link:hover {
-            background-color: #c3e6cb;
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
-        /* --- 6. النافذة المنبثقة (Modal) --- */
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-category {
+            color: #667eea;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .article-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            margin: 1.5rem 0;
+        }
+
+        .service-cta {
+            background: #667eea;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .service-cta:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-card:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-whatsapp { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); }
+        .contact-telegram { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); }
+        .contact-email { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); }
+
+        .contact-icon {
+            font-size: 2.5rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 0.3rem;
+            color: #333;
+        }
+
+        .contact-info p {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Auth Modal */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
             align-items: center;
             justify-content: center;
         }
 
+        .modal.active {
+            display: flex;
+        }
+
         .modal-content {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
+            padding: 3rem;
+            border-radius: 12px;
             width: 90%;
-            max-width: 400px;
-            text-align: center;
-            position: relative;
+            max-width: 450px;
+            animation: fadeInUp 0.3s;
         }
 
-        .close-btn {
-            position: absolute;
-            left: 20px;
-            top: 15px;
-            font-size: 24px;
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
             cursor: pointer;
-            color: #aaa;
+            color: #666;
         }
 
-        .modal input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .form-group {
+            margin-bottom: 1.5rem;
         }
 
-        .modal button {
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .form-group input {
             width: 100%;
-            padding: 12px;
-            background-color: #27ae60;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 1rem;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 600;
+            transition: transform 0.2s;
         }
 
-        /* رسالة الخطأ */
-        .error-msg {
-            color: red;
-            padding: 20px;
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .auth-switch {
             text-align: center;
-            background: white;
-            border-radius: 8px;
-            margin-top: 20px;
-            display: none;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .auth-switch a {
+            color: #667eea;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Login Message */
+        .login-message {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 600px;
+        }
+
+        .login-message h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .login-message p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .search-box-large {
+                flex-direction: column;
+            }
+
+            #mainSearchBtn {
+                width: 100%;
+            }
+
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="logo">Ramez Tech</div>
-        <div class="user-area" id="userArea">
-            <button class="btn-login" onclick="openModal()">تسجيل الدخول / اشتراك</button>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">📱</div>
+                <span>Ramez Tech</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#articles">المقالات</a></li>
+                <li><a href="#services">خدمات السيرفر</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            
+            <div class="user-section" id="userSection">
+                <button class="auth-btn" onclick="showAuthModal('login')">تسجيل الدخول</button>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="ابحث عن المقالات..." onkeyup="filterArticles()">
-    </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>مرحباً بك في Ramez Tech</h1>
+        <p>دليلك الشامل لإصلاح الهواتف وحل مشاكل السوفتوير</p>
+        <p style="font-size: 1rem; opacity: 0.9;">نوفر لك شروحات مجانية مفصلة لحل جميع مشاكل الهواتف، بالإضافة إلى خدمات سيرفر احترافية لإصلاح IMEI وفتح الشبكة وتجاوز حساب جوجل</p>
+    </section>
 
-    <div class="container" id="contentArea">
-        <p style="text-align:center; color:#777;">جاري تحميل المقالات...</p>
-    </div>
+    <!-- Search Section -->
+    <section class="search-hero">
+        <div class="container">
+            <div class="search-box-large">
+                <input type="text" id="mainSearch" placeholder="🔍 ابحث عن حل لمشكلتك... (IMEI, FRP, Flash...)">
+                <button id="mainSearchBtn">بحث</button>
+            </div>
+            <div class="popular-searches">
+                <span>🔥 بحث شائع:</span>
+                <a href="#" onclick="quickSearch('IMEI Samsung'); return false;">IMEI Samsung</a>
+                <a href="#" onclick="quickSearch('FRP Bypass'); return false;">FRP Bypass</a>
+                <a href="#" onclick="quickSearch('فلاش هواوي'); return false;">فلاش Huawei</a>
+            </div>
+        </div>
+    </section>
 
-    <div id="errorMsg" class="error-msg"></div>
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon icon-blue">🔧</div>
+                    <h3>شروحات مجانية</h3>
+                    <p>حلول مفصلة لجميع مشاكل الهواتف مع صور توضيحية</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon icon-green">🖥️</div>
+                    <h3>خدمات احترافية</h3>
+                    <p>سيرفرات موثوقة لإصلاح IMEI وفتح الشبكة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon icon-purple">💬</div>
+                    <h3>دعم فني سريع</h3>
+                    <p>نرد على استفساراتك خلال 24 ساعة</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div id="loginModal" class="modal">
+    <!-- Articles Section -->
+    <section id="articles" class="articles">
+        <div class="container">
+            <h2 class="section-title">أحدث المقالات</h2>
+            <p class="section-subtitle">شروحات مفصلة لحل مشاكل الهواتف</p>
+
+            <div class="category-filter" id="categoryFilter">
+                <button class="category-btn active" onclick="filterArticles('all')">الكل</button>
+            </div>
+
+            <div id="articlesContainer">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>جاري تحميل المقالات...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">خدمات السيرفر</h2>
+            <p class="section-subtitle">خدمات احترافية بأسعار منافسة</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <h3 class="service-title">فتح شبكة الهواتف</h3>
+                    <p class="service-description">فتح شبكة جميع أنواع الهواتف (سامسونج، آيفون، هواوي، شاومي) باستخدام سيرفرات احترافية</p>
+                    <div class="service-price">ابتداءً من 10$</div>
+                    <a href="#contact" class="service-cta">اطلب الخدمة</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">إصلاح IMEI</h3>
+                    <p class="service-description">إصلاح IMEI Null والـ Baseband Unknown لجميع أنواع الهواتف</p>
+                    <div class="service-price">ابتداءً من 15$</div>
+                    <a href="#contact" class="service-cta">اطلب الخدمة</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3 class="service-title">تجاوز حساب جوجل FRP</h3>
+                    <p class="service-description">إزالة قفل حساب جوجل من الهواتف بطرق آمنة ومضمونة</p>
+                    <div class="service-price">ابتداءً من 8$</div>
+                    <a href="#contact" class="service-cta">اطلب الخدمة</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <p class="section-subtitle">نحن هنا لمساعدتك في أي وقت</p>
+
+            <div class="contact-grid">
+                <a href="#" class="contact-card contact-whatsapp" id="whatsappLink">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-info">
+                        <h3>واتساب</h3>
+                        <p>تواصل فوري</p>
+                    </div>
+                </a>
+
+                <a href="https://t.me/rameztech" target="_blank" class="contact-card contact-telegram">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-info">
+                        <h3>تليجرام</h3>
+                        <p>@rameztech</p>
+                    </div>
+                </a>
+
+                <a href="mailto:info@rameztech.com" class="contact-card contact-email">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-info">
+                        <h3>البريد الإلكتروني</h3>
+                        <p>info@rameztech.com</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>عن Ramez Tech</h4>
+                    <p>دليلك الشامل لإصلاح الهواتف وحل مشاكل السوفتوير. نوفر شروحات مجانية وخدمات احترافية.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#articles">المقالات</a></li>
+                        <li><a href="#services">خدمات السيرفر</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Ramez Tech. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2>أهلاً بك</h2>
-            <p>سجل اسمك للدخول والوصول للروابط</p>
-            <form onsubmit="handleLogin(event)">
-                <input type="text" id="username" placeholder="الاسم" required>
-                <input type="email" id="email" placeholder="البريد الإلكتروني" required>
-                <button type="submit">دخول فوري</button>
+            <div class="modal-header">
+                <h2 id="authTitle">تسجيل الدخول</h2>
+                <button class="modal-close" onclick="closeAuthModal()">×</button>
+            </div>
+            <form id="authForm">
+                <div class="form-group">
+                    <label for="username">اسم المستخدم</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group" id="emailGroup" style="display: none;">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">كلمة المرور</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">تسجيل الدخول</button>
             </form>
+            <div class="auth-switch">
+                <span id="switchText">ليس لديك حساب؟</span>
+                <a onclick="switchAuthMode()" id="switchLink">إنشاء حساب</a>
+            </div>
         </div>
     </div>
 
     <script>
-        // --- متغيرات النظام ---
-        let articlesData = [];
-        let isLoggedIn = false;
-        let currentUser = null;
+        // Configuration
+        const GITHUB_REPO = 'rameztech/rameztech.github.io';
+        const GITHUB_BRANCH = 'main';
+        const DATA_PATH = 'https://raw.githubusercontent.com/' + GITHUB_REPO + '/' + GITHUB_BRANCH + '/data/';
 
-        // --- عند بدء التشغيل ---
-        document.addEventListener('DOMContentLoaded', () => {
-            checkUser();   // هل المستخدم مسجل من قبل؟
-            loadData();    // هات المقالات من GitHub
+        // State
+        let currentUser = null;
+        let isLoginMode = true;
+        let allArticles = [];
+        let allCategories = [];
+        let settings = {};
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadSettings();
+            checkAuth();
+            await loadCategories();
+            await loadArticles();
+            setupEventListeners();
         });
 
-        // 1. نظام الدخول السهل (Local Storage)
-        function checkUser() {
-            const storedUser = localStorage.getItem('ramez_user_simple');
-            if (storedUser) {
-                currentUser = JSON.parse(storedUser);
-                isLoggedIn = true;
-                updateHeader();
+        // Load Settings
+        async function loadSettings() {
+            try {
+                const response = await fetch(DATA_PATH + 'settings.json');
+                settings = await response.json();
+                
+                // Update contact links
+                if (settings.contact.whatsapp) {
+                    const whatsappLink = document.getElementById('whatsappLink');
+                    whatsappLink.href = `https://wa.me/${settings.contact.whatsapp.replace(/\D/g, '')}`;
+                }
+            } catch (error) {
+                console.error('Error loading settings:', error);
             }
         }
 
-        function handleLogin(e) {
-            e.preventDefault(); // منع إعادة تحميل الصفحة
-            const name = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
+        // Check Authentication
+        function checkAuth() {
+            currentUser = getCurrentUser();
+            updateUI();
+        }
 
-            // تسجيل فوري (بدون تعقيدات السيرفر)
-            const user = { name: name, email: email };
-            localStorage.setItem('ramez_user_simple', JSON.stringify(user));
+        function getCurrentUser() {
+            // Check cookie first
+            const cookie = document.cookie.split('; ').find(row => row.startsWith('ramez_user='));
+            if (cookie) {
+                try {
+                    return JSON.parse(decodeURIComponent(cookie.split('=')[1]));
+                } catch (e) {
+                    return null;
+                }
+            }
+            
+            // Fallback to localStorage
+            const stored = localStorage.getItem('ramez_current_user');
+            return stored ? JSON.parse(stored) : null;
+        }
+
+        function saveLogin(user) {
+            // Save to cookie (30 days)
+            const userData = JSON.stringify(user);
+            document.cookie = `ramez_user=${encodeURIComponent(userData)}; max-age=${30*24*60*60}; path=/; SameSite=Strict`;
+            
+            // Backup in localStorage
+            localStorage.setItem('ramez_current_user', userData);
             
             currentUser = user;
-            isLoggedIn = true;
+        }
+
+        function updateUI() {
+            const userSection = document.getElementById('userSection');
             
-            closeModal();
-            updateHeader();
-            renderArticles(articlesData); // إعادة رسم المقالات لفتح الروابط
-            alert("تم تسجيل الدخول بنجاح! الروابط متاحة الآن.");
-        }
-
-        function logout() {
-            if(confirm("هل تريد تسجيل الخروج؟")) {
-                localStorage.removeItem('ramez_user_simple');
-                isLoggedIn = false;
-                currentUser = null;
-                updateHeader();
-                renderArticles(articlesData); // إخفاء الروابط مرة أخرى
-            }
-        }
-
-        function updateHeader() {
-            const area = document.getElementById('userArea');
-            if (isLoggedIn) {
-                area.innerHTML = `<button class="btn-logout" onclick="logout()">خروج (${currentUser.name})</button>`;
+            if (currentUser) {
+                userSection.innerHTML = `
+                    <div class="user-profile">
+                        <div class="avatar">${currentUser.username.charAt(0).toUpperCase()}</div>
+                        <span>${currentUser.username}</span>
+                        <button class="logout-btn" onclick="logout()">تسجيل خروج</button>
+                    </div>
+                `;
             } else {
-                area.innerHTML = `<button class="btn-login" onclick="openModal()">تسجيل الدخول / اشتراك</button>`;
+                userSection.innerHTML = `
+                    <button class="auth-btn" onclick="showAuthModal('login')">تسجيل الدخول</button>
+                `;
             }
         }
 
-        // 2. جلب البيانات من GitHub
-        async function loadData() {
-            const contentDiv = document.getElementById('contentArea');
-            const errorDiv = document.getElementById('errorMsg');
+        // Load Categories
+        async function loadCategories() {
+            try {
+                const response = await fetch(DATA_PATH + 'categories.json');
+                allCategories = await response.json();
+                
+                const filterContainer = document.getElementById('categoryFilter');
+                allCategories.forEach(cat => {
+                    const btn = document.createElement('button');
+                    btn.className = 'category-btn';
+                    btn.textContent = cat.name;
+                    btn.onclick = () => filterArticles(cat.id);
+                    filterContainer.appendChild(btn);
+                });
+            } catch (error) {
+                console.error('Error loading categories:', error);
+            }
+        }
+
+        // Load Articles
+        async function loadArticles() {
+            try {
+                const response = await fetch(DATA_PATH + 'articles.json');
+                allArticles = await response.json();
+                displayArticles(allArticles);
+            } catch (error) {
+                console.error('Error loading articles:', error);
+                document.getElementById('articlesContainer').innerHTML = `
+                    <div class="login-message">
+                        <h2>خطأ في تحميل المقالات</h2>
+                        <p>حدث خطأ أثناء تحميل المقالات. يرجى المحاولة لاحقاً.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function displayArticles(articles) {
+            const container = document.getElementById('articlesContainer');
+            
+            if (!currentUser) {
+                container.innerHTML = `
+                    <div class="login-message">
+                        <h2>🔒 محتوى محمي</h2>
+                        <p>يرجى تسجيل الدخول للوصول إلى مقالات وخدمات Ramez Tech</p>
+                        <button onclick="showAuthModal('login')" class="auth-btn">تسجيل الدخول</button>
+                        <p style="margin-top: 1rem;">ليس لديك حساب؟ <a onclick="showAuthModal('register')" style="color: #667eea; cursor: pointer; font-weight: 600;">إنشاء حساب جديد</a></p>
+                    </div>
+                `;
+                return;
+            }
+
+            if (articles.length === 0) {
+                container.innerHTML = `
+                    <div class="login-message" style="background: #e3f2fd; border-color: #2196F3;">
+                        <h2>لا توجد مقالات</h2>
+                        <p>لم يتم نشر أي مقالات بعد. تابعنا للحصول على أحدث الشروحات!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = `<div class="articles-grid" id="articlesGrid"></div>`;
+            const grid = document.getElementById('articlesGrid');
+            
+            articles.forEach(article => {
+                const card = createArticleCard(article);
+                grid.appendChild(card);
+            });
+        }
+
+        function createArticleCard(article) {
+            const card = document.createElement('div');
+            card.className = 'article-card';
+            
+            const category = allCategories.find(c => c.id === article.category);
+            const categoryName = category ? category.name : article.category;
+            
+            card.innerHTML = `
+                <img src="${article.coverImage || 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=250&fit=crop'}" 
+                     alt="${article.title}" class="article-image">
+                <div class="article-content">
+                    <div class="article-category">${categoryName}</div>
+                    <h3 class="article-title">${article.title}</h3>
+                    <p class="article-excerpt">${article.excerpt}</p>
+                    <div class="article-meta">
+                        <span>📅 ${formatDate(article.date)}</span>
+                        <span>👁️ ${article.views || 0}</span>
+                    </div>
+                    <a href="#" class="read-more" onclick="viewArticle(${article.id}); return false;">اقرأ المزيد →</a>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('ar-SA', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        function filterArticles(categoryId) {
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if ((categoryId === 'all' && btn.textContent === 'الكل') ||
+                    (btn.textContent === allCategories.find(c => c.id === categoryId)?.name)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Filter and display
+            const filtered = categoryId === 'all' 
+                ? allArticles 
+                : allArticles.filter(a => a.category === categoryId);
+            
+            displayArticles(filtered);
+        }
+
+        function viewArticle(id) {
+            alert('سيتم فتح المقال رقم ' + id + '\n\nهذه الميزة ستكون متاحة قريباً!');
+        }
+
+        // Search
+        function setupEventListeners() {
+            const mainSearch = document.getElementById('mainSearch');
+            const mainSearchBtn = document.getElementById('mainSearchBtn');
+            
+            mainSearchBtn.addEventListener('click', performSearch);
+            mainSearch.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') performSearch();
+            });
+        }
+
+        function performSearch() {
+            if (!currentUser) {
+                showAuthModal('login');
+                return;
+            }
+
+            const query = document.getElementById('mainSearch').value.toLowerCase().trim();
+            if (!query) {
+                displayArticles(allArticles);
+                return;
+            }
+
+            const results = allArticles.filter(article => 
+                article.title.toLowerCase().includes(query) ||
+                article.excerpt.toLowerCase().includes(query) ||
+                article.content.toLowerCase().includes(query)
+            );
+
+            displayArticles(results);
+            
+            // Scroll to results
+            document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function quickSearch(query) {
+            document.getElementById('mainSearch').value = query;
+            performSearch();
+        }
+
+        // Auth Modal
+        function showAuthModal(mode) {
+            const modal = document.getElementById('authModal');
+            const title = document.getElementById('authTitle');
+            const submitBtn = document.getElementById('submitBtn');
+            const emailGroup = document.getElementById('emailGroup');
+            const switchText = document.getElementById('switchText');
+            const switchLink = document.getElementById('switchLink');
+
+            isLoginMode = mode === 'login';
+
+            if (isLoginMode) {
+                title.textContent = 'تسجيل الدخول';
+                submitBtn.textContent = 'تسجيل الدخول';
+                emailGroup.style.display = 'none';
+                switchText.textContent = 'ليس لديك حساب؟';
+                switchLink.textContent = 'إنشاء حساب';
+            } else {
+                title.textContent = 'إنشاء حساب جديد';
+                submitBtn.textContent = 'إنشاء حساب';
+                emailGroup.style.display = 'block';
+                switchText.textContent = 'لديك حساب بالفعل؟';
+                switchLink.textContent = 'تسجيل دخول';
+            }
+
+            modal.classList.add('active');
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.remove('active');
+            document.getElementById('authForm').reset();
+        }
+
+        function switchAuthMode() {
+            showAuthModal(isLoginMode ? 'register' : 'login');
+        }
+
+        // Auth Form
+        document.getElementById('authForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+
+            if (isLoginMode) {
+                await handleLogin(username, password);
+            } else {
+                await handleRegister(username, email, password);
+            }
+        });
+
+        async function handleLogin(username, password) {
+            try {
+                const response = await fetch(DATA_PATH + 'users.json');
+                const users = await response.json();
+
+                const user = users.find(u => 
+                    (u.username === username || u.email === username) && 
+                    u.password === hashPassword(password) &&
+                    u.status === 'active'
+                );
+
+                if (user) {
+                    saveLogin(user);
+                    updateUI();
+                    closeAuthModal();
+                    await loadArticles();
+                    alert('تم تسجيل الدخول بنجاح! 🎉');
+                } else {
+                    alert('اسم المستخدم أو كلمة المرور غير صحيحة، أو الحساب محظور.');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة لاحقاً.');
+            }
+        }
+
+        async function handleRegister(username, email, password) {
+            if (!email) {
+                alert('يرجى إدخال البريد الإلكتروني');
+                return;
+            }
 
             try {
-                // إضافة وقت لكسر الكاش وضمان جلب أحدث البيانات
-                const response = await fetch('data/articles.json?t=' + new Date().getTime());
-                
-                if (!response.ok) {
-                    throw new Error(`لم يتم العثور على ملف المقالات (Error ${response.status})`);
-                }
+                const response = await fetch(DATA_PATH + 'users.json');
+                const users = await response.json();
 
-                const data = await response.json();
-                
-                if (!Array.isArray(data) || data.length === 0) {
-                    contentDiv.innerHTML = '<p style="text-align:center;">لا توجد مقالات منشورة حتى الآن. استخدم البرنامج لإضافة أول مقال.</p>';
+                const exists = users.find(u => u.username === username || u.email === email);
+                if (exists) {
+                    alert('اسم المستخدم أو البريد الإلكتروني موجود مسبقاً');
                     return;
                 }
 
-                articlesData = data.reverse(); // الأحدث أولاً
-                renderArticles(articlesData);
+                const newUser = {
+                    id: Date.now(),
+                    username,
+                    email,
+                    password: hashPassword(password),
+                    role: 'subscriber',
+                    status: 'active',
+                    joinDate: new Date().toISOString(),
+                    subscriptionType: 'free'
+                };
 
+                // Note: In production, this would send to a backend
+                // For now, we'll save locally and prompt user to contact admin
+                alert('تم إنشاء الحساب بنجاح! يمكنك الآن تسجيل الدخول.\n\nملاحظة: في النسخة الحالية، يجب إضافة الحساب من لوحة التحكم.');
+                
+                showAuthModal('login');
             } catch (error) {
-                console.error(error);
-                contentDiv.innerHTML = '';
-                errorDiv.style.display = 'block';
-                errorDiv.innerHTML = `
-                    <h3>حدث خطأ في تحميل الموقع</h3>
-                    <p>${error.message}</p>
-                    <p>تأكد أنك قمت برفع ملف <b>data/articles.json</b> بشكل صحيح إلى GitHub.</p>
-                `;
+                console.error('Registration error:', error);
+                alert('حدث خطأ أثناء إنشاء الحساب. يرجى المحاولة لاحقاً.');
             }
         }
 
-        // 3. عرض المقالات والتحكم في الروابط
-        function renderArticles(articles) {
-            const container = document.getElementById('contentArea');
-            container.innerHTML = '';
-
-            articles.forEach(article => {
-                const card = document.createElement('div');
-                card.className = 'article-card';
-
-                // معالجة المحتوى لتحويل الروابط
-                let contentHTML = processContent(article.content || "");
-
-                // صورة المقال
-                let imgHTML = '';
-                if (article.coverImage) {
-                    imgHTML = `<img src="${article.coverImage}" class="article-img" style="display:block">`;
-                }
-
-                card.innerHTML = `
-                    <h2 class="article-title">${article.title}</h2>
-                    <span class="article-meta">القسم: ${article.category || 'عام'} | التاريخ: ${article.date ? article.date.split('T')[0] : ''}</span>
-                    ${imgHTML}
-                    <div class="article-content">
-                        ${contentHTML}
-                    </div>
-                `;
-                container.appendChild(card);
-            });
+        function hashPassword(password) {
+            // Simple hash (في الإنتاج، استخدم bcrypt أو SHA-256 حقيقي)
+            let hash = 0;
+            for (let i = 0; i < password.length; i++) {
+                const char = password.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return hash.toString(16);
         }
 
-        // دالة ذكية: تحول الروابط إلى "مغلقة" أو "مفتوحة"
-        function processContent(text) {
-            // 1. تحويل الصور (Markdown -> HTML)
-            text = text.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" style="max-width:100%; border-radius:5px;">');
-            
-            // 2. تحويل الأسطر الجديدة
-            text = text.replace(/\n/g, '<br>');
-
-            // 3. معالجة الروابط [اسم الرابط](الرابط)
-            // Regex يبحث عن نمط Markdown للروابط
-            text = text.replace(/\[(.*?)\]\((.*?)\)/g, (match, linkText, linkUrl) => {
-                if (isLoggedIn) {
-                    // إذا مسجل دخول: رابط أخضر مفتوح
-                    return `<a href="${linkUrl}" target="_blank" class="unlocked-link">🔓 تحميل: ${linkText}</a>`;
-                } else {
-                    // إذا غير مسجل: رابط أحمر مغلق يفتح نافذة التسجيل
-                    return `<div class="locked-link" onclick="openModal()">
-                                🔒 الرابط مخفي: <span>${linkText}</span><br>
-                                (اضغط هنا لتسجيل الدخول ورؤية الرابط)
-                            </div>`;
-                }
-            });
-
-            return text;
+        function logout() {
+            document.cookie = 'ramez_user=; max-age=0; path=/';
+            localStorage.removeItem('ramez_current_user');
+            currentUser = null;
+            updateUI();
+            displayArticles([]);
+            alert('تم تسجيل الخروج');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 4. البحث
-        function filterArticles() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            const filtered = articlesData.filter(a => 
-                a.title.toLowerCase().includes(query) || 
-                (a.content && a.content.toLowerCase().includes(query))
-            );
-            renderArticles(filtered);
-        }
-
-        // 5. التحكم بالنوافذ
-        function openModal() { document.getElementById('loginModal').style.display = 'flex'; }
-        function closeModal() { document.getElementById('loginModal').style.display = 'none'; }
-        
-        // إغلاق النافذة عند الضغط خارجها
-        window.onclick = function(e) {
-            if (e.target == document.getElementById('loginModal')) closeModal();
-        }
+        // Close modal on outside click
+        document.getElementById('authModal').addEventListener('click', (e) => {
+            if (e.target.id === 'authModal') {
+                closeAuthModal();
+            }
+        });
     </script>
 </body>
 </html>
