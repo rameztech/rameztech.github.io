@@ -1,7 +1,44 @@
 [
-  "IMEI",
-  "FRP",
-  "Software",
-  "Server",
-  "Tutorials"
+  {
+    "id": "imei",
+    "name": "إصلاح IMEI",
+    "slug": "imei",
+    "description": "حلول مشاكل IMEI لجميع الأجهزة",
+    "icon": "🔧"
+  },
+  {
+    "id": "frp",
+    "name": "FRP Bypass",
+    "slug": "frp",
+    "description": "تجاوز قفل حساب جوجل",
+    "icon": "🔓"
+  },
+  {
+    "id": "flash",
+    "name": "Flash & ROM",
+    "slug": "flash",
+    "description": "تثبيت الرومات والفلاشات",
+    "icon": "💾"
+  },
+  {
+    "id": "network",
+    "name": "فتح الشبكة",
+    "slug": "network",
+    "description": "فك قفل الشبكة لجميع الأجهزة",
+    "icon": "📶"
+  },
+  {
+    "id": "software",
+    "name": "مشاكل السوفتوير",
+    "slug": "software",
+    "description": "حلول مشاكل النظام والتطبيقات",
+    "icon": "⚙️"
+  },
+  {
+    "id": "tutorials",
+    "name": "شروحات تقنية",
+    "slug": "tutorials",
+    "description": "دروس ودورات تعليمية",
+    "icon": "📚"
+  }
 ]
