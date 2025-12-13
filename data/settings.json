@@ -1,17 +1,35 @@
 {
-    "site": {
-        "title": "Ramez Tech",
-        "description": "دليلك الشامل لإصلاح الهواتف",
-        "logo": "assets/logo.png",
-        "favicon": "assets/favicon.ico"
-    },
-    "theme": {
-        "primary": "#667eea",
-        "secondary": "#764ba2"
-    },
-    "contact": {
-        "whatsapp": "https://wa.me/xxxxxxxxxx",
-        "telegram": "https://t.me/yourusername",
-        "email": "info@rameztech.com"
-    }
+  "site": {
+    "title": "Ramez Tech",
+    "description": "دليلك الشامل لإصلاح الهواتف وحل مشاكل السوفتوير",
+    "url": "https://rameztech.github.io",
+    "logo": "🔱",
+    "favicon": "assets/favicon.ico",
+    "language": "ar",
+    "direction": "rtl"
+  },
+  "theme": {
+    "primary": "#667eea",
+    "secondary": "#764ba2",
+    "accent": "#f39c12",
+    "success": "#27ae60",
+    "danger": "#e74c3c"
+  },
+  "contact": {
+    "whatsapp": "+905XXXXXXXXX",
+    "telegram": "@rameztech",
+    "email": "info@rameztech.com",
+    "phone": "+90 XXX XXX XX XX"
+  },
+  "features": {
+    "registration": true,
+    "comments": false,
+    "newsletter": false,
+    "darkMode": false
+  },
+  "seo": {
+    "keywords": "إصلاح هواتف, IMEI, FRP, فلاش, فتح شبكة",
+    "author": "Ramez Tech",
+    "ogImage": "assets/images/og-image.jpg"
+  }
 }
