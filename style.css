@@ -1,0 +1,168 @@
+/* إعدادات عامة */
+body {
+    font-family: 'Tajawal', sans-serif; /* خط عربي جميل، يمكنك استبداله */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    direction: rtl;
+}
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3, h4 {
+    color: #1a237e; /* لون أزرق داكن للعناوين */
+}
+
+/* شريط التنقل */
+header {
+    background-color: #1a237e;
+    color: white;
+    padding: 10px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover, .login-btn:hover {
+    background-color: #3949ab;
+    border-radius: 5px;
+}
+
+.login-btn {
+    background-color: #ff6f00; /* لون مميز لزر الدخول */
+    border-radius: 5px;
+}
+
+/* القسم الرئيسي */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(rgba(26, 35, 126, 0.8), rgba(26, 35, 126, 0.8)), url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: white;
+}
+
+/* قسم الخدمات */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: #e8eaf6;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* قسم المنشورات */
+.post-card {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.post-card a {
+    color: #ff6f00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* قسم تسجيل الدخول */
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form .remember-me {
+    margin-bottom: 15px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-form button:hover {
+    background-color: #3949ab;
+}
+
+.login-form p {
+    text-align: center;
+}
+
+/* قسم التواصل */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
