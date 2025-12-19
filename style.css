@@ -1,0 +1,221 @@
+/* إعدادات عامة ومحسنة */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* خلفية بيضاء ناعمة */
+    color: #343a40; /* لون نص داكن */
+    direction: rtl;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* ظل أنعم وأكثر احترافية */
+}
+
+h1, h2, h3, h4 {
+    color: #007bff; /* أزرق أساسي جديد */
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* شريط التنقل المحسن */
+header {
+    background-color: #007bff; /* أزرق أساسي */
+    color: white;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    transition: background-color 0.3s, border-radius 0.3s;
+    font-weight: 400;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* أزرق أغمق عند التحويم */
+    border-radius: 6px;
+}
+
+/* القسم الرئيسي المحسن */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0, 123, 255, 0.85), rgba(0, 123, 255, 0.85)), url('https://via.placeholder.com/1200x400/007bff/ffffff?text=RAMEZ+TECH') no-repeat center center/cover;
+    color: white;
+    border-radius: 0 0 12px 12px;
+}
+
+.hero h1 {
+    font-size: 56px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* قسم الخدمات المحسن */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+}
+
+.service-card h3 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+/* قسم المنشورات المحسن */
+#posts h2 {
+    text-align: center;
+}
+
+.post-card {
+    border-bottom: 1px solid #dee2e6;
+    padding: 20px 0;
+    transition: background-color 0.3s;
+}
+
+.post-card:hover {
+    background-color: #f8f9fa;
+}
+
+.post-card h4 {
+    color: #343a40;
+    margin-bottom: 5px;
+}
+
+.post-card a {
+    color: #dc3545; /* لون أحمر مميز للروابط */
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.post-card a:hover {
+    text-decoration: underline;
+}
+
+/* تنسيق المحتوى الغني داخل المنشورات */
+.post-content {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-content a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* تنسيق فيديو يوتيوب المضمن */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* نسبة 16:9 */
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+/* قسم التواصل (Footer) المحسن */
+footer {
+    background-color: #343a40; /* لون داكن أنيق */
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.contact-links a {
+    color: #ffc107; /* لون أصفر مميز للروابط */
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.contact-links a:hover {
+    color: white;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
