@@ -1,4 +1,4 @@
-// script.js
+// script.js (النسخة المصححة والنهائية)
 document.addEventListener('DOMContentLoaded', () => {
     const postsGrid = document.getElementById('postsGrid');
     const searchInput = document.getElementById('searchInput');
@@ -7,14 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBody = document.getElementById('modalBody');
     const closeModalBtn = document.getElementById('closeModalBtn');
 
-    let allPosts = [];
-    let postsContent = typeof postsData !== 'undefined' ? postsData : {};
-    let currentFilter = 'all';
+    // --- التغيير الرئيسي هنا ---
+    // دمج كل قواعد البيانات المحملة في كائن واحد
+    const postsContent = {};
+    if (typeof postsData !== 'undefined') Object.assign(postsContent, postsData);
+    // يمكنك إضافة المزيد من الملفات هنا في المستقبل
+    // if (typeof postsData2 !== 'undefined') Object.assign(postsContent, postsData2);
 
-    // دمج الفهرس مع المحتوى الأولي المحمل
-    if (typeof searchIndex !== 'undefined') {
-        allPosts = searchIndex;
-    }
+    const allPosts = (typeof searchIndex !== 'undefined') ? searchIndex : [];
+    let currentFilter = 'all';
 
     // دالة لرسم بطاقة المنشور
     const createPostCard = (post) => {
@@ -46,29 +47,40 @@ document.addEventListener('DOMContentLoaded', () => {
             return matchesCategory && matchesSearch;
         });
 
-        filteredPosts.forEach(post => {
-            postsGrid.appendChild(createPostCard(post));
-        });
+        if (filteredPosts.length === 0) {
+            postsGrid.innerHTML = '<p style="text-align: center; color: #64748b; grid-column: 1 / -1;">لا توجد منشورات تطابق هذا البحث.</p>';
+        } else {
+            filteredPosts.forEach(post => {
+                postsGrid.appendChild(createPostCard(post));
+            });
+        }
     };
 
     // دالة لفتح النافذة المنبثقة
     const openModal = (postId) => {
-        const postIndex = allPosts.find(p => p.id === postId);
-        const postContent = postsContent[postId];
+        const postIndexData = allPosts.find(p => p.id === postId);
+        const postContentData = postsContent[postId];
 
-        if (!postIndex || !postContent) {
-            // هنا يمكنك إضافة منطق لتحميل ملف JS المناسب إذا لم يكن المحتوى موجوداً
-            console.error(`Post content for ID ${postId} not found.`);
+        if (!postIndexData) {
+            console.error(`Post index for ID ${postId} not found.`);
+            return;
+        }
+        
+        if (!postContentData) {
+            modalBody.innerHTML = `<h2 class="modal-title">${postIndexData.title}</h2><p>محتوى هذا المنشور غير متوفر حالياً. قد يكون في ملف لم يتم تحميله بعد.</p>`;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            console.error(`Post content for ID ${postId} not found in loaded data.`);
             return;
         }
         
         const categoryNames = { 'imei': 'إصلاح IMEI', 'frp': 'تخطي FRP', 'tools': 'أدوات', 'software': 'شروحات سوفتوير', 'hardware': 'شروحات هاردوير' };
 
         modalBody.innerHTML = `
-            <img src="${postIndex.cover}" alt="${postIndex.title}" class="modal-cover">
-            <span class="post-category">${categoryNames[postIndex.category] || postIndex.category}</span>
-            <h2 class="modal-title">${postIndex.title}</h2>
-            <div class="modal-body">${postContent.content}</div>
+            <img src="${postIndexData.cover}" alt="${postIndexData.title}" class="modal-cover">
+            <span class="post-category">${categoryNames[postIndexData.category] || postIndexData.category}</span>
+            <h2 class="modal-title">${postIndexData.title}</h2>
+            <div class="modal-body">${postContentData.content}</div>
         `;
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
@@ -109,8 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // التهيئة الأولية
-    createFilterButtons();
-    renderPosts();
+    if (allPosts.length > 0) {
+        createFilterButtons();
+        renderPosts();
+    } else {
+        postsGrid.innerHTML = '<p style="text-align: center; color: #64748b; grid-column: 1 / -1;">فشل تحميل فهرس المشاركات. يرجى التحقق من ملف search_index.js</p>';
+    }
 });
 
 // دالة ترجمة جوجل
