@@ -1,5 +1,4 @@
-// database/search_index.js
-const searchIndex = [
+window.searchIndex = [
     { 
         id: 1, 
         title: "تخطي FRP سامسونج A54 باستخدام DFT Pro", 
