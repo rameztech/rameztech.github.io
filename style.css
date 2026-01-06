@@ -61,7 +61,8 @@ header {
 }
 
 #google_translate_element { display: inline-block; }
-.goog-te-combo { background: rgba(255,255,255,0.95); color: #2563eb; border: 2px solid rgba(255,255,255,0.5); padding: 8px 35px 8px 15px; border-radius: 12px; font-weight: bold; font-size: 14px; cursor: pointer; transition: all 0.3s; outline: none; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg fill="%232563eb" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>' ); background-repeat: no-repeat; background-position: left 10px center; text-align: right; direction: rtl; }
+/* تم تصحيح مسار الصورة هنا لضمان عمله */
+.goog-te-combo { background: rgba(255,255,255,0.95); color: #2563eb; border: 2px solid rgba(255,255,255,0.5); padding: 8px 35px 8px 15px; border-radius: 12px; font-weight: bold; font-size: 14px; cursor: pointer; transition: all 0.3s; outline: none; appearance: none; background-image: url('https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_grey600_24dp.png' ); background-size: 20px; background-repeat: no-repeat; background-position: left 10px center; text-align: right; direction: rtl; }
 .goog-te-combo:hover { background: white; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); }
 .goog-te-combo:focus { background: white; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); }
 .goog-te-gadget { font-size: 0; color: transparent; }
