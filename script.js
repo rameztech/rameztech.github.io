@@ -1,22 +1,32 @@
-// script.js (النسخة المصححة النهائية)
 document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. Elements Selection ---
     const postsGrid = document.getElementById('postsGrid');
     const searchInput = document.getElementById('searchInput');
     const filterButtonsContainer = document.getElementById('filterButtons');
     const modal = document.getElementById('postModal');
     const modalBody = document.getElementById('modalBody');
     const closeModalBtn = document.getElementById('closeModalBtn');
+    const yearSpan = document.getElementById('year');
 
-    // نقرأ المتغيرات العامة مباشرة من الـ window
+    // --- 2. Data Initialization ---
     const postsContent = window.postsData || {};
     const allPosts = window.searchIndex || [];
     let currentFilter = 'all';
 
+    const categoryNames = {
+        'all': 'الكل',
+        'imei': 'إصلاح IMEI',
+        'frp': 'تخطي FRP',
+        'tools': 'أدوات',
+        'software': 'شروحات سوفتوير',
+        'hardware': 'شروحات هاردوير'
+    };
+
+    // --- 3. Functions ---
     const createPostCard = (post) => {
         const card = document.createElement('div');
         card.className = 'post-card';
-        card.onclick = () => openModal(post.id);
-        const categoryNames = { 'imei': 'إصلاح IMEI', 'frp': 'تخطي FRP', 'tools': 'أدوات', 'software': 'شروحات سوفتوير', 'hardware': 'شروحات هاردوير' };
+        card.setAttribute('data-id', post.id);
         card.innerHTML = `
             <img src="${post.cover}" alt="${post.title}" class="post-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500';">
             <div class="post-content">
@@ -29,13 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const renderPosts = ( ) => {
+        if (!postsGrid) return;
         postsGrid.innerHTML = '';
-        const searchTerm = searchInput.value.toLowerCase();
+        const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+        
         const filteredPosts = allPosts.filter(post => {
             const matchesCategory = currentFilter === 'all' || post.category === currentFilter;
             const matchesSearch = post.title.toLowerCase().includes(searchTerm) || post.excerpt.toLowerCase().includes(searchTerm);
             return matchesCategory && matchesSearch;
         });
+
         if (filteredPosts.length === 0) {
             postsGrid.innerHTML = '<p style="text-align: center; color: #64748b; grid-column: 1 / -1;">لا توجد منشورات تطابق هذا البحث.</p>';
         } else {
@@ -46,52 +59,80 @@ document.addEventListener('DOMContentLoaded', () => {
     const openModal = (postId) => {
         const postIndexData = allPosts.find(p => p.id === postId);
         const postContentData = postsContent[postId];
-        if (!postIndexData) { console.error(`Post index for ID ${postId} not found.`); return; }
+
+        if (!modal || !modalBody || !postIndexData) return;
+
         if (!postContentData) {
             modalBody.innerHTML = `<h2 class="modal-title">${postIndexData.title}</h2><p>محتوى هذا المنشور غير متوفر حالياً.</p>`;
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            return;
+        } else {
+            modalBody.innerHTML = `
+                <img src="${postIndexData.cover}" alt="${postIndexData.title}" class="modal-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500';">
+                <span class="post-category">${categoryNames[postIndexData.category] || postIndexData.category}</span>
+                <h2 class="modal-title">${postIndexData.title}</h2>
+                <div class="modal-body">${postContentData.content}</div>
+            `;
         }
-        const categoryNames = { 'imei': 'إصلاح IMEI', 'frp': 'تخطي FRP', 'tools': 'أدوات', 'software': 'شروحات سوفتوير', 'hardware': 'شروحات هاردوير' };
-        modalBody.innerHTML = `
-            <img src="${postIndexData.cover}" alt="${postIndexData.title}" class="modal-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500';">
-            <span class="post-category">${categoryNames[postIndexData.category] || postIndexData.category}</span>
-            <h2 class="modal-title">${postIndexData.title}</h2>
-            <div class="modal-body">${postContentData.content}</div>
-        `;
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     };
 
     const closeModal = ( ) => {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
     };
 
     const createFilterButtons = () => {
+        if (!filterButtonsContainer) return;
         const categories = ['all', ...new Set(allPosts.map(p => p.category))];
-        const categoryNames = { 'all': 'الكل', 'imei': 'إصلاح IMEI', 'frp': 'تخطي FRP', 'tools': 'أدوات', 'software': 'شروحات سوفتوير', 'hardware': 'شروحات هاردوير' };
-        filterButtonsContainer.innerHTML = categories.map(cat => `<button class="filter-btn ${cat === 'all' ? 'active' : ''}" data-category="${cat}">${categoryNames[cat] || cat}</button>`).join('');
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                currentFilter = this.dataset.category;
+        filterButtonsContainer.innerHTML = categories.map(cat => 
+            `<button class="filter-btn ${cat === 'all' ? 'active' : ''}" data-category="${cat}">${categoryNames[cat] || cat}</button>`
+        ).join('');
+
+        filterButtonsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('filter-btn')) {
+                filterButtonsContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                currentFilter = e.target.dataset.category;
                 renderPosts();
-            });
+            }
         });
     };
 
-    searchInput.addEventListener('input', renderPosts);
-    closeModalBtn.addEventListener('click', closeModal);
-    window.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+    // --- 4. Event Listeners & Initialization ---
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', renderPosts);
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModal);
+    }
+
+
+    if (modal) {
+        window.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+    }
+
+    if (postsGrid) {
+        postsGrid.addEventListener('click', (e) => {
+            const card = e.target.closest('.post-card');
+            if (card) {
+                const postId = parseInt(card.dataset.id, 10);
+                openModal(postId);
+            }
+        });
+    }
 
     if (allPosts.length > 0) {
         createFilterButtons();
         renderPosts();
-    } else {
-        postsGrid.innerHTML = '<p style="text-align: center; color: #64748b; grid-column: 1 / -1;">فشل تحميل فهرس المشاركات. يرجى التحقق من ملف search_index.js</p>';
+    } else if(postsGrid) {
+        postsGrid.innerHTML = '<p style="text-align: center; color: #64748b; grid-column: 1 / -1;">جاري تحميل المشاركات...</p>';
     }
 });
 
