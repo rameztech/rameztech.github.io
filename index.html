@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAMEZ TECH - خدمات إصلاح الهواتف</title>
-    <!-- تم تصحيح المسار هنا -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,48 +11,36 @@
         <header>
             <div class="header-top">
                 <div class="logo">
-                    <!-- ================== ضع رابط شعارك هنا ================== -->
-                    <!-- إذا لم تضع رابطاً، سيظهر النص البديل -->
-                    <img src="رابط-صورتك-هنا.png" alt="RAMEZ TECH Logo" style="height: 50px; color: transparent;">
-                    <!-- ======================================================= -->
+                    <img src="رابط-صورتك-هنا.png" alt="RAMEZ TECH Logo" style="height: 50px; color: transparent;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display:none;">⚡ RAMEZ TECH</span>
                 </div>
                 <div class="language-selector">
                     <div id="google_translate_element"></div>
                 </div>
             </div>
-            <div class="tagline">
-                خدمات احترافية لإصلاح الهواتف | سيرفرات FRP و IMEI و ATUM  
-
-                شروحات مجانية وخدمات سيرفر متقدمة
-            </div>
+            <div class="tagline">خدمات احترافية لإصلاح الهواتف | سيرفرات FRP و IMEI و ATUM  
+شروحات مجانية وخدمات سيرفر متقدمة</div>
             <a href="#contact" class="cta-button">📞 تواصل معنا</a>
         </header>
 
         <div class="search-section">
             <div class="search-container">
                 <input type="text" id="searchInput" class="search-box" placeholder="🔍 ابحث عن الشروحات والمنشورات المجانية...">
-                <div class="filter-buttons" id="filterButtons">
-                    <!-- سيتم ملء الأزرار ديناميكياً بواسطة الجافاسكريبت -->
-                </div>
+                <div class="filter-buttons" id="filterButtons"></div>
             </div>
         </div>
 
         <div class="posts-section">
             <h2 class="section-title">📚 شروحات ومنشورات مجانية</h2>
-            <div class="posts-grid" id="postsGrid">
-                <!-- سيتم ملء المشاركات هنا بواسطة الجافاسكريبت -->
-            </div>
+            <div class="posts-grid" id="postsGrid"></div>
         </div>
 
         <div class="contact-section" id="contact">
             <h2 class="contact-title">🔧 خدمات السيرفر المتقدمة</h2>
-            <p class="services-description">
-                نوفر خدمات سيرفر احترافية للأجهزة التي لا تدعمها الأدوات العادية  
-
-                خدمة سريعة وآمنة بضمان كامل على جميع العمليات
-            </p>
+            <p class="services-description">نوفر خدمات سيرفر احترافية للأجهزة التي لا تدعمها الأدوات العادية  
+خدمة سريعة وآمنة بضمان كامل على جميع العمليات</p>
             <div class="services-list">
-                <div class="service-item"><div class="service-icon">🔓</div><div class="service-name">تخطي FRP</div><div class="service-desc">للأجهزة غير المدعومة في DFT و Chimera</div></div>
+                <div class="service-item"><div class="service-icon">🔓</div><div class="service-name">تخطي FRP</div><div class="service-desc">للأجهزة غير المدعومة</div></div>
                 <div class="service-item"><div class="service-icon">🔢</div><div class="service-name">إصلاح IMEI</div><div class="service-desc">استعادة IMEI عبر السيرفر</div></div>
                 <div class="service-item"><div class="service-icon">⚡</div><div class="service-name">تخطي ATUM</div><div class="service-desc">حل مشاكل ATUM Lock</div></div>
                 <div class="service-item"><div class="service-icon">💾</div><div class="service-name">خدمات الفلاش</div><div class="service-desc">فلاش متقدم عبر السيرفر</div></div>
@@ -69,7 +56,7 @@
         </div>
 
         <footer>
-            <p>&copy; 2025 RAMEZ TECH - جميع الحقوق محفوظة</p>
+            <p>&copy; <span id="year"></span> RAMEZ TECH - جميع الحقوق محفوظة</p>
             <p style="margin-top: 10px; opacity: 0.8;">شروحات مجانية • خدمات سيرفر احترافية • دعم فني متميز</p>
         </footer>
     </div>
@@ -81,12 +68,9 @@
         </div>
     </div>
 
-    <!-- تم تصحيح المسارات هنا -->
     <script src="database/search_index.js"></script>
     <script src="database/posts_1.js"></script>
     <script src="script.js"></script>
-    
-    <!-- سكربت ترجمة جوجل -->
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
