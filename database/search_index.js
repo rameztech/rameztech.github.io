@@ -1,1 +1,50 @@
-window.searchIndex = [{"category":"frp","cover":"https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500","excerpt":"\u0634\u0631\u062d \u0645\u062c\u0627\u0646\u064a \u0648\u062a\u0641\u0635\u064a\u0644\u064a \u0644\u0637\u0631\u064a\u0642\u0629 \u062a\u062e\u0637\u064a \u062d\u0645\u0627\u064a\u0629 FRP \u0644\u0647\u0648\u0627\u062a\u0641 \u0633\u0627\u0645\u0633\u0648\u0646\u062c A54 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0623\u062f\u0627\u0629 DFT Pro","file":"posts_1.js","id":1,"title":"\u062a\u062e\u0637\u064a FRP \u0633\u0627\u0645\u0633\u0648\u0646\u062c A54 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 DFT Pro"},{"category":"frp","cover":"https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=500","excerpt":"\u062f\u0644\u064a\u0644 \u0634\u0627\u0645\u0644 \u0644\u0627\u0633\u062a\u062e\u062f\u0627\u0645 Chimera Tool \u0641\u064a \u062a\u062e\u0637\u064a \u062d\u0645\u0627\u064a\u0629 FRP \u0644\u0645\u062e\u062a\u0644\u0641 \u0627\u0644\u0623\u062c\u0647\u0632\u0629","file":"posts_1.js","id":2,"title":"\u062a\u062e\u0637\u064a FRP \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 Chimera Tool"},{"category":"imei","cover":"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500","excerpt":"\u0637\u0631\u064a\u0642\u0629 \u0645\u062c\u0627\u0646\u064a\u0629 \u0644\u0625\u0635\u0644\u0627\u062d IMEI NULL \u0641\u064a \u0647\u0648\u0627\u062a\u0641 MediaTek \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 Miracle Box","file":"posts_1.js","id":3,"title":"\u0625\u0635\u0644\u0627\u062d IMEI \u0644\u0647\u0648\u0627\u062a\u0641 MTK \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 Miracle"},{"category":"tools","cover":"https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500","excerpt":"\u062a\u0639\u0631\u0641 \u0639\u0644\u0649 \u0625\u0645\u0643\u0627\u0646\u064a\u0627\u062a UMT Dongle Pro \u0648\u0643\u064a\u0641\u064a\u0629 \u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0647\u0627 \u0641\u064a \u0625\u0635\u0644\u0627\u062d \u0627\u0644\u0647\u0648\u0627\u062a\u0641","file":"posts_1.js","id":4,"title":"\u062f\u0644\u064a\u0644 \u0634\u0627\u0645\u0644 \u0644\u0623\u062f\u0627\u0629 UMT Dongle Pro"},{"category":"software","cover":"https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=500","excerpt":"\u062a\u0639\u0644\u0645 \u0643\u064a\u0641\u064a\u0629 \u0639\u0645\u0644 \u0641\u0644\u0627\u0634 \u0643\u0627\u0645\u0644 \u0644\u0647\u0648\u0627\u062a\u0641 \u0634\u0627\u0648\u0645\u064a \u0648\u062d\u0644 \u062c\u0645\u064a\u0639 \u0645\u0634\u0627\u0643\u0644 \u0627\u0644\u0633\u0648\u0641\u062a\u0648\u064a\u0631","file":"posts_1.js","id":5,"title":"\u0641\u0644\u0627\u0634 \u0647\u0648\u0627\u062a\u0641 Xiaomi \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 Mi Flash Tool"},{"category":"hardware","cover":"https://images.unsplash.com/photo-1592286927505-b5c8e4a13d4f?w=500","excerpt":"\u062f\u0644\u064a\u0644 \u0645\u0635\u0648\u0631 \u062e\u0637\u0648\u0629 \u0628\u062e\u0637\u0648\u0629 \u0644\u0641\u0643 \u0648\u062a\u0631\u0643\u064a\u0628 \u0634\u0627\u0634\u0629 Samsung Galaxy A32","file":"posts_1.js","id":6,"title":"\u062a\u063a\u064a\u064a\u0631 \u0634\u0627\u0634\u0629 Samsung A32 - \u0634\u0631\u062d \u0647\u0627\u0631\u062f\u0648\u064a\u0631"},{"category":"frp","cover":"https://github.com/rameztech/rameztech.github.io/blob/main/images/logo.png","excerpt":"\u0631\u0648\u0645 \u0643\u0648\u0645\u0628\u064a\u0646\u064a\u0634\u0646 N950F \u062d\u0645\u0627\u064a\u0629 U6 \u0644\u062d\u0644 \u0645\u0634\u0627\u0643\u0644 DRK, Frp","file":"posts_1.js","id":7,"title":"N950F U6 To Reset Frp"},{"category":"frp","cover":"https://play.google.com/store/apps/dev?id=5700313618786177705&hl=ar","excerpt":"\u0646\u0642\u062f\u0645 \u0644\u0643\u0645 \u062a\u062e\u0637\u064a \u062d\u0633\u0627\u0628 \u063a\u0648\u063a\u0644 FRP \u0644\u062a\u0627\u0628\u0644\u064a\u062a  SAMSUNG TAB A8 T290 U3","file":"posts_1.js","id":8,"title":"SAMSUNG TAB A8 T290 U3"}];
+window.searchIndex = [
+    { 
+        id: 1, 
+        title: "تخطي FRP سامسونج A54 باستخدام DFT Pro", 
+        category: "frp", 
+        excerpt: "شرح مجاني وتفصيلي لطريقة تخطي حماية FRP لهواتف سامسونج A54 باستخدام أداة DFT Pro",
+        cover: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500",
+        file: "posts_1.js" 
+    },
+    { 
+        id: 2, 
+        title: "تخطي FRP باستخدام Chimera Tool", 
+        category: "frp",
+        excerpt: "دليل شامل لاستخدام Chimera Tool في تخطي حماية FRP لمختلف الأجهزة",
+        cover: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=500",
+        file: "posts_1.js"
+    },
+    { 
+        id: 3, 
+        title: "إصلاح IMEI لهواتف MTK باستخدام Miracle", 
+        category: "imei",
+        excerpt: "طريقة مجانية لإصلاح IMEI NULL في هواتف MediaTek باستخدام Miracle Box",
+        cover: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500",
+        file: "posts_1.js"
+    },
+    { 
+        id: 4, 
+        title: "دليل شامل لأداة UMT Dongle Pro", 
+        category: "tools",
+        excerpt: "تعرف على إمكانيات UMT Dongle Pro وكيفية استخدامها في إصلاح الهواتف",
+        cover: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500",
+        file: "posts_1.js"
+    },
+    { 
+        id: 5, 
+        title: "فلاش هواتف Xiaomi باستخدام Mi Flash Tool", 
+        category: "software",
+        excerpt: "تعلم كيفية عمل فلاش كامل لهواتف شاومي وحل جميع مشاكل السوفتوير",
+        cover: "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=500",
+        file: "posts_1.js"
+    },
+    { 
+        id: 6, 
+        title: "تغيير شاشة Samsung A32 - شرح هاردوير", 
+        category: "hardware",
+        excerpt: "دليل مصور خطوة بخطوة لفك وتركيب شاشة Samsung Galaxy A32",
+        cover: "https://images.unsplash.com/photo-1592286927505-b5c8e4a13d4f?w=500",
+        file: "posts_1.js"
+    }
+];
