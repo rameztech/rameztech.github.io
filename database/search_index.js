@@ -55,4 +55,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_7_20260107_221928.jpg",
         file: "database/posts_1.js"
     },
+    { 
+        id: 8, 
+        title: "ما هي الميزة إصلاح IMEI", 
+        category: "tools", 
+        excerpt: "fsdvddfvzddvzx",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_8_20260107_225333.jpg",
+        file: "database/posts_1.js"
+    },
 ];
