@@ -43,4 +43,6 @@ Object.assign(window.postsData, {
 لحل مشاكل السوفت وير
 للتحميل من هنـــــــــــــا
 تركيب عبر Odin او اي بوكس داعم` }
+,
+    8: { content: `<p>يييييييييييي</p><h3>السلام عليكم ورحمة الله وبركاتة</h3>مرحبا بكم متابعين موقع حلب تك نقدم لكم تخطي حساب غوغل FRP لتابليت  SAMSUNG TAB A8 T290 U3 باستخدام  CHIMERA TOOL  التاب يحمل المعالج  Qualcomm Snapdragon 429 (SDM429) نقوم بفك الغطاء الخلفي كل ماعليك فصل البطارية وقم بفتح اداة الشيميرا نقوم بتوصيل نقاط التيست بوينت<a href="https://halabtech.com/%d8%a7%d8%b2%d8%a7%d9%84%d8%a9-%d8%ad%d8%b3%d8%a7%d8%a8-%d8%ba%d9%88%d8%ba%d9%84-%d9%84%d8%aa%d8%a7%d8%a8-samsung-tab-a8-t290-%d8%a8%d8%a7%d8%b3%d8%aa%d8%ae%d8%af%d8%a7%d9%85-%d8%b4%d9%8a%d9%85%d9%8a/" target="_blank">hhhhhhhhhhh</a><div class="youtube-embed">    <iframe src="https://www.youtube.com/embed/fbK2ySlxAW4&list=RDEMyXaWZ5LT0iMWOX_0MrOVCg&start_radio=1" frameborder="0" allowfullscreen></iframe></div>` }
 });
