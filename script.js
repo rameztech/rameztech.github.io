@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearSpan = document.getElementById('year');
 
     // --- 2. Data Initialization ---
-    const postsContent = window.postsData || {};
+    window.postsData = window.postsData || {};
+    window.loadedPostsFiles = window.loadedPostsFiles || [];
+    
     const allPosts = window.searchIndex || [];
     let currentFilter = 'all';
 
@@ -22,7 +24,36 @@ document.addEventListener('DOMContentLoaded', () => {
         'hardware': 'شروحات هاردوير'
     };
 
-    // --- 3. Functions ---
+    // --- 3. Dynamic Loading Function ---
+    const loadPostFile = (fileName) => {
+        return new Promise((resolve, reject) => {
+            // إذا كان الملف محمّل بالفعل
+            if (window.loadedPostsFiles.includes(fileName)) {
+                resolve();
+                return;
+            }
+
+            console.log(`📥 تحميل ملف: ${fileName}`);
+
+            const script = document.createElement('script');
+            script.src = `database/${fileName}`;
+            
+            script.onload = () => {
+                window.loadedPostsFiles.push(fileName);
+                console.log(`✅ تم تحميل: ${fileName}`);
+                resolve();
+            };
+            
+            script.onerror = () => {
+                console.error(`❌ فشل تحميل: ${fileName}`);
+                reject(new Error(`Failed to load ${fileName}`));
+            };
+            
+            document.head.appendChild(script);
+        });
+    };
+
+    // --- 4. Functions ---
     const createPostCard = (post) => {
         const card = document.createElement('div');
         card.className = 'post-card';
@@ -38,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return card;
     };
 
-    const renderPosts = ( ) => {
+    const renderPosts = () => {
         if (!postsGrid) return;
         postsGrid.innerHTML = '';
         const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
@@ -56,27 +87,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const openModal = (postId) => {
+    const openModal = async (postId) => {
         const postIndexData = allPosts.find(p => p.id === postId);
-        const postContentData = postsContent[postId];
 
         if (!modal || !modalBody || !postIndexData) return;
 
-        if (!postContentData) {
-            modalBody.innerHTML = `<h2 class="modal-title">${postIndexData.title}</h2><p>محتوى هذا المنشور غير متوفر حالياً.</p>`;
-        } else {
-            modalBody.innerHTML = `
-                <img src="${postIndexData.cover}" alt="${postIndexData.title}" class="modal-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500';">
-                <span class="post-category">${categoryNames[postIndexData.category] || postIndexData.category}</span>
-                <h2 class="modal-title">${postIndexData.title}</h2>
-                <div class="modal-body">${postContentData.content}</div>
-            `;
-        }
+        // عرض رسالة تحميل
+        modalBody.innerHTML = `
+            <h2 class="modal-title">${postIndexData.title}</h2>
+            <p style="text-align: center; padding: 40px;">
+                <span style="font-size: 48px;">⏳</span><br>
+                <strong>جاري تحميل المحتوى...</strong>
+            </p>
+        `;
+        
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+
+        try {
+            // تحميل ملف posts_X.js إذا لم يكن محمّلاً
+            const fileName = postIndexData.file || 'posts_1.js';
+            await loadPostFile(fileName);
+
+            // الحصول على المحتوى
+            const postContentData = window.postsData[postId];
+
+            if (!postContentData) {
+                modalBody.innerHTML = `
+                    <h2 class="modal-title">${postIndexData.title}</h2>
+                    <p style="color: #ef4444; text-align: center; padding: 40px;">
+                        ❌ عذراً، محتوى هذا المنشور غير متوفر حالياً.
+                    </p>
+                `;
+            } else {
+                modalBody.innerHTML = `
+                    <img src="${postIndexData.cover}" alt="${postIndexData.title}" class="modal-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500';">
+                    <span class="post-category">${categoryNames[postIndexData.category] || postIndexData.category}</span>
+                    <h2 class="modal-title">${postIndexData.title}</h2>
+                    <div class="modal-body">${postContentData.content}</div>
+                `;
+            }
+        } catch (error) {
+            console.error('خطأ في تحميل المنشور:', error);
+            modalBody.innerHTML = `
+                <h2 class="modal-title">${postIndexData.title}</h2>
+                <p style="color: #ef4444; text-align: center; padding: 40px;">
+                    ❌ حدث خطأ أثناء تحميل المحتوى.<br>
+                    <small>${error.message}</small>
+                </p>
+            `;
+        }
     };
 
-    const closeModal = ( ) => {
+    const closeModal = () => {
         if (modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
@@ -100,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // --- 4. Event Listeners & Initialization ---
+    // --- 5. Event Listeners & Initialization ---
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
@@ -113,9 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModalBtn.addEventListener('click', closeModal);
     }
 
-
     if (modal) {
-        window.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+        window.addEventListener('click', (event) => { 
+            if (event.target === modal) closeModal(); 
+        });
     }
 
     if (postsGrid) {
@@ -134,8 +198,17 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if(postsGrid) {
         postsGrid.innerHTML = '<p style="text-align: center; color: #64748b; grid-column: 1 / -1;">جاري تحميل المشاركات...</p>';
     }
+
+    // تسجيل معلومات التحميل في Console
+    console.log(`📊 عدد المنشورات في الفهرس: ${allPosts.length}`);
+    console.log(`📂 ملفات posts محملة مسبقاً: ${window.loadedPostsFiles.length}`);
 });
 
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: 'ar', includedLanguages: 'en,tr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element');
+    new google.translate.TranslateElement({ 
+        pageLanguage: 'ar', 
+        includedLanguages: 'en,tr', 
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
+        autoDisplay: false 
+    }, 'google_translate_element');
 }
