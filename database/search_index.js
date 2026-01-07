@@ -1,13 +1,5 @@
 window.searchIndex = [
     { 
-        id: 2, 
-        title: "تخطي FRP باستخدام Chimera Tool", 
-        category: "frp", 
-        excerpt: "دليل شامل لاستخدام Chimera Tool في تخطي حماية FRP لمختلف الأجهزة",
-        cover: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=500",
-        file: "posts_1.js"
-    },
-    { 
         id: 3, 
         title: "إصلاح IMEI لهواتف MTK باستخدام Miracle", 
         category: "imei", 
