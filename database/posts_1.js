@@ -5,11 +5,6 @@ window.postsData = window.postsData || {};
 
 // ندمج البيانات الجديدة في المتغير العام
 Object.assign(window.postsData, {
-    4: {
-        content: `
-<h3>UMT Dongle Pro - الدليل الكامل</h3><p>UMT Pro واحدة من أقوى الأدوات الشاملة في عالم إصلاح الهواتف.</p>
-`
-    },
     5: {
         content: `
 <h3>دليل فلاش Xiaomi - Mi Flash Tool</h3><p>شرح شامل لعملية الفلاش الكامل لهواتف شاومي باستخدام الأداة الرسمية.</p>
