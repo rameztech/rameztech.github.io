@@ -94,21 +94,4 @@ IMEI والأمان
 </p>
 `
     },
-    9: {
-        content: `
-مقاومه ازالة 
-+تفليش انج روم
- /تتريك /
-بدون سيرفر 
-<a href="https://halabtech.com/%D8%AD%D8%B5%D8%B1%D9%8A-%D8%A7%D8%B5%D9%84%D8%A7%D8%AD-%D8%A7%D9%84%D8%A7%D9%8A%D9%85%D9%8A-%D8%A7%D9%84%D8%A7%D8%B3%D8%A7%D8%B3%D9%8A-%D9%84%D9%87%D8%A7%D8%AA%D9%81-redmi-note-13-nfc-sapphire-sapph/">اضغط هنا</a>
-
-<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/h24qI69TdsE" frameborder="0" allowfullscreen></iframe></div>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_9_img1_20260107_230602.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
-    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
-`
-    },
 } );
