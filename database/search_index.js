@@ -47,12 +47,4 @@ window.searchIndex = [
         cover: "https://images.unsplash.com/photo-1592286927505-b5c8e4a13d4f?w=500",
         file: "posts_1.js"
     },
-    { 
-        id: 7, 
-        title: "تغيير شاشة Samsung A32 - شرح هاردوير", 
-        category: "hardware", 
-        excerpt: "دليل مصور خطوة بخطوة لفك وتركيب شاشة Samsung Galaxy A32",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_7_20260107_221928.jpg",
-        file: "database/posts_1.js"
-    },
 ];
