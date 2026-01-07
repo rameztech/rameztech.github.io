@@ -55,4 +55,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_1_20260108_000649.jpg",
         file: "database/posts_1.js"
     },
+    { 
+        id: 2, 
+        title: "N960F U10 اصلاح الايمي الاساس", 
+        category: "frp", 
+        excerpt: "N960F U10 اصلاح الايمي الاساسي / Chimera",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_2_20260108_001444.jpg",
+        file: "database/posts_1.js"
+    },
 ];
