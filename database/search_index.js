@@ -63,12 +63,4 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_8_20260107_225333.jpg",
         file: "database/posts_1.js"
     },
-    { 
-        id: 9, 
-        title: "Redmi Note 13/NFC (Sapphire/Sapphiren)", 
-        category: "imei", 
-        excerpt: "اصلاح الايمي الاساسي لهاتف Redmi Note 13/NFC (Sapphire/Sapphiren) مغلق او مفتوح",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_9_20260107_230600.jpg",
-        file: "database/posts_1.js"
-    },
 ];
