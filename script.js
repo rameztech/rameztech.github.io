@@ -17,11 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const categoryNames = {
         'all': 'الكل',
-        'imei': 'إصلاح IMEI',
         'frp': 'تخطي FRP',
-        'tools': 'أدوات',
+        'hardware': 'شروحات هاردوير',
+        'imei': 'إصلاح IMEI',
         'software': 'شروحات سوفتوير',
-        'hardware': 'شروحات هاردوير'
+        'test': 'اختبار',
+        'tools': 'أدوات',
     };
 
     // --- 3. Dynamic Loading Function ---
