@@ -1,13 +1,5 @@
 window.searchIndex = [
     { 
-        id: 1, 
-        title: "تخطي FRP سامسونج A54 باستخدام DFT Pro", 
-        category: "frp", 
-        excerpt: "شرح مجاني وتفصيلي لطريقة تخطي حماية FRP لهواتف سامسونج A54 باستخدام أداة DFT Pro",
-        cover: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500",
-        file: "posts_1.js"
-    },
-    { 
         id: 2, 
         title: "تخطي FRP باستخدام Chimera Tool", 
         category: "frp", 
