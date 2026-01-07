@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const allPosts = window.searchIndex || [];
     let currentFilter = 'all';
 
+    // هذه الأقسام سيتم تحديثها تلقائياً بواسطة برنامج بايثون
     const categoryNames = {
         'all': 'الكل',
         'imei': 'إصلاح IMEI',
@@ -85,10 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const createFilterButtons = () => {
         if (!filterButtonsContainer) return;
-        const categories = ['all', ...new Set(allPosts.map(p => p.category))];
-        filterButtonsContainer.innerHTML = categories.map(cat => 
-            `<button class="filter-btn ${cat === 'all' ? 'active' : ''}" data-category="${cat}">${categoryNames[cat] || cat}</button>`
-        ).join('');
+        // استخراج الأقسام الفريدة الموجودة في المنشورات + الأقسام المعرفة في categoryNames
+        const usedCategories = new Set(allPosts.map(p => p.category));
+        const categories = ['all', ...new Set([...Object.keys(categoryNames), ...usedCategories])];
+        
+        filterButtonsContainer.innerHTML = categories
+            .filter(cat => cat === 'all' || usedCategories.has(cat) || categoryNames[cat])
+            .map(cat => 
+                `<button class="filter-btn ${cat === 'all' ? 'active' : ''}" data-category="${cat}">${categoryNames[cat] || cat}</button>`
+            ).join('');
 
         filterButtonsContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('filter-btn')) {
