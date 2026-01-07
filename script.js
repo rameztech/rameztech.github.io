@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'frp': 'تخطي FRP',
         'tools': 'أدوات',
         'software': 'شروحات سوفتوير',
-        'hardware': 'شروحات هاردوير'
+        'hardware': 'شروحات هاردوير',
+        'testnew': 'test'
     };
 
     // --- 3. Functions ---
