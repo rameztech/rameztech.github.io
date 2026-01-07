@@ -1,13 +1,5 @@
 window.searchIndex = [
     { 
-        id: 3, 
-        title: "إصلاح IMEI لهواتف MTK باستخدام Miracle", 
-        category: "imei", 
-        excerpt: "طريقة مجانية لإصلاح IMEI NULL في هواتف MediaTek باستخدام Miracle Box",
-        cover: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500",
-        file: "posts_1.js"
-    },
-    { 
         id: 4, 
         title: "دليل شامل لأداة UMT Dongle Pro", 
         category: "tools", 
