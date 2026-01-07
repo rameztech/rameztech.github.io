@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMEZ TECH - خدمات إصلاح الهواتف</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div class="logo">
+                    <img src="images/logo.png" alt="RAMEZ TECH Logo" style="height: 150px; color: transparent;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display:none;">⚡ RAMEZ TECH</span>
+                </div>
+                <div class="language-selector">
+                    <div id="google_translate_element"></div>
+                </div>
+            </div>
+            <div class="tagline">خدمات احترافية لإصلاح الهواتف | سيرفرات FRP و IMEI و ATUM  
+شروحات مجانية وخدمات سيرفر متقدمة</div>
+            <a href="#contact" class="cta-button">📞 تواصل معنا</a>
+        </header>
+
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-box" placeholder="🔍 ابحث عن الشروحات والمنشورات المجانية...">
+                <div class="filter-buttons" id="filterButtons"></div>
+            </div>
+        </div>
+
+        <div class="posts-section">
+            <h2 class="section-title">📚 شروحات ومنشورات مجانية</h2>
+            <div class="posts-grid" id="postsGrid"></div>
+        </div>
+
+        <div class="contact-section" id="contact">
+            <h2 class="contact-title">🔧 خدمات السيرفر المتقدمة</h2>
+            <p class="services-description">نوفر خدمات سيرفر احترافية للأجهزة التي لا تدعمها الأدوات العادية  
+خدمة سريعة وآمنة بضمان كامل على جميع العمليات</p>
+            <div class="services-list">
+                <div class="service-item"><div class="service-icon">🔓</div><div class="service-name">تخطي FRP</div><div class="service-desc">للأجهزة غير المدعومة</div></div>
+                <div class="service-item"><div class="service-icon">🔢</div><div class="service-name">إصلاح IMEI</div><div class="service-desc">استعادة IMEI عبر السيرفر</div></div>
+                <div class="service-item"><div class="service-icon">⚡</div><div class="service-name">تخطي ATUM</div><div class="service-desc">حل مشاكل ATUM Lock</div></div>
+                <div class="service-item"><div class="service-icon">💾</div><div class="service-name">خدمات الفلاش</div><div class="service-desc">فلاش متقدم عبر السيرفر</div></div>
+                <div class="service-item"><div class="service-icon">📶</div><div class="service-name">فتح الشبكات</div><div class="service-desc">Network Unlock لجميع الأجهزة</div></div>
+                <div class="service-item"><div class="service-icon">🛠️</div><div class="service-name">خدمات أخرى</div><div class="service-desc">حلول متنوعة حسب الطلب</div></div>
+            </div>
+            <p style="font-size: 1.3em; margin: 30px 0 20px; font-weight: bold;">💬 تواصل معنا الآن للحصول على الخدمة</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/9647XXXXXXXX" class="contact-btn whatsapp-btn" target="_blank"><span>📱</span> واتساب</a>
+                <a href="https://t.me/rameztech" class="contact-btn telegram-btn" target="_blank"><span>✈️</span> تلغرام</a>
+                <a href="mailto:info@rameztech.com" class="contact-btn email-btn"><span>✉️</span> البريد الإلكتروني</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; <span id="year"></span> RAMEZ TECH - جميع الحقوق محفوظة</p>
+            <p style="margin-top: 10px; opacity: 0.8;">شروحات مجانية • خدمات سيرفر احترافية • دعم فني متميز</p>
+        </footer>
+    </div>
+
+    <div class="modal" id="postModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="database/search_index.js"></script>
+    <script src="database/posts_1.js"></script>
+    <script src="script.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
