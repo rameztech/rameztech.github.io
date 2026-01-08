@@ -47,4 +47,12 @@ window.searchIndex = [
         cover: "https://images.unsplash.com/photo-1592286927505-b5c8e4a13d4f?w=500",
         file: "posts_1.js"
     },
+    { 
+        id: 7, 
+        title: "Infinix hot 40i X6528", 
+        category: "imei", 
+        excerpt: "حماية 01.10.2050 - dft pro",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_7_20260108_224728.jpg",
+        file: "posts_1.js"
+    },
 ];
