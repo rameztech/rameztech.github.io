@@ -51,7 +51,7 @@ window.searchIndex = [
         id: 7, 
         title: "Infinix hot 40i X6528", 
         category: "imei", 
-        excerpt: "حماية 01.10.2050 - dft pro",
+        excerpt: "حماية 01.10.2050 - dft pro بدون عمل فورمات",
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_7_20260108_224728.jpg",
         file: "posts_1.js"
     },
