@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'hardware': 'شروحات هاردوير',
         'imei': 'إصلاح IMEI',
         'software': 'شروحات سوفتوير',
-        'test': 'اختبار',
         'tools': 'أدوات',
     };
 
