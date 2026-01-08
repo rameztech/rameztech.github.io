@@ -47,12 +47,4 @@ window.searchIndex = [
         cover: "https://images.unsplash.com/photo-1592286927505-b5c8e4a13d4f?w=500",
         file: "posts_1.js"
     },
-    { 
-        id: 8, 
-        title: "ؤسشيس", 
-        category: "test", 
-        excerpt: "شسيسشيسش",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_8_20260108_021017.jpg",
-        file: "posts_1.js"
-    },
 ];
