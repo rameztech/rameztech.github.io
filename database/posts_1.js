@@ -48,4 +48,29 @@ Object.assign(window.postsData, {
 <h3>تغيير شاشة Samsung A32</h3><p>في هذا الشرح سنتعلم كيفية تغيير شاشة A32 بطريقة احترافية وآمنة.</p>
 `
     },
+    7: {
+        content: `
+<ul>
+    <li><strong>طريقه اصلاح الايميل الاساسي</strong></li>
+    <li>تم التجريب على هذه الحمايه او اقدم منها كلها تعمل</li>
+</ul>
+
+<ul>
+    <li>اطفئ الهاتف بشكل كامل</li>
+    <li>اكتب الايمي ثم البدء بعمليه الاصلاح ثم </li>
+</ul>
+
+<ul>
+    <li>توصيل الهاتف بدون الضغط على اي شيء</li>
+    <li>هذه صوره توضيحيه </li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_7_img1_20260108_224729.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
+
+`
+    },
 } );
