@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. Dynamic Loading Function ---
     const loadPostFile = (fileName) => {
         return new Promise((resolve, reject) => {
-            // إذا كان الملف محمّل بالفعل
             if (window.loadedPostsFiles.includes(fileName)) {
                 resolve();
                 return;
@@ -92,7 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!modal || !modalBody || !postIndexData) return;
 
-        // عرض رسالة تحميل
+        // تحديث URL Hash
+        window.location.hash = `post-${postId}`;
+
         modalBody.innerHTML = `
             <h2 class="modal-title">${postIndexData.title}</h2>
             <p style="text-align: center; padding: 40px;">
@@ -105,11 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'hidden';
 
         try {
-            // تحميل ملف posts_X.js إذا لم يكن محمّلاً
             const fileName = postIndexData.file || 'posts_1.js';
             await loadPostFile(fileName);
 
-            // الحصول على المحتوى
             const postContentData = window.postsData[postId];
 
             if (!postContentData) {
@@ -120,9 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     </p>
                 `;
             } else {
+                // إضافة زر المشاركة هنا
                 modalBody.innerHTML = `
                     <img src="${postIndexData.cover}" alt="${postIndexData.title}" class="modal-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500';">
-                    <span class="post-category">${categoryNames[postIndexData.category] || postIndexData.category}</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 15px;">
+                        <span class="post-category">${categoryNames[postIndexData.category] || postIndexData.category}</span>
+                        <button onclick="sharePost(${postId})" class="filter-btn" style="font-size: 0.9em; padding: 8px 20px;">
+                            🔗 مشاركة المنشور
+                        </button>
+                    </div>
                     <h2 class="modal-title">${postIndexData.title}</h2>
                     <div class="modal-body">${postContentData.content}</div>
                 `;
@@ -143,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
+            history.pushState("", document.title, window.location.pathname + window.location.search);
         }
     };
 
@@ -162,6 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
+
+    // جعل openModal متاحة عالمياً للـ Deep Linking
+    window.openModalFromHash = openModal;
 
     // --- 5. Event Listeners & Initialization ---
     if (yearSpan) {
@@ -199,7 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
         postsGrid.innerHTML = '<p style="text-align: center; color: #64748b; grid-column: 1 / -1;">جاري تحميل المشاركات...</p>';
     }
 
-    // تسجيل معلومات التحميل في Console
     console.log(`📊 عدد المنشورات في الفهرس: ${allPosts.length}`);
     console.log(`📂 ملفات posts محملة مسبقاً: ${window.loadedPostsFiles.length}`);
 });
