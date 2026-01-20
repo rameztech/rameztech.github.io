@@ -1,4 +1,3 @@
-Content is user-generated and unverified.
 document.addEventListener('DOMContentLoaded', () => {
     // --- 1. Elements Selection ---
     const postsGrid = document.getElementById('postsGrid');
