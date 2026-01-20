@@ -55,4 +55,14 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_7_20260108_224728.jpg",
         file: "posts_1.js"
     },
+    { 
+        id: 8, 
+        title: "Redmi 14c lake/pond", 
+        category: "imei", 
+        excerpt: "Hayper os1 اصلاح ايمي  
+    بدون فورمات
+     DFT PRO",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_8_20260120_114944.jpg",
+        file: "posts_1.js"
+    },
 ];
