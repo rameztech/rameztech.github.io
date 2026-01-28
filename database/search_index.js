@@ -71,4 +71,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_11_20260128_150736.jpg",
         file: "posts_1.js"
     },
+    { 
+        id: 12, 
+        title: "frp a336e u14 /E  ازاله حساب غوغل", 
+        category: "frp", 
+        excerpt: "odin + dft pro",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_12_20260128_152741.jpg",
+        file: "posts_1.js"
+    },
 ];
