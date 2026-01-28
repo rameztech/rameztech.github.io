@@ -63,4 +63,14 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_8_20260121_114800.jpg",
         file: "posts_1.js"
     },
+    { 
+        id: 9, 
+        title: "إزالة حساب جوجل FRP", 
+        category: "frp", 
+        excerpt: "G532F 
+الحماية U1
+dft pro + odin",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_9_20260128_101807.jpg",
+        file: "posts_1.js"
+    },
 ];
