@@ -64,14 +64,6 @@ window.searchIndex = [
         file: "posts_1.js"
     },
     { 
-        id: 9, 
-        title: "redmi 13 moon اصلاح ايمي", 
-        category: "frp", 
-        excerpt: "مقفل بوت لودر   سيرفر  + dft pro",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_9_20260128_143402.jpg",
-        file: "posts_1.js"
-    },
-    { 
         id: 10, 
         title: "redmi 13 moon اصلاح ايمي", 
         category: "imei", 
