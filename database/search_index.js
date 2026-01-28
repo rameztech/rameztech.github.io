@@ -63,4 +63,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_10_20260128_144304.jpg",
         file: "posts_1.js"
     },
+    { 
+        id: 11, 
+        title: "تخطي حساب غوغل FRP G532f", 
+        category: "frp", 
+        excerpt: "Dft pro + odin",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_11_20260128_150736.jpg",
+        file: "posts_1.js"
+    },
 ];
