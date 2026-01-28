@@ -71,4 +71,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_9_20260128_105721.jpg",
         file: "posts_1.js"
     },
+    { 
+        id: 10, 
+        title: "qqqqqqqqqqqq", 
+        category: "frp", 
+        excerpt: "wwwwwwwwwwwww",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_10_20260128_110717.jpg",
+        file: "posts_1.js"
+    },
 ];
