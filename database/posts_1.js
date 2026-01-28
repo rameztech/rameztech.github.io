@@ -72,25 +72,6 @@ Object.assign(window.postsData, {
 </p>
 `
     },
-    8: {
-        content: `
-<strong>aaaaabbbbcccc</strong>
-
-<h3>اeeeeffffffdddddd</h3>
-
-
-<ul>
-    <li>gfckhgkhgckhgchg</li>
-    <li>ghchgchkgchgk</li>
-</ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_8_img1_20260121_114801.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
-    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
-`
-    },
     12: {
         content: `
 <h3>   تخطي حساب غوغل FRP G532f     </h3>
