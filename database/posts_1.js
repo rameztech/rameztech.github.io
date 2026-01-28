@@ -146,6 +146,43 @@ Object.assign(window.postsData, {
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
     <a href="#contact">تواصل معنا للحصول على الخدمة</a>
 </p>
+`
+    },
+    12: {
+        content: `
+<h3>   تخطي حساب غوغل FRP G532f     </h3>
+
+
+<ul>
+    <li>فلش المف المرفق عبر odin بخانه AP</li>
+    <li>لتحميل الملف <a href="https://mega.nz/file/83YlzToC#cnLJV1-oxJTgewZkkI3HnhiQe4u_7QVJChwnwm0DCJI">اضغط هنا</a></li>
+</ul>
+
+<ul>
+    <li>  اذهب الى dft pro  </li>
+    <li>  اختر خانة سامسونج اضغط reset frp ( ADB)   </li>
+</ul>
+
+<ul>
+    <li>اكمل الاعدادات على الهاتف</li>
+    <li> فعل خيارات مطور  </li>
+</ul>
+
+<ul>
+    <li>  تاكد من تفعيل oem  </li>
+    <li>    اعد ضبط المصنع   </li>
+</ul>
+
+<ul>
+    <li>مبروك</li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_12_img1_20260128_113425.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_12_img2_20260128_113427.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
 
 `
     },
