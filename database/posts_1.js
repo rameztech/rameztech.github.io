@@ -72,92 +72,24 @@ Object.assign(window.postsData, {
 </p>
 `
     },
-    12: {
+    8: {
         content: `
-<h3>   تخطي حساب غوغل FRP G532f     </h3>
+<strong>aaaaabbbbcccc</strong>
+
+<h3>اeeeeffffffdddddd</h3>
 
 
 <ul>
-    <li>فلش المف المرفق عبر odin بخانه AP</li>
-    <li>لتحميل الملف <a href="https://mega.nz/file/83YlzToC#cnLJV1-oxJTgewZkkI3HnhiQe4u_7QVJChwnwm0DCJI">اضغط هنا</a></li>
+    <li>gfckhgkhgckhgchg</li>
+    <li>ghchgchkgchgk</li>
 </ul>
-
-<ul>
-    <li>  اذهب الى dft pro  </li>
-    <li>  اختر خانة سامسونج اضغط reset frp ( ADB)   </li>
-</ul>
-
-<ul>
-    <li>اكمل الاعدادات على الهاتف</li>
-    <li> فعل خيارات مطور  </li>
-</ul>
-
-<ul>
-    <li>  تاكد من تفعيل oem  </li>
-    <li>    اعد ضبط المصنع   </li>
-</ul>
-
-<ul>
-    <li>مبروك</li>
-</ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_12_img1_20260128_113425.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_12_img2_20260128_113427.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_8_img1_20260121_114801.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
 <p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
     <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
     <a href="#contact">تواصل معنا للحصول على الخدمة</a>
 </p>
-`
-    },
-    13: {
-        content: `
-<ul>
-    <li>تفليش انج روم  او فتح بوت لودر سيرفر </li>
-    <li> التوجه الى dft pro   </li>
-</ul>
 
-<ul>
-    <li>بعد تفليش انج روم نقوم باصلاح ايمي بخانه ADB SERVICES مع تحديد خيار BL LOCK</li>
-    <li> الان نقوم بتفليش روم رسمي عبر فاست بوت    </li>
-</ul>
-
-<ul>
-    <li>  <   لتحميل جميع الملفات DA + ENG ROM + ROM Global   </li>
-    <li>  <a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c">اضغط هنا</a>  </li>
-</ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_13_img1_20260128_123025.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
-    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
-`
-    },
-    14: {
-        content: `
-<ul>
-    <li>تفليش انج روم او فتح بوت لودر سيرفر</li>
-    <li>التوجه الى dft pro</li>
-</ul>
-
-<ul>
-    <li>بعد تفليش انج روم نقوم باصلاح ايمي بخانه ADB SERVICES مع تحديد خيار BL LOCK</li>
-    <li>الان نقوم بتفليش روم رسمي عبر فاست بوت</li>
-</ul>
-
-<ul>
-    <li>لتحميل جميع الملفات DA + ENG ROM + ROM Global</li>
-    <li><a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c">اضغط هنا للتحميل</a></li>
-</ul>
-
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_13_img1_20260128_123025.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
-    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_14_img1_20260128_130845.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
 `
     },
 } );
