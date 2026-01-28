@@ -64,14 +64,6 @@ window.searchIndex = [
         file: "posts_1.js"
     },
     { 
-        id: 9, 
-        title: "fsad", 
-        category: "frp", 
-        excerpt: "sdsdassdad",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_9_20260128_105721.jpg",
-        file: "posts_1.js"
-    },
-    { 
         id: 12, 
         title: "تخطي حساب غوغل FRP G532f  u1", 
         category: "frp", 
