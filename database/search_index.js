@@ -74,4 +74,15 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_13_20260128_123024.jpg",
         file: "posts_1.js"
     },
+    { 
+        id: 14, 
+        title: "redmi 13 moon اصلاح ايمي", 
+        category: "imei", 
+        excerpt: "مقفل بوت لودر  
+         &
+ fix nv data
+سيرفر + dft pro",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_14_20260128_130843.jpg",
+        file: "posts_1.js"
+    },
 ];
