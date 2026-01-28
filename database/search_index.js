@@ -80,14 +80,6 @@ window.searchIndex = [
         file: "posts_1.js"
     },
     { 
-        id: 11, 
-        title: "xxxxxxxxxxxxxxx", 
-        category: "imei", 
-        excerpt: "ccccccccccccccccccccc",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_11_20260128_110932.jpg",
-        file: "posts_1.js"
-    },
-    { 
         id: 12, 
         title: "تخطي حساب غوغل FRP G532f  u1", 
         category: "frp", 
