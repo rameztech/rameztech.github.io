@@ -89,6 +89,35 @@ Object.assign(window.postsData, {
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
     <a href="#contact">تواصل معنا للحصول على الخدمة</a>
 </p>
+`
+    },
+    9: {
+        content: `
+<ul>
+    <li>eeeeeeeeeeeeeee</li>
+    <li>rrrrrrrrrrrrr</li>
+</ul>
+
+<ul>
+    <li>dddddddddd</li>
+    <li><a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c">اضغط هنا</a></li>
+</ul>
+
+
+<ul>
+    <li>fffffffff</li>
+    <li>bbbbbbbbbbbbbbb</li>
+</ul>
+
+<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/21zSGwpuB-I" frameborder="0" allowfullscreen></iframe></div>
+</li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_9_img1_20260128_135253.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
 
 `
     },
