@@ -118,6 +118,30 @@ Object.assign(window.postsData, {
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
     <a href="#contact">تواصل معنا للحصول على الخدمة</a>
 </p>
+`
+    },
+    10: {
+        content: `
+<ul>
+    <li>تفليش إنج روم أو فتح بوت لودر عبر السيرفر</li>
+    <li>نتجه إلى DFT PRO</li>
+</ul>
+
+<ul>
+    <li>نقوم بإصلاح IMEI من خانة ADB SERVICES مع تحديد خيار BL LOCK</li>
+    <li>الآن نقوم بتفليش روم رسمي عبر Fastboot</li>
+</ul>
+
+<ul>
+    <li>لتحميل جميع الملفات</li>
+    <li><a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c">اضغط هنا</a></li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_10_img1_20260128_141356.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
 
 `
     },
