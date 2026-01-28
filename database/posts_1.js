@@ -166,6 +166,33 @@ Object.assign(window.postsData, {
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
     <a href="#contact">تواصل معنا للحصول على الخدمة</a>
 </p>
+`
+    },
+    14: {
+        content: `
+<h3>Hayper os1 مقفل بوتلودر اصلاح ايمي  بدون فورمات</h3>
+<strong>عبر DFT PRO</strong>
+
+<ul>
+    <li>من خانه xiaomi special</li>
+    <li>نتوجه الى خانه mediatek</li>
+</ul>
+
+<ul>
+    <li>نكتب موديل الجهاز</li>
+    <li>نختار الحماية 1 او 2</li>
+</ul>
+
+<ul>
+    <li>نكتب الايميتين مع تحديد خانة patch Bl lock</li>
+    <li>ومبروك عليك اصلاح الايمي بدون مشاكل الكاميرا والفلاش</li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_14_img1_20260128_160953.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
 
 `
     },
