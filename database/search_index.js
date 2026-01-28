@@ -56,14 +56,6 @@ window.searchIndex = [
         file: "posts_1.js"
     },
     { 
-        id: 8, 
-        title: "ttttttttttttttttttttttttttttt", 
-        category: "frp", 
-        excerpt: "hhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_8_20260121_114800.jpg",
-        file: "posts_1.js"
-    },
-    { 
         id: 10, 
         title: "redmi 13 moon اصلاح ايمي", 
         category: "imei", 
