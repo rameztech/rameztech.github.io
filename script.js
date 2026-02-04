@@ -249,3 +249,17 @@ function googleTranslateElementInit() {
         autoDisplay: false 
     }, 'google_translate_element');
 }
+
+
+// --- 6. Custom Language Switcher ---
+function changeLanguage(langCode) {
+    const select = document.querySelector('.goog-te-combo');
+    if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+    } else {
+        console.error('Google Translate element not found yet.');
+        // محاولة إعادة المحاولة بعد قليل في حال لم يتم تحميل العنصر بعد
+        setTimeout(() => changeLanguage(langCode), 500);
+    }
+}
