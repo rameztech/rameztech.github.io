@@ -249,3 +249,31 @@ function googleTranslateElementInit() {
         autoDisplay: false 
     }, 'google_translate_element');
 }
+
+// وظائف القائمة المخصصة للترجمة
+function toggleDropdown() {
+    document.getElementById("langDropdown").classList.toggle("show");
+}
+
+// إغلاق القائمة عند الضغط خارجها
+window.onclick = function(event) {
+    if (!event.target.matches('.lang-btn') && !event.target.closest('.lang-btn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+// تغيير اللغة عبر Google Translate
+function changeLanguage(lang) {
+    var selectElement = document.querySelector('.goog-te-combo');
+    if (selectElement) {
+        selectElement.value = lang;
+        selectElement.dispatchEvent(new Event('change'));
+        toggleDropdown(); // إغلاق القائمة بعد الاختيار
+    }
+}
