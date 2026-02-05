@@ -15,7 +15,18 @@
                     <span style="display:none;">⚡ RAMEZ TECH</span>
                 </div>
                 <div class="language-selector">
-                    <div id="google_translate_element"></div>
+                    <div class="custom-dropdown">
+                        <button class="dropdown-btn" id="langBtn">
+                            <span class="globe-icon">🌐</span>
+                            <span class="arrow-down">▼</span>
+                        </button>
+                        <div class="dropdown-content" id="langDropdown">
+                            <a href="javascript:void(0)" onclick="changeLanguage('ar')">🇸🇦 العربية</a>
+                            <a href="javascript:void(0)" onclick="changeLanguage('tr')">🇹🇷 Türkçe</a>
+                            <a href="javascript:void(0)" onclick="changeLanguage('en')">🇺🇸 English</a>
+                        </div>
+                    </div>
+                    <div id="google_translate_element" style="display:none;"></div>
                 </div>
             </div>
             <div class="tagline">خدمات احترافية لإصلاح الهواتف | سيرفرات FRP و IMEI و ATUM<br>شروحات مجانية وخدمات سيرفر متقدمة</div>
