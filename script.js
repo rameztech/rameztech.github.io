@@ -250,13 +250,14 @@ function googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 
-// وظائف القائمة المخصصة للترجمة
+
+// ========== وظائف القائمة المخصصة للترجمة ==========
 function toggleDropdown() {
     document.getElementById("langDropdown").classList.toggle("show");
 }
 
 // إغلاق القائمة عند الضغط خارجها
-window.onclick = function(event) {
+window.addEventListener('click', function(event) {
     if (!event.target.matches('.lang-btn') && !event.target.closest('.lang-btn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
         for (var i = 0; i < dropdowns.length; i++) {
@@ -266,7 +267,7 @@ window.onclick = function(event) {
             }
         }
     }
-}
+});
 
 // تغيير اللغة عبر Google Translate
 function changeLanguage(lang) {
@@ -274,6 +275,11 @@ function changeLanguage(lang) {
     if (selectElement) {
         selectElement.value = lang;
         selectElement.dispatchEvent(new Event('change'));
-        toggleDropdown(); // إغلاق القائمة بعد الاختيار
+        toggleDropdown();
+    } else {
+        // إذا لم يتم تحميل Google Translate بعد، انتظر قليلاً
+        setTimeout(function() {
+            changeLanguage(lang);
+        }, 500);
     }
 }
