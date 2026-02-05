@@ -14,24 +14,18 @@
                     <img src="images/logo.png" alt="RAMEZ TECH Logo" style="height: 150px; color: transparent;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <span style="display:none;">⚡ RAMEZ TECH</span>
                 </div>
-                <div class="custom-dropdown">
-    <button class="lang-btn" id="langBtn" onclick="toggleDropdown()">
-        <span class="globe-icon">🌐</span>
-        <span class="arrow-down">▼</span>
-    </button>
-    <div class="dropdown-content" id="langDropdown">
-        <!-- التركية -->
-        <a href="javascript:void(0)" onclick="changeLanguage('tr')" class="lang-option">
-            <img src="https://flagcdn.com/w40/tr.png" width="20" alt="TR"> <span>Turkish</span>
-        </a>
-        <!-- الإنجليزية -->
-        <a href="javascript:void(0 )" onclick="changeLanguage('en')" class="lang-option">
-            <img src="https://flagcdn.com/w40/us.png" width="20" alt="EN"> <span>English</span>
-        </a>
-    </div>
-</div>
-<div id="google_translate_element" style="display:none;"></div>
-
+                <div class="language-selector">
+                    <div class="custom-dropdown">
+                        <button class="dropdown-btn" id="langBtn">
+                            <span class="globe-icon">🌐</span>
+                            <span class="arrow-down">▼</span>
+                        </button>
+                        <div class="dropdown-content" id="langDropdown">
+                            <a href="javascript:void(0)" onclick="changeLanguage('tr')">🇹🇷 </a>
+                            <a href="javascript:void(0)" onclick="changeLanguage('en')">🇺🇸 </a>
+                        </div>
+                    </div>
+                    <div id="google_translate_element" style="display:none;"></div>
                 </div>
             </div>
             <div class="tagline">خدمات احترافية لإصلاح الهواتف | سيرفرات FRP و IMEI و ATUM<br>شروحات مجانية وخدمات سيرفر متقدمة</div>
