@@ -248,38 +248,59 @@ function googleTranslateElementInit() {
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
         autoDisplay: false 
     }, 'google_translate_element');
+    
+    // إضافة علامة تدل على أن Google Translate تم تحميله
+    setTimeout(function() {
+        window.googleTranslateLoaded = true;
+        console.log('✅ Google Translate تم تحميله بنجاح');
+    }, 1000);
 }
+
 
 
 // ========== وظائف القائمة المخصصة للترجمة ==========
 function toggleDropdown() {
-    document.getElementById("langDropdown").classList.toggle("show");
+    var dropdown = document.getElementById("langDropdown");
+    if (dropdown) {
+        dropdown.classList.toggle("show");
+    }
 }
 
 // إغلاق القائمة عند الضغط خارجها
-window.addEventListener('click', function(event) {
-    if (!event.target.matches('.lang-btn') && !event.target.closest('.lang-btn')) {
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.custom-dropdown')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
         for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
+            dropdowns[i].classList.remove('show');
         }
     }
 });
 
 // تغيير اللغة عبر Google Translate
 function changeLanguage(lang) {
-    var selectElement = document.querySelector('.goog-te-combo');
-    if (selectElement) {
-        selectElement.value = lang;
-        selectElement.dispatchEvent(new Event('change'));
-        toggleDropdown();
-    } else {
-        // إذا لم يتم تحميل Google Translate بعد، انتظر قليلاً
-        setTimeout(function() {
-            changeLanguage(lang);
-        }, 500);
+    // إغلاق القائمة
+    var dropdown = document.getElementById("langDropdown");
+    if (dropdown) {
+        dropdown.classList.remove("show");
     }
+    
+    // البحث عن عنصر select الخاص بـ Google Translate
+    function tryChangeLanguage() {
+        var selectElement = document.querySelector('.goog-te-combo');
+        
+        if (selectElement) {
+            // وُجد العنصر - تغيير اللغة
+            selectElement.value = lang;
+            // استخدام طرق متعددة لتفعيل التغيير
+            var event = new Event('change', { bubbles: true });
+            selectElement.dispatchEvent(event);
+            console.log('✅ تم تغيير اللغة إلى: ' + lang);
+        } else {
+            // العنصر غير موجود - المحاولة بعد ثانية
+            console.log('⏳ انتظار تحميل Google Translate...');
+            setTimeout(tryChangeLanguage, 1000);
+        }
+    }
+    
+    tryChangeLanguage();
 }
