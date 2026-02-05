@@ -15,23 +15,7 @@
                     <span style="display:none;">⚡ RAMEZ TECH</span>
                 </div>
                 <div class="language-selector">
-                    <div class="custom-dropdown">
-                        <button class="lang-btn" id="langBtn" onclick="toggleDropdown()">
-                            <span class="globe-icon">🌐</span>
-                            <span class="arrow-down">▼</span>
-                        </button>
-                        <div class="dropdown-content" id="langDropdown">
-                            <!-- التركية -->
-                            <a href="javascript:void(0)" onclick="changeLanguage('tr')" class="lang-option">
-                                <img src="https://flagcdn.com/w40/tr.png" width="20" alt="TR"> <span>Turkish</span>
-                            </a>
-                            <!-- الإنجليزية -->
-                            <a href="javascript:void(0)" onclick="changeLanguage('en')" class="lang-option">
-                                <img src="https://flagcdn.com/w40/us.png" width="20" alt="EN"> <span>English</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div id="google_translate_element" style="display:none;"></div>
+                    <div id="google_translate_element"></div>
                 </div>
             </div>
             <div class="tagline">خدمات احترافية لإصلاح الهواتف | سيرفرات FRP و IMEI و ATUM<br>شروحات مجانية وخدمات سيرفر متقدمة</div>
@@ -65,7 +49,7 @@
             <div class="contact-buttons">
                 <a href="https://wa.me/5343593398?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D9%81%D8%B1" class="contact-btn whatsapp-btn" target="_blank"><span>📱</span> واتساب</a>
                 <a href="https://t.me/rameztech" class="contact-btn telegram-btn" target="_blank"><span>✈️</span> تلغرام</a>
-                <a href="/cdn-cgi/l/email-protection#a2cbccc4cde2d0c3cfc7d8d6c7c1ca8cc1cdcf" class="contact-btn email-btn"><span>✉️</span> البريد الإلكتروني</a>
+                <a href="mailto:info@rameztech.com" class="contact-btn email-btn"><span>✉️</span> البريد الإلكتروني</a>
             </div>
         </div>
 
@@ -83,6 +67,9 @@
     </div>
 
     <!-- تحميل الفهرس فقط، المنشورات تُحمّل ديناميكياً عند الحاجة -->
-                        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="database/search_index.js"></script>
+                        <script src="database/search_index.js"></script>
     <script src="database/posts_1.js"></script>
-    <script src
+    <script src="script.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
