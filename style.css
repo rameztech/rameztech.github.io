@@ -124,7 +124,14 @@ header {
     font-size: 10px;
 }
 
-#google_translate_element { display: none !important; }
+#google_translate_element {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
 .goog-te-banner-frame { display: none !important; }
 body { top: 0 !important; }
 
