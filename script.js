@@ -242,18 +242,20 @@ function copyPostLink(postId) {
 }
 
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ 
-        pageLanguage: 'ar', 
-        includedLanguages: 'en,tr', 
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
-        autoDisplay: false 
-    }, 'google_translate_element');
-    
-    // إضافة علامة تدل على أن Google Translate تم تحميله
-    setTimeout(function() {
+    try {
+        new google.translate.TranslateElement({
+            pageLanguage: 'ar',
+            includedLanguages: 'en,tr',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+
         window.googleTranslateLoaded = true;
         console.log('✅ Google Translate تم تحميله بنجاح');
-    }, 1000);
+    } catch (error) {
+        console.error('❌ فشل تهيئة Google Translate:', error);
+        window.googleTranslateLoaded = false;
+    }
 }
 
 
@@ -283,24 +285,42 @@ function changeLanguage(lang) {
     if (dropdown) {
         dropdown.classList.remove("show");
     }
-    
+
+    var maxAttempts = 10;
+    var attempt = 0;
+
     // البحث عن عنصر select الخاص بـ Google Translate
     function tryChangeLanguage() {
         var selectElement = document.querySelector('.goog-te-combo');
-        
+
         if (selectElement) {
             // وُجد العنصر - تغيير اللغة
             selectElement.value = lang;
+
             // استخدام طرق متعددة لتفعيل التغيير
-            var event = new Event('change', { bubbles: true });
-            selectElement.dispatchEvent(event);
+            selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+            selectElement.dispatchEvent(new Event('input', { bubbles: true }));
+
+            if (typeof selectElement.onchange === 'function') {
+                selectElement.onchange();
+            }
+
             console.log('✅ تم تغيير اللغة إلى: ' + lang);
-        } else {
-            // العنصر غير موجود - المحاولة بعد ثانية
-            console.log('⏳ انتظار تحميل Google Translate...');
-            setTimeout(tryChangeLanguage, 1000);
+            return;
         }
+
+        attempt += 1;
+
+        if (attempt >= maxAttempts) {
+            console.warn('⚠️ تعذر العثور على أداة Google Translate. تأكد من السماح بتحميل translate.google.com');
+            alert('تعذر تحميل خدمة الترجمة حالياً. يرجى المحاولة لاحقاً أو التحقق من مانع الإعلانات.');
+            return;
+        }
+
+        // العنصر غير موجود - المحاولة بعد نصف ثانية
+        console.log('⏳ انتظار تحميل Google Translate...');
+        setTimeout(tryChangeLanguage, 500);
     }
-    
+
     tryChangeLanguage();
 }
