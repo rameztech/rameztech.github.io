@@ -242,18 +242,36 @@ function copyPostLink(postId) {
 }
 
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ 
-        pageLanguage: 'ar', 
-        includedLanguages: 'en,tr', 
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
-        autoDisplay: false 
+    new google.translate.TranslateElement({
+        pageLanguage: 'ar',
+        includedLanguages: 'en,tr',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
     }, 'google_translate_element');
-    
-    // إضافة علامة تدل على أن Google Translate تم تحميله
+
+    // علامة تدل على أن Google Translate تم تحميله
     setTimeout(function() {
         window.googleTranslateLoaded = true;
         console.log('✅ Google Translate تم تحميله بنجاح');
-    }, 1000);
+    }, 700);
+}
+
+function setGoogleTranslateCookie(lang) {
+    var target = lang === 'ar' ? '' : '/ar/' + lang;
+    var cookieValue = 'googtrans=' + target + ';path=/;max-age=31536000;SameSite=Lax';
+    document.cookie = cookieValue;
+    document.cookie = cookieValue + ';domain=' + window.location.hostname;
+}
+
+function dispatchLegacyChange(selectElement) {
+    var changeEvent = new Event('change', { bubbles: true });
+    selectElement.dispatchEvent(changeEvent);
+
+    if (document.createEvent) {
+        var legacyEvent = document.createEvent('HTMLEvents');
+        legacyEvent.initEvent('change', true, true);
+        selectElement.dispatchEvent(legacyEvent);
+    }
 }
 
 
@@ -278,29 +296,38 @@ document.addEventListener('click', function(event) {
 
 // تغيير اللغة عبر Google Translate
 function changeLanguage(lang) {
-    // إغلاق القائمة
-    var dropdown = document.getElementById("langDropdown");
+    var dropdown = document.getElementById('langDropdown');
     if (dropdown) {
-        dropdown.classList.remove("show");
+        dropdown.classList.remove('show');
     }
-    
-    // البحث عن عنصر select الخاص بـ Google Translate
+
+    // fallback موثوق يعمل حتى لو لم يظهر select
+    setGoogleTranslateCookie(lang);
+
+    var attempts = 0;
+    var maxAttempts = 8;
+
     function tryChangeLanguage() {
+        attempts += 1;
         var selectElement = document.querySelector('.goog-te-combo');
-        
+
         if (selectElement) {
-            // وُجد العنصر - تغيير اللغة
             selectElement.value = lang;
-            // استخدام طرق متعددة لتفعيل التغيير
-            var event = new Event('change', { bubbles: true });
-            selectElement.dispatchEvent(event);
+            dispatchLegacyChange(selectElement);
             console.log('✅ تم تغيير اللغة إلى: ' + lang);
-        } else {
-            // العنصر غير موجود - المحاولة بعد ثانية
-            console.log('⏳ انتظار تحميل Google Translate...');
-            setTimeout(tryChangeLanguage, 1000);
+            return;
         }
+
+        if (attempts < maxAttempts) {
+            console.log('⏳ انتظار تحميل Google Translate... المحاولة ' + attempts);
+            setTimeout(tryChangeLanguage, 500);
+            return;
+        }
+
+        // fallback أخير: إعادة تحميل الصفحة لتطبيق Cookie googtrans
+        console.log('↻ لم يظهر عنصر Google Translate، يتم إعادة التحميل لتطبيق اللغة.');
+        window.location.reload();
     }
-    
+
     tryChangeLanguage();
 }
