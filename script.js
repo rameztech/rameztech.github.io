@@ -245,41 +245,7 @@ function googleTranslateElementInit() {
     new google.translate.TranslateElement({ 
         pageLanguage: 'ar', 
         includedLanguages: 'en,tr', 
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE, 
         autoDisplay: false 
     }, 'google_translate_element');
-    console.log('Google Translate Initialized');
-}
-
-
-// --- 6. Custom Language Dropdown Logic ---
-document.addEventListener('click', function(event) {
-    const dropdown = document.getElementById('langDropdown');
-    const btn = document.getElementById('langBtn');
-    const container = document.querySelector('.custom-dropdown');
-
-    if (btn && btn.contains(event.target)) {
-        dropdown.classList.toggle('show');
-        container.classList.toggle('active');
-    } else if (dropdown && !dropdown.contains(event.target)) {
-        dropdown.classList.remove('show');
-        if (container) container.classList.remove('active');
-    }
-});
-
-function changeLanguage(langCode) {
-    // إغلاق القائمة فوراً عند الضغط
-    const dropdown = document.getElementById('langDropdown');
-    const container = document.querySelector('.custom-dropdown');
-    if (dropdown) dropdown.classList.remove('show');
-    if (container) container.classList.remove('active');
-
-    const select = document.querySelector('.goog-te-combo');
-    if (select) {
-        console.log('Changing language to: ' + langCode);
-        select.value = langCode;
-        select.dispatchEvent(new Event('change'));
-    } else {
-        console.log('Google Translate not ready, retrying...');
-        setTimeout(() => changeLanguage(langCode), 500);
-    }
 }

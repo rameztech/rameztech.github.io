@@ -51,57 +51,50 @@ header {
     height: 150px; /* يمكنك تعديل ارتفاع الشعار من هنا */
 }
 
-.custom-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.lang-btn {
-    background: rgba(255, 255, 255, 0.1 );
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 8px 12px;
-    border-radius: 20px;
-    cursor: pointer;
+.language-selector {
     display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
-    transition: all 0.3s ease;
+    gap: 8px;
+    background: rgba(255,255,255,0.2);
+    padding: 8px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: #ffffff;
-    min-width: 140px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1000;
-    border-radius: 8px;
-    margin-top: 5px;
-    overflow: hidden;
+#google_translate_element { display: inline-block; }
+/* تم تصحيح مسار الصورة هنا لضمان عمله */
+.goog-te-combo { background: rgba(255,255,255,0.95); color: #2563eb; border: 2px solid rgba(255,255,255,0.5); padding: 8px 35px 8px 15px; border-radius: 12px; font-weight: bold; font-size: 14px; cursor: pointer; transition: all 0.3s; outline: none; appearance: none; background-image: url('https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_grey600_24dp.png' ); background-size: 20px; background-repeat: no-repeat; background-position: left 10px center; text-align: right; direction: rtl; }
+.goog-te-combo:hover { background: white; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); }
+.goog-te-combo:focus { background: white; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); }
+.goog-te-gadget { font-size: 0; color: transparent; }
+.goog-te-gadget > span { display: none; }
+.goog-te-gadget > div { display: inline; }
+.goog-te-banner-frame { display: none !important; }
+body { top: 0 !important; }
+
+.tagline {
+    font-size: 1.2em;
+    opacity: 0.95;
+    margin-top: 10px;
+    line-height: 1.6;
 }
 
-.lang-option {
-    color: #333 !important;
-    padding: 12px 16px;
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #2563eb;
+    padding: 15px 40px;
+    border-radius: 30px;
     text-decoration: none;
-    display: flex !important;
-    align-items: center;
-    gap: 10px;
-    transition: background 0.2s;
-    cursor: pointer;
-    width: 100%;
-    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
-.lang-option:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown-content.show {
-    display: block;
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
 
 .search-section {
