@@ -219,7 +219,7 @@ Object.assign(window.postsData, {
 <h3>🔐 معلومات الملف</h3>
 <ul>
     <li><strong>كلمة فك الضغط:</strong> ramez tech</li>
-    <li><strong>الحجم:</strong> ~15 MB</li>
+    <li><strong>الحجم:</strong> ~11.6 MB</li>
 </ul>
 
 <h3>📖 طريقة الاستخدام</h3>
