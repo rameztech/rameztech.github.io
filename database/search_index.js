@@ -99,7 +99,7 @@ window.searchIndex = [
         id: 15, 
         title: "تفعيل ويندوز 10 و 11 و اوفيس", 
         category: "tools", 
-        excerpt: "تفعيل ويندوز 10 و 11 و اوفيس مجانا",
+        excerpt: "تفعيل ويندوز 10 و11 مجانا مدى الحياة بضغطة زر واحدة",
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_15_20260206_123135.jpg",
         file: "posts_1.js"
     },
