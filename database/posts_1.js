@@ -244,6 +244,41 @@ Object.assign(window.postsData, {
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
     <a href="#contact">تواصل معنا للحصول على الخدمة</a>
 </p>
+`
+    },
+    16: {
+        content: `
+<h3>🔓 تخطي حساب Google - Redmi Pad SE 8.7 5G (flare) 24075RP89G</h3>
+
+<p>شرح تخطي حساب جوجل لجهاز Redmi Pad SE 8.7 5G بنظام HyperOS باستخدام أداة DFT Pro</p>
+
+<h3>📱 معلومات الجهاز</h3>
+<ul>
+    <li><strong>الموديل:</strong> Redmi Pad SE 8.7 5G (flare)</li>
+    <li><strong>رقم الموديل:</strong> 24075RP89G</li>
+    <li><strong>النظام:</strong> HyperOS</li>
+    <li><strong>الأداة المستخدمة:</strong> DFT Pro</li>
+</ul>
+
+<h3>📖 خطوات العمل</h3>
+<ul>
+    <li>نختار <strong>Xiaomi</strong></li>
+    <li>نختار خانة <strong>MediaTek</strong></li>
+    <li>نحدد موديل الجهاز <strong>Redmi 14C</strong></li>
+    <li>نختار <strong>Protection 2</strong></li>
+    <li>نختار <strong>Reset FRP</strong></li>
+    <li>نقوم بإطفاء الهاتف</li>
+    <li>نوصله مع الضغط على أزرار الصوت</li>
+    <li>مبروك! ✅</li>
+</ul>
+
+<p>هذه صورة توضيحية 👇</p>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_16_img1_20260207_113403.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
 
 `
     },
