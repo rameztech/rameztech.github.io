@@ -103,4 +103,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_15_20260206_123135.jpg",
         file: "posts_1.js"
     },
+    { 
+        id: 16, 
+        title: "Redmi Pad SE 8.7 5G frp", 
+        category: "frp", 
+        excerpt: "🔓 تخطي حساب Google باستخدام أداة DFT Pro",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_16_20260207_113401.jpg",
+        file: "posts_1.js"
+    },
 ];
