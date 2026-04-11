@@ -213,7 +213,7 @@ Object.assign(window.postsData, {
 
 <h3>📥 التحميل</h3>
 <ul>
-    <li><a href="https://mega.nz/file/JyZzAAZD#cnvmQq2H7GB_drIlhOOeuztTH8oamAHymvTmVTFGJVY">اضغط هنا للتحميل</a></li>
+    <li><a href="https://mega.nz/file/E7400Ihb#eJAAImk9PO7OuvCLKatLaOJ1gAYOFXU1HK0js7IkS1E">اضغط هنا للتحميل</a></li>
 </ul>
 
 <h3>🔐 معلومات الملف</h3>
