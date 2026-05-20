@@ -47,32 +47,41 @@ header {
     gap: 10px;
 }
 
-.animated-logo {
-    font-family: 'Arial', sans-serif;
-    font-size: 1.5em;
+.ultra-bright-logo {
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6em;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     
-    /* ألوان فاتحة وساطعة */
-    background: linear-gradient(90deg, #00f2fe, #4facfe, #00f2fe);
+    /* تدرج لوني ساطع جداً */
+    background: linear-gradient(
+        90deg, 
+        #ffffff 0%, 
+        #00f2fe 30%, 
+        #ffffff 50%, 
+        #ff00ff 70%, 
+        #ffffff 100%
+    );
     background-size: 200% auto;
     
-    /* قص الخلفية لتأخذ شكل النص */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    /* تفعيل الحركة */
-    animation: shine 3s linear infinite;
+    /* حركة أسرع قليلاً للسطوع */
+    animation: shine-bright 2s linear infinite;
     
-    /* إضافة وهج خفيف جداً لزيادة السطوع */
-    filter: drop-shadow(0 0 1px rgba(0, 242, 254, 0.5));
+    /* وهج نيون قوي */
+    filter: drop-shadow(0 0 5px rgba(0, 242, 254, 0.8)) 
+            drop-shadow(0 0 10px rgba(255, 0, 255, 0.5));
 }
 
-@keyframes shine {
+@keyframes shine-bright {
     to {
         background-position: 200% center;
     }
+}
 }
 }
 .language-selector {
