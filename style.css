@@ -47,8 +47,29 @@ header {
     gap: 10px;
 }
 
-.logo img {
-    height: 150px; /* يمكنك تعديل ارتفاع الشعار من هنا */
+.animated-logo {
+    font-family: 'Orbitron', sans-serif; /* يفضل استخدام خط تقني */
+    font-size: 1.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    /* تحديد التدرج اللوني */
+    background: linear-gradient(90deg, #00d2ff, #3a7bd5, #ff007f, #00d2ff);
+    background-size: 300% 100%;
+    
+    /* قص الخلفية لتأخذ شكل النص */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* الحركة */
+    animation: gradient-move 4s linear infinite;
+}
+
+/* تعريف حركة الألوان */
+@keyframes gradient-move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
 }
 
 .language-selector {
