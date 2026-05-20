@@ -48,30 +48,29 @@ header {
 }
 
 .animated-logo {
-    font-family: 'Orbitron', sans-serif; /* يفضل استخدام خط تقني */
-    font-size: 1.2em;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5em;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
     
-    /* تحديد التدرج اللوني */
-    background: linear-gradient(90deg, #00d2ff, #3a7bd5, #ff007f, #00d2ff);
-    background-size: 300% 100%;
+    /* خلفية التدرج */
+    background: linear-gradient(90deg, #ff007f, #00d2ff, #ff007f);
+    background-size: 200% auto;
     
     /* قص الخلفية لتأخذ شكل النص */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    /* الحركة */
-    animation: gradient-move 4s linear infinite;
+    /* تفعيل الحركة */
+    animation: shine 3s linear infinite;
 }
 
-/* تعريف حركة الألوان */
-@keyframes gradient-move {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 300% 50%; }
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }
-
 .language-selector {
     display: flex;
     gap: 8px;
