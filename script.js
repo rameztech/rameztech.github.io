@@ -92,6 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!modal || !modalBody || !postIndexData) return;
 
+        // --- تعديل الواتس ---
+        const postUrl = window.location.origin + window.location.pathname + '#post/' + postId;
+        const whatsappBtn = document.getElementById('whatsapp-link');
+        if (whatsappBtn) {
+            const message = `مرحباً، أريد الاستفسار عن خدمات السيرفر بخصوص هذا المنشور: ${postUrl}`;
+            whatsappBtn.href = "https://wa.me/+905343593398?text=" + encodeURIComponent(message);
+        }
+        // ------------------
+
         // تحديث الرابط عند فتح المنشور
         history.pushState(null, null, `#post/${postId}`);
 
@@ -181,13 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const postId = parseInt(hash.replace('#post/', ''), 10);
             if (!isNaN(postId)) {
                 openModal(postId);
-const postUrl = window.location.origin + window.location.pathname + '#post/' + postId;
-const whatsappBtn = document.getElementById('whatsapp-link');
-
-if (whatsappBtn) {
-    const message = `مرحباً، أريد الاستفسار عن خدمات السيرفر بخصوص هذا المنشور: ${postUrl}`;
-    whatsappBtn.href = "https://wa.me/+905343593398?text=" + encodeURIComponent(message);
-}
+            }
         }
     };
 
