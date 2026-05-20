@@ -50,12 +50,12 @@ header {
 .animated-logo {
     font-family: 'Arial', sans-serif;
     font-size: 1.5em;
-    font-weight: 800;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
     
-    /* خلفية التدرج */
-    background: linear-gradient(90deg, #ff007f, #00d2ff, #ff007f);
+    /* ألوان فاتحة وساطعة */
+    background: linear-gradient(90deg, #00f2fe, #4facfe, #00f2fe);
     background-size: 200% auto;
     
     /* قص الخلفية لتأخذ شكل النص */
@@ -64,12 +64,16 @@ header {
     
     /* تفعيل الحركة */
     animation: shine 3s linear infinite;
+    
+    /* إضافة وهج خفيف جداً لزيادة السطوع */
+    filter: drop-shadow(0 0 1px rgba(0, 242, 254, 0.5));
 }
 
 @keyframes shine {
     to {
         background-position: 200% center;
     }
+}
 }
 .language-selector {
     display: flex;
