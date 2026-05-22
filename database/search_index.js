@@ -151,4 +151,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_22_20260522_222944.jpg",
         file: "posts_2.js"
     },
+    { 
+        id: 23, 
+        title: "إصلاح الـ IMEI لجهاز Redmi 13 (Moon) os1", 
+        category: "imei", 
+        excerpt: "طريقة إصلاح الـ IMEI لجهاز Redmi 13 (Moon)",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_23_20260522_224555.jpg",
+        file: "posts_2.js"
+    },
 ];
