@@ -135,4 +135,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_20_20260522_211356.jpg",
         file: "posts_1.js"
     },
+    { 
+        id: 21, 
+        title: "A145R /Galaxy A14 u11  فورمات", 
+        category: "software", 
+        excerpt: "اندرويد 15 عبر dft pro",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_21_20260522_221208.jpg",
+        file: "posts_2.js"
+    },
 ];
