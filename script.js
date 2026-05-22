@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFilter = 'all';
 
     // --- 3. Pagination State ---
-    const POSTS_PER_PAGE = 10;
+    const POSTS_PER_PAGE = 6;
     let currentPage = 1;
     let currentFilteredPosts = [];
 
