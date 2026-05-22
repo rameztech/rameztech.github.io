@@ -343,6 +343,31 @@ Object.assign(window.postsData, {
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
     <a href="#contact">تواصل معنا للحصول على الخدمة</a>
 </p>
+`
+    },
+    19: {
+        content: `
+<h3>  تخطي حساب غوغل A155F U7  اندرويد 16  </h3>
+
+<strong>   عبر DFT PRO </strong>
+
+
+<ul>
+    <li> Samsung  </li>
+    <li> FRP TOOL </li>
+</ul>
+
+
+<ul>
+    <li>REST FRP  ANDROID 16 NEW </li>
+    <li>بشرط حمايه 01\10\2025 وما قبل </li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_19_img1_20260522_205510.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
 
 `
     },
