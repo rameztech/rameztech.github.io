@@ -311,6 +311,38 @@ Object.assign(window.postsData, {
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
     <a href="#contact">تواصل معنا للحصول على الخدمة</a>
 </p>
+`
+    },
+    18: {
+        content: `
+<h3>اSamsung Galaxy Tab A9+ SM-X210 FRP </h3>
+
+<strong>حماية U6 </strong>
+
+
+<ul>
+    <li>الخطوات كما هو موضح بالصوره </li>
+    <li>Samsung </li>
+</ul>
+
+<ul>
+    <li>Mediatek service </li>
+    <li>كتابه موديل الجهاز </li>
+</ul>
+
+
+<ul>
+    <li>Reset frp</li>
+    <li>
+نقوم بتوصيل الجهاز (test point) كما هو موضح بالصوره</li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_18_img1_20260522_203845.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_18_img2_20260522_203847.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
 
 `
     },
