@@ -128,14 +128,6 @@ window.searchIndex = [
         file: "posts_1.js"
     },
     { 
-        id: 19, 
-        title: "تخطي حساب غوغل A155F U7", 
-        category: "frp", 
-        excerpt: "اندرويد 16 عبر DFT PRO",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_19_20260522_205508.jpg",
-        file: "posts_1.js"
-    },
-    { 
         id: 20, 
         title: "إزالة حساب جوجل A155F U6 Reset Frp U7", 
         category: "frp", 
