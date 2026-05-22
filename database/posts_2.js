@@ -62,6 +62,35 @@ Object.assign(window.postsData, {
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
     <a href="#contact">تواصل معنا للحصول على الخدمة</a>
 </p>
+`
+    },
+    24: {
+        content: `
+<h3>redmi 14c اصلاح ايمي os2</h3>
+
+<ul>
+    <li>الخطوة الأولى: تفليش إيـنج روم (eng rom) الحصري من الرابط التالي: 
+        <a href="https://www.rameztech.com" style="color: #b45309; font-weight: bold; text-decoration: underline;">اضغط هنا للتحميل</a>
+    </li>
+    <li>بعد التفليش، نتوجه في الأداة إلى خانة <strong>adb service</strong>.</li>
+</ul>
+
+<ul>
+    <li>نحدد خيار <strong>patch bl lock</strong> (للحفاظ على البوتلودر).</li>
+    <li>نضغط على أمر <strong>repair adb</strong> لكتابة الأرقام الجديدة.</li>
+</ul>
+
+<ul>
+    <li>الخطوة الأخيرة: نقوم بتفليش الروم الرسمي لحل مشكلة الشبكة وإحياء الهاتف بالكامل عبر هذا الرابط حصراً: 
+        <a href="https://www.rameztech.com" style="color: #b45309; font-weight: bold; text-decoration: underline;">اضغط هنا للتحميل</a>
+    </li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_24_img1_20260522_230837.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
 
 `
     },
