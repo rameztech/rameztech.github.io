@@ -127,4 +127,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_18_20260522_203843.jpg",
         file: "posts_1.js"
     },
+    { 
+        id: 19, 
+        title: "تخطي حساب غوغل A155F U7", 
+        category: "frp", 
+        excerpt: "اندرويد 16 عبر DFT PRO",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_19_20260522_205508.jpg",
+        file: "posts_1.js"
+    },
 ];
