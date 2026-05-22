@@ -167,12 +167,4 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_24_20260522_230835.jpg",
         file: "posts_2.js"
     },
-    { 
-        id: 25, 
-        title: "adfsfsz", 
-        category: "imei", 
-        excerpt: "sdasdasd",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_25_20260523_001248.jpg",
-        file: "posts_2.js"
-    },
 ];
