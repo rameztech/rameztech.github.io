@@ -119,4 +119,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_17_20260522_202838.jpg",
         file: "posts_1.js"
     },
+    { 
+        id: 18, 
+        title: "Samsung Galaxy Tab A9+ SM-X210 FRP تخطي حساب غوغل", 
+        category: "frp", 
+        excerpt: "عبر DFT PRO",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_18_20260522_203843.jpg",
+        file: "posts_1.js"
+    },
 ];
