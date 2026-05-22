@@ -143,4 +143,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_21_20260522_221208.jpg",
         file: "posts_2.js"
     },
+    { 
+        id: 22, 
+        title: "Huawei Y6p  med-lx9  frp ازاله حساب غوغل", 
+        category: "frp", 
+        excerpt: "dft pro + test point",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_22_20260522_222944.jpg",
+        file: "posts_2.js"
+    },
 ];
