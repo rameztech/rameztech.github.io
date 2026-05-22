@@ -111,4 +111,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_16_20260207_113401.jpg",
         file: "posts_1.js"
     },
+    { 
+        id: 17, 
+        title: "تخطي حساب غوغل سامسونج A16 (A165F) U 1", 
+        category: "frp", 
+        excerpt: "عبر dft pro",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_17_20260522_202838.jpg",
+        file: "posts_1.js"
+    },
 ];
