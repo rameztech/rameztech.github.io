@@ -7,45 +7,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBody = document.getElementById('modalBody');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const yearSpan = document.getElementById('year');
-    
-    // متغير للتحكم في عدد المنشورات
     let displayLimit = 6; 
 
     // --- 2. Data Initialization ---
     window.postsData = window.postsData || {};
     window.loadedPostsFiles = window.loadedPostsFiles || [];
-    
     const allPosts = window.searchIndex || [];
     let currentFilter = 'all';
 
     const categoryNames = {
-        'all': 'الكل',
-        'frp': 'تخطي FRP',
-        'hardware': 'شروحات هاردوير',
-        'imei': 'إصلاح IMEI',
-        'software': 'شروحات سوفتوير',
-        'tools': 'أدوات',
+        'all': 'الكل', 'frp': 'تخطي FRP', 'hardware': 'شروحات هاردوير',
+        'imei': 'إصلاح IMEI', 'software': 'شروحات سوفتوير', 'tools': 'أدوات',
     };
 
-    // --- 3. Dynamic Loading Function ---
     const loadPostFile = (fileName) => {
         return new Promise((resolve, reject) => {
-            if (window.loadedPostsFiles.includes(fileName)) {
-                resolve();
-                return;
-            }
+            if (window.loadedPostsFiles.includes(fileName)) { resolve(); return; }
             const script = document.createElement('script');
             script.src = `database/${fileName}`;
-            script.onload = () => {
-                window.loadedPostsFiles.push(fileName);
-                resolve();
-            };
-            script.onerror = () => reject(new Error(`Failed to load ${fileName}`));
+            script.onload = () => { window.loadedPostsFiles.push(fileName); resolve(); };
+            script.onerror = () => reject();
             document.head.appendChild(script);
         });
     };
 
-    // --- 4. Functions ---
     const createPostCard = (post) => {
         const card = document.createElement('div');
         card.className = 'post-card';
@@ -67,22 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
         const loadMoreBtn = document.getElementById('loadMoreBtn');
         
-        const filteredPosts = allPosts
-            .sort((a, b) => b.id - a.id) // الترتيب من الأحدث للأقدم
-            .filter(post => {
-                const matchesCategory = currentFilter === 'all' || post.category === currentFilter;
-                const matchesSearch = post.title.toLowerCase().includes(searchTerm) || post.excerpt.toLowerCase().includes(searchTerm);
-                return matchesCategory && matchesSearch;
-            });
+        const filteredPosts = allPosts.sort((a, b) => b.id - a.id).filter(post => {
+            const matchesCategory = currentFilter === 'all' || post.category === currentFilter;
+            const matchesSearch = post.title.toLowerCase().includes(searchTerm) || post.excerpt.toLowerCase().includes(searchTerm);
+            return matchesCategory && matchesSearch;
+        });
 
         if (filteredPosts.length === 0) {
-            postsGrid.innerHTML = '<p style="text-align: center; color: #64748b; grid-column: 1 / -1;">لا توجد منشورات تطابق هذا البحث.</p>';
+            postsGrid.innerHTML = '<p style="text-align: center;">لا توجد منشورات.</p>';
             if (loadMoreBtn) loadMoreBtn.style.display = 'none';
         } else {
             filteredPosts.slice(0, displayLimit).forEach(post => postsGrid.appendChild(createPostCard(post)));
-            if (loadMoreBtn) {
-                loadMoreBtn.style.display = (filteredPosts.length > displayLimit) ? 'block' : 'none';
-            }
+            if (loadMoreBtn) loadMoreBtn.style.display = (filteredPosts.length > displayLimit) ? 'block' : 'none';
         }
     };
 
@@ -90,92 +71,47 @@ document.addEventListener('DOMContentLoaded', () => {
         const postIndexData = allPosts.find(p => p.id === postId);
         if (!modal || !modalBody || !postIndexData) return;
 
+        // تحديث الرابط والواتس
         const postUrl = window.location.origin + window.location.pathname + '#post/' + postId;
         const whatsappBtn = document.getElementById('whatsapp-link');
-        if (whatsappBtn) {
-            whatsappBtn.href = "https://wa.me/+905343593398?text=" + encodeURIComponent(`مرحباً، أريد الاستفسار عن هذا المنشور: ${postUrl}`);
-        }
+        if (whatsappBtn) whatsappBtn.href = "https://wa.me/+905343593398?text=" + encodeURIComponent(`استفسار عن المنشور: ${postUrl}`);
 
         history.pushState(null, null, `#post/${postId}`);
-        modalBody.innerHTML = `<h2 class="modal-title">${postIndexData.title}</h2><p style="text-align: center; padding: 40px;">⏳ جاري تحميل المحتوى...</p>`;
+        modalBody.innerHTML = `<h2 class="modal-title">${postIndexData.title}</h2><p style="text-align: center;">⏳ جاري التحميل...</p>`;
         modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
 
         try {
-            const fileName = postIndexData.file || 'posts_1.js';
-            await loadPostFile(fileName);
+            await loadPostFile(postIndexData.file || 'posts_1.js');
             const postContentData = window.postsData[postId];
+            modalBody.innerHTML = `
+                <img src="${postIndexData.cover}" class="modal-cover">
+                <div style="text-align: left; margin: 10px 0;"><button onclick="copyPostLink(${postId})" class="filter-btn">🔗 مشاركة</button></div>
+                <h2 class="modal-title">${postIndexData.title}</h2>
+                <div class="modal-body">${postContentData ? postContentData.content : 'خطأ في تحميل المحتوى'}</div>
+            `;
+        } catch (e) { modalBody.innerHTML = `<p>حدث خطأ.</p>`; }
+    };
 
-            if (!postContentData) {
-                modalBody.innerHTML = `<h2 class="modal-title">${postIndexData.title}</h2><p style="color: #ef4444; text-align: center; padding: 40px;">❌ عذراً، محتوى هذا المنشور غير متوفر.</p>`;
-            } else {
-                modalBody.innerHTML = `
-                    <img src="${postIndexData.cover}" alt="${postIndexData.title}" class="modal-cover">
-                    <h2 class="modal-title">${postIndexData.title}</h2>
-                    <div class="modal-body">${postContentData.content}</div>
-                `;
-            }
-        } catch (error) {
-            modalBody.innerHTML = `<p>حدث خطأ في التحميل.</p>`;
+    const handleDeepLink = () => {
+        const hash = window.location.hash;
+        if (hash && hash.startsWith('#post/')) {
+            const postId = parseInt(hash.replace('#post/', ''), 10);
+            if (!isNaN(postId)) openModal(postId);
         }
     };
 
-    const closeModal = () => {
-        if (modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            history.pushState(null, null, window.location.pathname);
-        }
-    };
-
-    const createFilterButtons = () => {
-        if (!filterButtonsContainer) return;
-        const categories = ['all', ...new Set(allPosts.map(p => p.category))];
-        filterButtonsContainer.innerHTML = categories.map(cat => 
-            `<button class="filter-btn ${cat === 'all' ? 'active' : ''}" data-category="${cat}">${categoryNames[cat] || cat}</button>`
-        ).join('');
-        filterButtonsContainer.addEventListener('click', (e) => {
-            if (e.target.classList.contains('filter-btn')) {
-                filterButtonsContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                e.target.classList.add('active');
-                currentFilter = e.target.dataset.category;
-                displayLimit = 6; // إعادة التعيين
-                renderPosts();
-            }
-        });
-    };
-
-    // --- 5. Initialization ---
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
-    if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', () => {
-            displayLimit += 6;
-            renderPosts();
-        });
-    }
-
-    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-    if (searchInput) searchInput.addEventListener('input', () => { displayLimit = 6; renderPosts(); });
-    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-    if (modal) window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-
-    if (postsGrid) {
-        postsGrid.addEventListener('click', (e) => {
-            const card = e.target.closest('.post-card');
-            if (card) openModal(parseInt(card.dataset.id, 10));
-        });
-    }
-
+    // --- Event Listeners ---
+    document.getElementById('loadMoreBtn')?.addEventListener('click', () => { displayLimit += 6; renderPosts(); });
+    window.addEventListener('hashchange', handleDeepLink);
+    
+    // تشغيل عند التحميل
     if (allPosts.length > 0) {
-        createFilterButtons();
         renderPosts();
+        handleDeepLink(); // هذا السطر يحل مشكلة الرابط
     }
 });
 
-// وظائف خارجية
 function copyPostLink(postId) {
-    navigator.clipboard.writeText(window.location.origin + window.location.pathname + '#post/' + postId);
-    alert('تم نسخ الرابط!');
+    const url = window.location.origin + window.location.pathname + '#post/' + postId;
+    navigator.clipboard.writeText(url).then(() => alert('تم نسخ الرابط!'));
 }
-
-function toggleDropdown() { document.getElementById("langDropdown").classList.toggle("show"); }
