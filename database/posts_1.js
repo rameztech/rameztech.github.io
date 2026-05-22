@@ -281,6 +281,36 @@ Object.assign(window.postsData, {
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
     <a href="#contact">تواصل معنا للحصول على الخدمة</a>
 </p>
+`
+    },
+    17: {
+        content: `
+<strong> تخطي حساب غوغل سامسونج A16 (A165F) U1 </strong>
+
+<h3> لخطوات كما هو موضح بالصوره  </h3>
+
+<ul>
+    <li>Samsung </li>
+    <li>Mediatek service </li>
+</ul>
+
+<ul>
+    <li>كتابه موديل الجهاز </li>
+    <li>Reset frp</li>
+</ul>
+
+<ul>
+    <li>
+نقوم بتوصيل الجهاز (test point) كما هو موضح بالصوره</li>
+    <li>Done</li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_17_img1_20260522_202840.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_17_img2_20260522_202842.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
 
 `
     },
