@@ -8,26 +8,37 @@ Object.assign(window.postsData, {
     1: {
         content: `
 <h3>طريقة تخطي FRP لسامسونج A54 - DFT Pro</h3>
-            <p>في هذا الشرح المجاني سنتعلم كيفية تخطي حماية Google FRP لهواتف سامسونج A54 باستخدام أداة DFT Pro.</p>
-            <h4>المتطلبات:</h4>
-            <ul><li>أداة DFT Pro (آخر إصدار)</li><li>كابل USB أصلي</li><li>تفعيل خيارات المطور</li></ul>
-            <div class="youtube-embed"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe></div>
-            <h4>خطوات العمل:</h4>
-            <p><strong>1. التحضير:</strong></p><p>- قم بتوصيل الهاتف بالكمبيوتر</p><p>- افتح أداة DFT Pro</p><p>- اختر Samsung من القائمة</p>
-            <p><strong>2. تخطي FRP:</strong></p><p>- اذهب إلى تبويب FRP/Google Lock</p><p>- اختر موديل A54</p><p>- اضغط Remove FRP</p>
-            <p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-            
+<p>في هذا الشرح المجاني سنتعلم كيفية تخطي حماية Google FRP لهواتف سامسونج A54 باستخدام أداة DFT Pro.</p>
+
+<h4>المتطلبات:</h4>
+<ul>
+    <li>أداة DFT Pro (آخر إصدار)</li>
+    <li>كابل USB أصلي</li>
+    <li>تفعيل خيارات المطور</li>
+</ul>
+
+<div class="youtube-embed">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<h4>خطوات العمل:</h4>
+<p><strong>1. التحضير:</strong><br>- قم بتوصيل الهاتف بالكمبيوتر<br>- افتح أداة DFT Pro<br>- اختر Samsung من القائمة</p>
+<p><strong>2. تخطي FRP:</strong><br>- اذهب إلى تبويب FRP/Google Lock<br>- اختر موديل A54<br>- اضغط Remove FRP</p>
+
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
         هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
     </p>
 </div>
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong>
+    <br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
+    <br>
+    <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
+</div>
 `
     },
     2: {
