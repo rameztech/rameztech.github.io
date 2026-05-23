@@ -167,4 +167,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_24_20260522_230835.jpg",
         file: "posts_2.js"
     },
+    { 
+        id: 25, 
+        title: "fssa", 
+        category: "frp", 
+        excerpt: "adasdsad",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_25_20260524_023736.jpg",
+        file: "posts_2.js"
+    },
 ];
