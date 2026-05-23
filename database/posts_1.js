@@ -83,11 +83,20 @@ Object.assign(window.postsData, {
     <li>هذه صوره توضيحيه </li>
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_7_img1_20260108_224729.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong>
+    <br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
+    <br>
+    <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
+</div>
 `
     },
     10: {
@@ -109,11 +118,37 @@ Object.assign(window.postsData, {
     <li><a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c">اضغط هنا</a></li>
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_10_img1_20260128_144306.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+<ul>
+    <li><strong>طريقه اصلاح الايميل الاساسي</strong></li>
+    <li>تم التجريب على هذه الحمايه او اقدم منها كلها تعمل</li>
+</ul>
+
+<ul>
+    <li>اطفئ الهاتف بشكل كامل</li>
+    <li>اكتب الايمي ثم البدء بعمليه الاصلاح ثم </li>
+</ul>
+
+<ul>
+    <li>توصيل الهاتف بدون الضغط على اي شيء</li>
+    <li>هذه صوره توضيحيه </li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_7_img1_20260108_224729.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong>
+    <br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
+    <br>
+    <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
+</div>
+`
+    },
 `
     },
     11: {
@@ -138,11 +173,20 @@ Object.assign(window.postsData, {
     <li>اعد ضبط المصنع</li>
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_11_img1_20260128_150737.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong>
+    <br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
+    <br>
+    <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
+</div>
 `
     },
     12: {
@@ -181,11 +225,20 @@ Object.assign(window.postsData, {
     
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_13_img1_20260128_155246.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong>
+    <br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
+    <br>
+    <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
+</div>
 `
     },
     14: {
@@ -208,11 +261,20 @@ Object.assign(window.postsData, {
     <li>ومبروك عليك اصلاح الايمي بدون مشاكل الكاميرا والفلاش</li>
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_14_img1_20260128_160953.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong>
+    <br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
+    <br>
+    <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
+</div>
 `
     },
     15: {
@@ -259,11 +321,20 @@ Object.assign(window.postsData, {
 
 <p><strong>© 2024 RAMEZ TECH - جميع الحقوق محفوظة</strong></p>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_15_img1_20260206_123137.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong>
+    <br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
+    <br>
+    <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
+</div>
 `
     },
     16: {
@@ -294,11 +365,20 @@ Object.assign(window.postsData, {
 
 <p>هذه صورة توضيحية 👇</p>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_16_img1_20260207_113403.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong>
+    <br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
+    <br>
+    <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
+</div>
 `
     },
     17: {
@@ -324,11 +404,20 @@ Object.assign(window.postsData, {
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_17_img1_20260522_202840.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_17_img2_20260522_202842.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong>
+    <br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
+    <br>
+    <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
+</div>
 `
     },
     18: {
@@ -356,11 +445,20 @@ Object.assign(window.postsData, {
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_18_img1_20260522_203845.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_18_img2_20260522_203847.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong>
+    <br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
+    <br>
+    <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
+</div>
 `
     },
     20: {
@@ -381,11 +479,20 @@ Object.assign(window.postsData, {
     <li>بشرط حماية 01/10/2025 وما قبل</li>
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_20_img1_20260522_211357.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+
+<div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong>
+    <br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
+    <br>
+    <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
+</div>
 `
     },
 } );
