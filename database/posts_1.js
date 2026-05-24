@@ -149,8 +149,6 @@ Object.assign(window.postsData, {
 </div>
 `
     },
-`
-    },
     11: {
         content: `
 <ul>
