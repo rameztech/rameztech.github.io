@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramez Tech – دليل إصلاح الأجهزة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07080d;
+      --surface: #0e111a;
+      --surface2: #141824;
+      --border: rgba(0,210,255,0.12);
+      --accent: #00d2ff;
+      --accent2: #7b61ff;
+      --accent3: #ff6b35;
+      --text: #e8eaf0;
+      --muted: #7a8099;
+      --glow: 0 0 30px rgba(0,210,255,0.2);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background grid effect */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,210,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,210,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Ambient glow blob */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -200px;
+      right: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(0,210,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      animation: drift 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes drift {
+      from { transform: translate(0, 0); }
+      to   { transform: translate(-60px, 80px); }
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* ======= HEADER ======= */
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      animation: fadeDown 0.7s ease both;
+    }
+
+    .logo-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 0 20px rgba(0,210,255,0.35);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, var(--accent), #fff 60%, var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+      margin-top: 6px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      margin: 18px auto 0;
+    }
+
+    /* ======= SEARCH BOX ======= */
+    .search-wrap {
+      position: relative;
+      margin-bottom: 36px;
+      animation: fadeDown 0.7s 0.15s ease both;
+    }
+
+    .search-wrap svg {
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      transform: translateY(-50%);
+      color: var(--accent);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    #searchInput {
+      width: 100%;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 52px 18px 20px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    #searchInput::placeholder { color: var(--muted); }
+
+    #searchInput:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0,210,255,0.1), var(--glow);
+    }
+
+    /* ======= STATS BAR ======= */
+    .stats {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 36px;
+      animation: fadeDown 0.7s 0.25s ease both;
+    }
+
+    .stat-card {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-lbl {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ======= RESULT CARD ======= */
+    #resultArea {
+      display: none;
+      animation: slideUp 0.4s ease both;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .device-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px 14px 0 0;
+      padding: 20px 22px;
+      border-bottom: none;
+    }
+
+    .device-badge {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .device-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .device-code {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 400;
+      margin-top: 2px;
+      letter-spacing: 0.5px;
+    }
+
+    .methods-wrap {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 0 0 14px 14px;
+      overflow: hidden;
+    }
+
+    .method-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    .method-item:last-child { border-bottom: none; }
+    .method-item:hover { background: rgba(0,210,255,0.04); }
+
+    .method-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .method-num.type-a { background: rgba(0,210,255,0.15); color: var(--accent); }
+    .method-num.type-b { background: rgba(123,97,255,0.15); color: var(--accent2); }
+    .method-num.type-c { background: rgba(255,107,53,0.15); color: var(--accent3); }
+    .method-num.type-d { background: rgba(0,220,130,0.15); color: #00dc82; }
+
+    .method-body {}
+
+    .method-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-bottom: 5px;
+      letter-spacing: 0.3px;
+    }
+
+    .tag-a { background: rgba(0,210,255,0.12); color: var(--accent); border: 1px solid rgba(0,210,255,0.2); }
+    .tag-b { background: rgba(123,97,255,0.12); color: var(--accent2); border: 1px solid rgba(123,97,255,0.2); }
+    .tag-c { background: rgba(255,107,53,0.12); color: var(--accent3); border: 1px solid rgba(255,107,53,0.2); }
+    .tag-d { background: rgba(0,220,130,0.12); color: #00dc82; border: 1px solid rgba(0,220,130,0.2); }
+
+    .method-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .method-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 3px;
+      line-height: 1.5;
+    }
+
+    /* cert-only special note */
+    .cert-note {
+      background: rgba(255,107,53,0.07);
+      border: 1px solid rgba(255,107,53,0.15);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: #ffb49a;
+      line-height: 1.6;
+    }
+
+    /* ======= NO RESULT ======= */
+    .no-result {
+      text-align: center;
+      padding: 50px 20px;
+      display: none;
+      animation: slideUp 0.4s ease both;
+    }
+
+    .no-result-icon { font-size: 3rem; margin-bottom: 12px; opacity: 0.4; }
+    .no-result p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ======= DEVICE LIST ======= */
+    .all-devices {
+      margin-top: 48px;
+      animation: fadeDown 0.7s 0.35s ease both;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 13px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(0,210,255,0.06);
+    }
+
+    .chip span {
+      font-size: 0.68rem;
+      color: var(--accent);
+      margin-right: 4px;
+      font-weight: 700;
+    }
+
+    /* ======= FOOTER ======= */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.78rem;
+      animation: fadeDown 0.7s 0.45s ease both;
+    }
+
+    footer strong { color: var(--accent); }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header>
+    <div class="logo-line">
+      <div class="logo-icon">🔧</div>
+      <h1>Ramez Tech</h1>
+    </div>
+    <p>دليل إصلاح الإيمي – أجهزة شاومي وبوكو</p>
+    <div class="divider"></div>
+  </header>
+
+  <div class="search-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input type="text" id="searchInput" placeholder="ابحث بكود الجهاز: pond, goya, obsidian …" oninput="searchDevice()">
+  </div>
+
+  <div id="resultArea"></div>
+  <div class="no-result" id="noResult">
+    <div class="no-result-icon">🔍</div>
+    <p>لم يُعثر على الجهاز. تحقق من كود الجهاز وحاول مجدداً.</p>
+    <p style="margin-top:8px; font-size:0.8rem;">كل أجهزة شاومي وبوكو تدعم تعديل ملف سيرت (CPID)</p>
+  </div>
+
+  <footer>
+    صُنع بعناية بواسطة <strong>Ramez Tech</strong> · جميع الطرق مختبرة
+  </footer>
+
+</div>
+
+<script>
+/* ========== DATA ========== */
+/*
+  القواعد من ملف TXT:
+  ─────────────────────────────────────────────────────
+  القسم 1 – مغلق بوتلودر → تفليش سيرفر ENG ROM (ADB Service):
+    obsidian, tanzanite, dew, goya, klimt, moon/tides, pond/lake
+
+  القسم 2 – تفليش انج بريلودر (Patch BL Lock Flash Mode):
+    moon/tides   → Camera & SMS Working · DA HyperOS 1 · No Eng No Root
+    pond/lake    → Camera & SMS Working · DA HyperOS 1 · No Eng No Root
+    obsidian     → ENG Preloader Required
+    tanzanite    → ENG Preloader Required
+    dew          → ENG Preloader Required
+    goya         → ENG Preloader Required
+    klimt        → ENG Preloader Required
+
+  القسم 3 – جهاز مروت → Patch Cert ADB Root:
+    rodin, blue, obsidian, tanzanite, goya, klimt, moon/tides, pond/lake
+
+  القسم 4 – تعديل سيرت CPID (إن كان السيرفر يعمل):
+    Poco X7 Pro (rodin) + كل أجهزة شاومي وبوكو بشكل عام
+
+  القسم 5 – سيرفر + تبديل/إزالة مقاومة:
+    Poco X7 Pro (rodin) فقط
+  ─────────────────────────────────────────────────────
+*/
+
+const data = {
+  "moon": {
+    name: "Xiaomi Redmi 13",
+    fullName: "Xiaomi Redmi 13 (moon / tides)",
+    methods: [
+      { type: "a", tag: "مغلق بوتلودر", title: "تفليش سيرفر ENG ROM", sub: "استخدم خيار ADB Service حصراً" },
+      { type: "b", tag: "تفليش انج بريلودر", title: "Patch BL Lock – Flash Mode", sub: "Camera & SMS Working · Supported DA HyperOS 1 · No Eng – No Root" },
+      { type: "c", tag: "جهاز مروت", title: "Patch Cert – ADB Root", sub: "يتطلب روت مسبق" }
+    ]
+  },
+
+  "tides": {
+    name: "Xiaomi Redmi 13x",
+    fullName: "Xiaomi Redmi 13x (moon / tides)",
+    methods: [
+      { type: "a", tag: "مغلق بوتلودر", title: "تفليش سيرفر ENG ROM", sub: "استخدم خيار ADB Service حصراً" },
+      { type: "b", tag: "تفليش انج بريلودر", title: "Patch BL Lock – Flash Mode", sub: "Camera & SMS Working · Supported DA HyperOS 1 · No Eng – No Root" },
+      { type: "c", tag: "جهاز مروت", title: "Patch Cert – ADB Root", sub: "يتطلب روت مسبق" }
+    ]
+  },
+
+  "pond": {
+    name: "Xiaomi Redmi 14C / POCO C75 / A3 Pro",
+    fullName: "Xiaomi Redmi 14C / POCO C75 / A3 Pro (pond / lake)",
+    methods: [
+      { type: "a", tag: "مغلق بوتلودر", title: "تفليش سيرفر ENG ROM", sub: "استخدم خيار ADB Service حصراً" },
+      { type: "b", tag: "تفليش انج بريلودر", title: "Patch BL Lock – Flash Mode", sub: "Camera & SMS Working · Supported DA HyperOS 1 · No Eng – No Root" },
+      { type: "c", tag: "جهاز مروت", title: "Patch Cert – ADB Root", sub: "يتطلب روت مسبق" }
+    ]
+  },
+
+  "lake": {
+    name: "Xiaomi Redmi 14C / POCO C75 / A3 Pro",
+    fullName: "Xiaomi Redmi 14C / POCO C75 / A3 Pro (pond / lake)",
+    methods: [
+      { type: "a", tag: "مغلق بوتلودر", title: "تفليش سيرفر ENG ROM", sub: "استخدم خيار ADB Service حصراً" },
+      { type: "b", tag: "تفليش انج بريلودر", title: "Patch BL Lock – Flash Mode", sub: "Camera & SMS Working · Supported DA HyperOS 1 · No Eng – No Root" },
+      { type: "c", tag: "جهاز مروت", title: "Patch Cert – ADB Root", sub: "يتطلب روت مسبق" }
+    ]
+  },
+
+  "obsidian": {
+    name: "Xiaomi Redmi Note 14 Pro 4G",
+    fullName: "Xiaomi Redmi Note 14 Pro 4G (obsidian)",
+    methods: [
+      { type: "a", tag: "مغلق بوتلودر", title: "تفليش سيرفر ENG ROM", sub: "استخدم خيار ADB Service حصراً" },
+      { type: "b", tag: "تفليش انج بريلودر", title: "Patch BL Lock – Flash Mode", sub: "ENG Preloader Required" },
+      { type: "c", tag: "جهاز مروت", title: "Patch Cert – ADB Root", sub: "يتطلب روت مسبق" }
+    ]
+  },
+
+  "tanzanite": {
+    name: "Xiaomi Redmi Note 14 Pro / POCO X7",
+    fullName: "Xiaomi Redmi Note 14 Pro / POCO X7 (tanzanite)",
+    methods: [
+      { type: "a", tag: "مغلق بوتلودر", title: "تفليش سيرفر ENG ROM", sub: "استخدم خيار ADB Service حصراً" },
+      { type: "b", tag: "تفليش انج بريلودر", title: "Patch BL Lock – Flash Mode", sub: "ENG Preloader Required" },
+      { type: "c", tag: "جهاز مروت", title: "Patch Cert – ADB Root", sub: "يتطلب روت مسبق" }
+    ]
+  },
+
+  "dew": {
+    name: "Xiaomi Redmi 15C",
+    fullName: "Xiaomi Redmi 15C (dew)",
+    methods: [
+      { type: "a", tag: "مغلق بوتلودر", title: "تفليش سيرفر ENG ROM", sub: "استخدم خيار ADB Service حصراً" },
+      { type: "b", tag: "تفليش انج بريلودر", title: "Patch BL Lock – Flash Mode", sub: "ENG Preloader Required" },
+      { type: "c", tag: "جهاز مروت", title: "Patch Cert – ADB Root", sub: "يتطلب روت مسبق" }
+    ]
+  },
+
+  "goya": {
+    name: "Xiaomi 15T",
+    fullName: "Xiaomi 15T (goya)",
+    methods: [
+      { type: "a", tag: "مغلق بوتلودر", title: "تفليش سيرفر ENG ROM", sub: "استخدم خيار ADB Service حصراً" },
+      { type: "b", tag: "تفليش انج بريلودر", title: "Patch BL Lock – Flash Mode", sub: "ENG Preloader Required" },
+      { type: "c", tag: "جهاز مروت", title: "Patch Cert – ADB Root", sub: "يتطلب روت مسبق" }
+    ]
+  },
+
+  "klimt": {
+    name: "Xiaomi 15T Pro",
+    fullName: "Xiaomi 15T Pro (klimt)",
+    methods: [
+      { type: "a", tag: "مغلق بوتلودر", title: "تفليش سيرفر ENG ROM", sub: "استخدم خيار ADB Service حصراً" },
+      { type: "b", tag: "تفليش انج بريلودر", title: "Patch BL Lock – Flash Mode", sub: "ENG Preloader Required" },
+      { type: "c", tag: "جهاز مروت", title: "Patch Cert – ADB Root", sub: "يتطلب روت مسبق" }
+    ]
+  },
+
+  "rodin": {
+    name: "Xiaomi Redmi X7 Pro / Turbo 4",
+    fullName: "Xiaomi Redmi X7 Pro / Turbo 4 (rodin)",
+    methods: [
+      { type: "c", tag: "جهاز مروت", title: "Patch Cert – ADB Root", sub: "يتطلب روت مسبق" }
+    ]
+  },
+
+  "blue": {
+    name: "Xiaomi Redmi A3",
+    fullName: "Xiaomi Redmi A3 (blue)",
+    methods: [
+      { type: "c", tag: "جهاز مروت", title: "Patch Cert – ADB Root", sub: "يتطلب روت مسبق" }
+    ]
+  }
+
+};
+
+/*
+  القاعدة العامة (من ملف TXT):
+  أي جهاز شاومي أو بوكو لا يوجد في القائمة أعلاه →
+  يظهر له تلقائياً: "تعديل سيرت CPID إن كان السيرفر يعمل"
+  يتم التعامل مع هذا في دالة searchDevice أدناه
+*/
+
+/* ========== SEARCH ========== */
+const tagClass = { a: 'tag-a', b: 'tag-b', c: 'tag-c', d: 'tag-d' };
+const numClass = { a: 'type-a', b: 'type-b', c: 'type-c', d: 'type-d' };
+
+// الكلمات المفتاحية لشاومي وبوكو للتعرف على الأجهزة العامة
+const xiaomiKeywords = [
+  'xiaomi','redmi','poco','pocophone','mi ','mi9','mi10','mi11','mi12','mi13',
+  'note','pro','lite','ultra','turbo','speed'
+];
+
+function isXiaomiDevice(query) {
+  const q = query.toLowerCase();
+  return xiaomiKeywords.some(k => q.includes(k));
+}
+
+function searchDevice() {
+  const input = document.getElementById('searchInput').value.toLowerCase().trim();
+  const resultArea = document.getElementById('resultArea');
+  const noResult = document.getElementById('noResult');
+
+  if (!input) {
+    resultArea.style.display = 'none';
+    noResult.style.display = 'none';
+    return;
+  }
+
+  // البحث بالكود أو الاسم
+  let device = null, matchedCode = '';
+  for (const [code, dev] of Object.entries(data)) {
+    if (
+      code === input ||
+      dev.name.toLowerCase().includes(input) ||
+      dev.fullName.toLowerCase().includes(input)
+    ) {
+      device = dev; matchedCode = code; break;
+    }
+  }
+
+  if (device) {
+    // ─── جهاز موجود في القائمة ───
+    noResult.style.display = 'none';
+
+    // CPID دائماً في النهاية لكل جهاز
+    const allMethods = [
+      ...device.methods,
+      { type: "d", tag: "تعديل سيرت CPID", title: "تعديل ملف سيرت CPID عبر السيرفر", sub: "متاح لجميع أجهزة شاومي وبوكو – إن كان السيرفر يعمل" }
+    ];
+
+    let methodsHTML = allMethods.map((m, i) => `
+      <div class="method-item">
+        <div class="method-num ${numClass[m.type] || 'type-a'}">${i + 1}</div>
+        <div class="method-body">
+          <span class="method-tag ${tagClass[m.type] || 'tag-a'}">${m.tag}</span>
+          <div class="method-title">${m.title}</div>
+          <div class="method-sub">${m.sub}</div>
+        </div>
+      </div>
+    `).join('');
+
+    resultArea.innerHTML = `
+      <div class="device-header">
+        <div class="device-badge">📱</div>
+        <div>
+          <div class="device-name">${device.name}</div>
+          <div class="device-code">${device.fullName}</div>
+        </div>
+      </div>
+      <div class="methods-wrap">${methodsHTML}</div>
+    `;
+
+    resultArea.style.display = 'none';
+    requestAnimationFrame(() => { resultArea.style.display = 'block'; });
+
+  } else if (isXiaomiDevice(input) || input.length >= 3) {
+    // ─── جهاز شاومي/بوكو غير مدرج → القاعدة العامة من ملف TXT ───
+    noResult.style.display = 'none';
+
+    resultArea.innerHTML = `
+      <div class="device-header">
+        <div class="device-badge">📱</div>
+        <div>
+          <div class="device-name">${input.charAt(0).toUpperCase() + input.slice(1)}</div>
+          <div class="device-code">جهاز شاومي / بوكو – غير مدرج في القائمة المفصّلة</div>
+        </div>
+      </div>
+      <div class="methods-wrap">
+        <div class="method-item">
+          <div class="method-num type-d">1</div>
+          <div class="method-body">
+            <span class="method-tag tag-d">تعديل سيرت CPID</span>
+            <div class="method-title">تعديل ملف سيرت CPID عبر السيرفر</div>
+            <div class="method-sub">متاح لجميع أجهزة شاومي وبوكو – إن كان السيرفر يعمل</div>
+          </div>
+        </div>
+      </div>
+      <div class="cert-note">ℹ️ هذا الجهاز غير مدرج في القائمة المفصّلة. الطريقة المتاحة هي تعديل سيرت CPID إن كان السيرفر يدعمه. للمزيد تواصل مع Ramez Tech.</div>
+    `;
+
+    resultArea.style.display = 'none';
+    requestAnimationFrame(() => { resultArea.style.display = 'block'; });
+
+  } else {
+    resultArea.style.display = 'none';
+    noResult.style.display = 'block';
+  }
+}
+</script>
+</body>
+</html>
