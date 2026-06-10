@@ -185,7 +185,7 @@ window.searchIndex = [
     },
     { 
         id: 27, 
-        title: ">تخطي حساب غوغل redmi 12 fire", 
+        title: "تخطي حساب غوغل redmi 12 fire", 
         category: "frp", 
         excerpt: "dft pro",
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_27_20260611_002336.jpg",
