@@ -175,8 +175,8 @@ Object.assign(window.postsData, {
 </ul>
 
 <ul>
-    <li>لتحميل جميع الملفات اضغط هنا: <a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c" target="_blank">اضغط هنا للتحميل</a></li>
-    <li>لتحميل ملف DA اضغط هنا: <a href="https://mega.nz/file/9n4AiJTR#5YoH_nRkhVy7Sr2k8-Er2n_0y94Awaj5jrj1-I-0lTg" target="_blank">اضغط هنا للتحميل</a></li>
+    <li>لتحميل جميع الملفات : <a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c" target="_blank">اضغط هنا للتحميل</a></li>
+    <li>لتحميل ملف DA : <a href="https://mega.nz/file/9n4AiJTR#5YoH_nRkhVy7Sr2k8-Er2n_0y94Awaj5jrj1-I-0lTg" target="_blank">اضغط هنا للتحميل</a></li>
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_26_img1_20260610_231820.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_26_img2_20260610_231822.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
