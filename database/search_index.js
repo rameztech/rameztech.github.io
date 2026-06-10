@@ -167,12 +167,4 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_24_20260522_230835.jpg",
         file: "posts_2.js"
     },
-    { 
-        id: 25, 
-        title: "Redmi 14c (lake-pond) اصلاح الايمي", 
-        category: "imei", 
-        excerpt: "hyper os3  srever + dft pro",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_25_20260610_164152.jpg",
-        file: "posts_2.js"
-    },
 ];
