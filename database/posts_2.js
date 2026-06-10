@@ -205,7 +205,7 @@ Object.assign(window.postsData, {
 <ul>
     <li>كل الشكر للسيد خالد للمساعده بكتابه هذا المنشور <a href="https://wa.me/905380444883" target="_blank">Halit Alhelo</a></li>
 </ul>
-<img src="https://github.com/rameztech/rameztech.github.io/blob/main/images/posts/post_27_img1_20260610_235103.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_27_img1_20260610_235103.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
