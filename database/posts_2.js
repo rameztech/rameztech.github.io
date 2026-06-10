@@ -207,34 +207,4 @@ Object.assign(window.postsData, {
 </ul>
 `
     },
-    28: {
-        content: `
-<h3>تخطي حساب غوغل redmi 12 fire</h3>
-
-<ul>
-    <li>نتجه الى dft pro</li>
-    <li>من خانة xiaomi نتجه الى media tek</li>
-    <li>نختار اسم الهاتف</li>
-    <li>نحدد reset frp ونضغط start</li>
-    <li>نقوم باطفاء الهاتف وتوصيله مع الضغط على ازرار الصوت</li>
-</ul>
-
-<ul>
-    <li>كل الشكر للسيد خالد للمساعده بكتابه هذا المنشور <a href="https://wa.me/905380444883" target="_blank">Halit Alhelo</a></li>
-</ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_28_img1_20260611_000122.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
-    <strong>⚠️ إخلاء مسؤولية:</strong>
-    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
-        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
-    </p>
-</div>
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
-    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
-
-`
-    },
 } );
