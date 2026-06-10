@@ -190,21 +190,4 @@ Object.assign(window.postsData, {
 </p>
 `
     },
-    27: {
-        content: `
-<h3>تخطي حساب غوغل redmi 12 fire</h3>
-
-<ul>
-    <li>نتجه الى dft pro</li>
-    <li>من خانة xiaomi نتجه الى media tek</li>
-    <li>نختار اسم الهاتف</li>
-    <li>نحدد reset frp ونضغط start</li>
-    <li>نقوم باطفاء الهاتف وتوصيله مع الضغط على ازرار الصوت</li>
-</ul>
-
-<ul>
-    <li>كل الشكر للسيد خالد للمساعده بكتابه هذا المنشور <a href="https://wa.me/905380444883" target="_blank">Halit Alhelo</a></li>
-</ul>
-`
-    },
 } );
