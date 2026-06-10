@@ -134,4 +134,34 @@ Object.assign(window.postsData, {
 </div>
 `
     },
+    25: {
+        content: `
+<h3>Redmi 14C اصلاح ايمي os3 (سيرفر)</h3>
+<strong>Lake/pond </strong>
+
+<ul>
+    <li>الخطوة الأولى: تفليش إيـنج روم (eng rom) الحصري من الرابط التالي:<a href="https://mega.nz/file/MyJ0wABZ#pqUgVAwy8SEfN69XccHDodU83WXVj_wOr4Zee3ftH88">اضغط هنا للتحميل</a></li>
+    <li>بعد التفليش، نتوجه في الأداة إلى خانة adb service.</li>
+    <li>نحدد خيار patch bl lock</li>
+    <li>نضغط على أمر repair adb لكتابة الأرقام الجديدة</li>
+    <li>نقوم بتفليش الروم الرسمي عبر هذا الرابط حصراً:<a href="https://mifirm.net/download/17812">اضغط هنا للتحميل</a></li>
+    <li>والان نحمل هذا الملف ونستبدل الملف الموجود داخل الفلاشة الرسمية لعدم الوقوع بمشكلة nv data<a href="https://mega.nz/file/1uwCVLib#mBus9eFv7peP2r5mFe0goEleNIFSkpdnfh2U_usfFTU">اضغط هنا للتحميل</a></li>
+    <li>عنصر 2</li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_25_img1_20260610_224706.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_25_img2_20260610_224708.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
+
+`
+    },
 } );
