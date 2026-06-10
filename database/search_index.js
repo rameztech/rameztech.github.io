@@ -175,4 +175,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_25_20260610_224704.jpg",
         file: "posts_2.js"
     },
+    { 
+        id: 26, 
+        title: "redmi 13 moon اصلاح ايمي Hayper os3", 
+        category: "imei", 
+        excerpt: "DFT PRO + سيرفر",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_26_20260610_231818.jpg",
+        file: "posts_2.js"
+    },
 ];
