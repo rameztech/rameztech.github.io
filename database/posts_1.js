@@ -101,7 +101,7 @@ Object.assign(window.postsData, {
     },
     10: {
         content: `
-<h3> Hayper os1 </h3>
+<h3> Hayper os2 </h3>
 
 <ul>
     <li>تفليش انج روم  او فتح بوت لودر سيرفر</li>
