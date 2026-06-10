@@ -97,7 +97,7 @@ Object.assign(window.postsData, {
 
 <ul>
     <li>الخطوة الأولى: تفليش إيـنج روم (eng rom) الحصري من الرابط التالي: 
-        <a href="https://mega.nz/file/MyJ0wABZ#pqUgVAwy8SEfN69XccHDodU83WXVj_wOr4Zee3ftH88" style="color: #b45309; font-weight: bold; text-decoration: underline;">اضغط هنا للتحميل</a>
+        <a href="https://mega.nz/file/MyJ0wABZ#pqUgVAwy8SEfN69XccHDodU83WXVj_wOr4Zee3ftH88" target="_blank" style="color: #b45309; font-weight: bold; text-decoration: underline;">اضغط هنا للتحميل</a>
     </li>
     <li>بعد التفليش، نتوجه في الأداة إلى خانة <strong>adb service</strong>.</li>
 </ul>
@@ -109,12 +109,10 @@ Object.assign(window.postsData, {
 
 <ul>
     <li> نقوم بتفليش الروم الرسمي عبر هذا الرابط حصراً: 
-        <a href="https://mifirm.net/download/17812" style="color: #b45309; font-weight: bold; text-decoration: underline;">اضغط هنا للتحميل</a>
+        <a href="https://mifirm.net/download/17812" target="_blank" style="color: #b45309; font-weight: bold; text-decoration: underline;">اضغط هنا للتحميل</a>
     </li>
-
-<ul>
     <li> والان نحمل هذا الملف ونستبدل الملف الموجود داخل الفلاشة الرسمية لعدم الوقوع بمشكلة nv data
-        <a href="https://mega.nz/file/1uwCVLib#mBus9eFv7peP2r5mFe0goEleNIFSkpdnfh2U_usfFTU" style="color: #b45309; font-weight: bold; text-decoration: underline;">اضغط هنا للتحميل</a>
+        <a href="https://mega.nz/file/1uwCVLib#mBus9eFv7peP2r5mFe0goEleNIFSkpdnfh2U_usfFTU" target="_blank" style="color: #b45309; font-weight: bold; text-decoration: underline;">اضغط هنا للتحميل</a>
     </li>
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_24_img1_20260522_230837.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
@@ -140,13 +138,12 @@ Object.assign(window.postsData, {
 <strong>Lake/pond </strong>
 
 <ul>
-    <li>الخطوة الأولى: تفليش إيـنج روم (eng rom) الحصري من الرابط التالي:<a href="https://mega.nz/file/MyJ0wABZ#pqUgVAwy8SEfN69XccHDodU83WXVj_wOr4Zee3ftH88">اضغط هنا للتحميل</a></li>
+    <li>الخطوة الأولى: تفليش إيـنج روم (eng rom) الحصري من الرابط التالي:<a href="https://mega.nz/file/MyJ0wABZ#pqUgVAwy8SEfN69XccHDodU83WXVj_wOr4Zee3ftH88" target="_blank">اضغط هنا للتحميل</a></li>
     <li>بعد التفليش، نتوجه في الأداة إلى خانة adb service.</li>
     <li>نحدد خيار patch bl lock</li>
     <li>نضغط على أمر repair adb لكتابة الأرقام الجديدة</li>
-    <li>نقوم بتفليش الروم الرسمي عبر هذا الرابط حصراً:<a href="https://mifirm.net/download/17812">اضغط هنا للتحميل</a></li>
-    <li>والان نحمل هذا الملف ونستبدل الملف الموجود داخل الفلاشة الرسمية لعدم الوقوع بمشكلة nv data<a href="https://mega.nz/file/1uwCVLib#mBus9eFv7peP2r5mFe0goEleNIFSkpdnfh2U_usfFTU">اضغط هنا للتحميل</a></li>
-    <li>عنصر 2</li>
+    <li>نقوم بتفليش الروم الرسمي عبر هذا الرابط حصراً:<a href="https://mifirm.net/download/17812" target="_blank">اضغط هنا للتحميل</a></li>
+    <li>والان نحمل this الملف ونستبدل الملف الموجود داخل الفلاشة الرسمية لعدم الوقوع بمشكلة nv data<a href="https://mega.nz/file/1uwCVLib#mBus9eFv7peP2r5mFe0goEleNIFSkpdnfh2U_usfFTU" target="_blank">اضغط هنا للتحميل</a></li>
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_25_img1_20260610_224706.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_25_img2_20260610_224708.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
@@ -164,4 +161,4 @@ Object.assign(window.postsData, {
 
 `
     },
-} );
+});
