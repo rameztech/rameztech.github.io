@@ -192,7 +192,7 @@ Object.assign(window.postsData, {
     },
     27: {
         content: `
-<h3>تخطي حساب غوغل redmi 12 fire</h3>
+<h3> تخطي حساب غوغل redmi 12 fire </h3>
 
 <ul>
     <li>نتجه الى dft pro</li>
