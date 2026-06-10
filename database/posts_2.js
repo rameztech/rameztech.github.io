@@ -90,6 +90,4 @@ Object.assign(window.postsData, {
     <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
 </div>
 `
-    },
-
 } );
