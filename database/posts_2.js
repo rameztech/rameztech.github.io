@@ -111,8 +111,6 @@ Object.assign(window.postsData, {
     <li> نقوم بتفليش الروم الرسمي عبر هذا الرابط حصراً: 
         <a href="https://mifirm.net/download/17812" target="_blank" style="color: #b45309; font-weight: bold; text-decoration: underline;">اضغط هنا للتحميل</a>
     </li>
-
-<ul>
     <li> والان نحمل هذا الملف ونستبدل الملف الموجود داخل الفلاشة الرسمية لعدم الوقوع بمشكلة nv data
         <a href="https://mega.nz/file/1uwCVLib#mBus9eFv7peP2r5mFe0goEleNIFSkpdnfh2U_usfFTU" target="_blank" style="color: #b45309; font-weight: bold; text-decoration: underline;">اضغط هنا للتحميل</a>
     </li>
@@ -174,8 +172,8 @@ Object.assign(window.postsData, {
 </ul>
 
 <ul>
-    <li>لتحميل جميع الملفات : <a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c" target="_blank">اضغط هنا للتحميل</a></li>
-    <li>لتحميل ملف DA : <a href="https://mega.nz/file/9n4AiJTR#5YoH_nRkhVy7Sr2k8-Er2n_0y94Awaj5jrj1-I-0lTg" target="_blank">اضغط هنا للتحميل</a></li>
+    <li>لتحميل جميع الملفات اضغط هنا: <a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c" target="_blank">اضغط هنا للتحميل</a></li>
+    <li>لتحميل ملف DA اضغط هنا: <a href="https://mega.nz/file/9n4AiJTR#5YoH_nRkhVy7Sr2k8-Er2n_0y94Awaj5jrj1-I-0lTg" target="_blank">اضغط هنا للتحميل</a></li>
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_26_img1_20260610_231820.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_26_img2_20260610_231822.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
@@ -207,19 +205,6 @@ Object.assign(window.postsData, {
 <ul>
     <li>كل الشكر للسيد خالد للمساعده بكتابه هذا المنشور <a href="https://wa.me/905380444883" target="_blank">Halit Alhelo</a></li>
 </ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_27_img1_20260610_235103.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
-    <strong>⚠️ إخلاء مسؤولية:</strong>
-    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
-        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
-    </p>
-</div>
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
-    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
-
 `
     },
 } );
