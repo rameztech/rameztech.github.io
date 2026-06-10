@@ -167,4 +167,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_24_20260522_230835.jpg",
         file: "posts_2.js"
     },
+    { 
+        id: 25, 
+        title: "إصلاح الآيمي لجهاز Redmi 14C (lake/pond) على نظام HyperOS", 
+        category: "imei", 
+        excerpt: "server + dft pro",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_25_20260610_170438.jpg",
+        file: "posts_2.js"
+    },
 ];
