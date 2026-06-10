@@ -26,7 +26,7 @@ Object.assign(window.postsData, {
 <div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
     <strong>⚠️ للأجهزة غير المدعومة:</strong>
     <br>
-    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى, يمكنك طلب خدمة السيرفر المتقدمة.
     <br>
     <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
 </div>
@@ -55,7 +55,7 @@ Object.assign(window.postsData, {
 <div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
     <strong>⚠️ للأجهزة غير المدعومة:</strong>
     <br>
-    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى, يمكنك طلب خدمة السيرفر المتقدمة.
     <br>
     <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
 </div>
@@ -85,7 +85,7 @@ Object.assign(window.postsData, {
 <div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
     <strong>⚠️ للأجهزة غير المدعومة:</strong>
     <br>
-    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى, يمكنك طلب خدمة السيرفر المتقدمة.
     <br>
     <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
 </div>
@@ -126,7 +126,7 @@ Object.assign(window.postsData, {
 <div style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
     <strong>⚠️ للأجهزة غير المدعومة:</strong>
     <br>
-    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى, يمكنك طلب خدمة السيرفر المتقدمة.
     <br>
     <a href="#contact" style="color: #d97706; font-weight: bold;">تواصل معنا للحصول على الخدمة</a>
 </div>
@@ -191,4 +191,4 @@ Object.assign(window.postsData, {
 
 `
     },
-} );
+});
