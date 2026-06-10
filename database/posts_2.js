@@ -158,7 +158,37 @@ Object.assign(window.postsData, {
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
     <a href="#contact">تواصل معنا للحصول على الخدمة</a>
 </p>
+`
+    },
+    26: {
+        content: `
+<h3>redmi 13 moon اصلاح ايمي Hayper os3</h3>
+
+<ul>
+    <li>تفليش انج روم او فتح بوت لودر سيرفر</li>
+    <li>نتجه الى dft pro</li>
+    <li>نقوم باصلاح ايمي بخانه ADB SERVICES مع تحديد خيار BL LOCK</li>
+    <li>الان نقوم بتفليش روم رسمي عبر فاست بوت</li>
+</ul>
+
+<ul>
+    <li>لتحميل جميع الملفات اضغط هنا: <a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c" target="_blank">اضغط هنا للتحميل</a></li>
+    <li>لتحميل ملف DA اضغط هنا: <a href="https://mega.nz/file/9n4AiJTR#5YoH_nRkhVy7Sr2k8-Er2n_0y94Awaj5jrj1-I-0lTg" target="_blank">اضغط هنا للتحميل</a></li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_26_img1_20260610_231820.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_26_img2_20260610_231822.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
 
 `
     },
-});
+} );
