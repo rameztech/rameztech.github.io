@@ -161,7 +161,7 @@ window.searchIndex = [
     },
     { 
         id: 24, 
-        title: "Redmi 14C اصلاح ايمي os2 (سيرفر )", 
+        title: "Redmi 14C اصلاح ايمي os2 (سيرفر)", 
         category: "imei", 
         excerpt: "dft pro + سيرفر",
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_24_20260522_230835.jpg",
