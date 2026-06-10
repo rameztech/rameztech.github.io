@@ -191,12 +191,4 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_27_20260611_002336.jpg",
         file: "posts_2.js"
     },
-    { 
-        id: 28, 
-        title: "test", 
-        category: "frp", 
-        excerpt: "test",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_28_20260611_002538.jpg",
-        file: "posts_2.js"
-    },
 ];
