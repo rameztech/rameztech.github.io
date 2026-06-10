@@ -167,4 +167,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_24_20260522_230835.jpg",
         file: "posts_2.js"
     },
+    { 
+        id: 25, 
+        title: "Redmi 14C اصلاح ايمي os3  Lake/pond  (سيرفر)", 
+        category: "imei", 
+        excerpt: "dft pro + (سيرفر)",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_25_20260610_224704.jpg",
+        file: "posts_2.js"
+    },
 ];
