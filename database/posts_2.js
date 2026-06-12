@@ -234,9 +234,6 @@ Object.assign(window.postsData, {
     <li>ننتقل إلى وضع Meta Mode</li>
     <li>نحدد خيار Reset FRP New ونضغط Start</li>
     <li>نقوم بإطفاء الهاتف وتوصيله بالكمبيوتر</li>
-</ul>
-
-<ul>
     <li>كل الشكر للسيد خالد للمساعده بكتابه هذا المنشور <a href="https://wa.me/905313511767" target="_blank">mohamed RAJ</a></li>
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_28_img1_20260612_162325.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
