@@ -219,4 +219,40 @@ Object.assign(window.postsData, {
 </p>
 `
     },
+    28: {
+        content: `
+<h3>تخطي حساب غوغل Tecno Spark 40 (KM8n)</h3>
+
+<ul>
+    <li>الموديل: Tecno Spark 40 (KM8n)</li>
+    <li>رقعة الأمان: 01-01-2026</li>
+</ul>
+
+<ul>
+    <li>نتجه إلى أداة DFT Pro</li>
+    <li>من القائمة نختار قسم Mediatek</li>
+    <li>ننتقل إلى وضع Meta Mode</li>
+    <li>نحدد خيار Reset FRP New ونضغط Start</li>
+    <li>نقوم بإطفاء الهاتف وتوصيله بالكمبيوتر</li>
+</ul>
+
+<ul>
+    <li>كل الشكر للسيد خالد للمساعده بكتابه هذا المنشور <a href="https://wa.me/905313511767" target="_blank">mohamed RAJ</a></li>
+</ul>
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_28_img1_20260612_162325.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_28_img2_20260612_162330.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
+    <strong>⚠️ إخلاء مسؤولية:</strong>
+    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
+        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
+    </p>
+</div>
+<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
+    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
+    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
+</p>
+
+`
+    },
 } );
