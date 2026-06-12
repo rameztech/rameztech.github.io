@@ -191,4 +191,12 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_27_20260611_002336.jpg",
         file: "posts_2.js"
     },
+    { 
+        id: 28, 
+        title: "تخطي حساب غوغل Tecno Spark 40 (KM8n)", 
+        category: "frp", 
+        excerpt: "dft pro",
+        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_28_20260612_162323.jpg",
+        file: "posts_2.js"
+    },
 ];
