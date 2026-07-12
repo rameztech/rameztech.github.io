@@ -118,21 +118,6 @@ Object.assign(window.postsData, {
     <li><a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c">اضغط هنا</a></li>
 </ul>
 <img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_10_img1_20260128_144306.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<ul>
-    <li><strong>طريقه اصلاح الايميل الاساسي</strong></li>
-    <li>تم التجريب على هذه الحمايه او اقدم منها كلها تعمل</li>
-</ul>
-
-<ul>
-    <li>اطفئ الهاتف بشكل كامل</li>
-    <li>اكتب الايمي ثم البدء بعمليه الاصلاح ثم </li>
-</ul>
-
-<ul>
-    <li>توصيل الهاتف بدون الضغط على اي شيء</li>
-    <li>هذه صوره توضيحيه </li>
-</ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_7_img1_20260108_224729.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
