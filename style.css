@@ -513,8 +513,8 @@ html { scroll-behavior: smooth; }
 /* ============================= */
 .support-widget {
     position: fixed;
-    bottom: 24px;
-    left: 24px;
+    bottom: 16px;
+    left: 10px;
     z-index: 2000;
     display: flex;
     flex-direction: column;
@@ -582,8 +582,8 @@ html { scroll-behavior: smooth; }
 .support-widget__link--telegram .support-widget__icon { background: #0088cc; }
 
 .support-widget__toggle {
-    width: 58px;
-    height: 58px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -594,19 +594,30 @@ html { scroll-behavior: smooth; }
     justify-content: center;
     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
     position: relative;
-    transition: transform 0.25s ease;
+    opacity: 0.8;
+    transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease, height 0.25s ease;
 }
 
-.support-widget__toggle:hover {
-    transform: scale(1.06);
+.support-widget__toggle:hover,
+.support-widget.is-open .support-widget__toggle {
+    opacity: 1;
+    width: 56px;
+    height: 56px;
+    transform: scale(1.04);
 }
 
 .support-widget__toggle svg {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     fill: currentColor;
     position: absolute;
-    transition: transform 0.25s ease, opacity 0.15s ease;
+    transition: transform 0.25s ease, opacity 0.15s ease, width 0.25s ease, height 0.25s ease;
+}
+
+.support-widget__toggle:hover svg,
+.support-widget.is-open .support-widget__toggle svg {
+    width: 26px;
+    height: 26px;
 }
 
 .support-widget__toggle .icon-close {
@@ -631,6 +642,6 @@ html { scroll-behavior: smooth; }
 }
 
 @media (max-width: 768px) {
-    .support-widget { bottom: 16px; left: 16px; }
-    .support-widget__toggle { width: 52px; height: 52px; }
+    .support-widget { bottom: 12px; left: 8px; }
+    .support-widget__toggle { width: 46px; height: 46px; }
 }
