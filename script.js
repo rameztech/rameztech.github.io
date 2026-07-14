@@ -282,6 +282,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // مراقبة تغييرات الرابط (للخلف وللأمام في المتصفح)
     window.addEventListener('hashchange', handleDeepLink);
 
+    // --- فقاعة الدعم والدردشة العائمة ---
+    const supportWidget = document.getElementById('supportWidget');
+    const supportWidgetToggle = document.getElementById('supportWidgetToggle');
+
+    if (supportWidget && supportWidgetToggle) {
+        supportWidgetToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = supportWidget.classList.toggle('is-open');
+            supportWidgetToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // إغلاق الفقاعة عند الضغط خارجها
+        document.addEventListener('click', (e) => {
+            if (!supportWidget.contains(e.target)) {
+                supportWidget.classList.remove('is-open');
+                supportWidgetToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
     // تسجيل معلومات التحميل في Console
     console.log(`📊 عدد المنشورات في الفهرس: ${allPosts.length}`);
     console.log(`📂 ملفات posts محملة مسبقاً: ${window.loadedPostsFiles.length}`);
