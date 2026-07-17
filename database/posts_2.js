@@ -275,28 +275,4 @@ Object.assign(window.postsData, {
 </p>
 `
     },
-    30: {
-        content: `
-<h3>cdsssdsdsfsasa</h3>
-<div><strong>fssfcddd</strong></div>
-<ul>
-    <li>fgdgsdgdgsdg</li>
-    <li>gdgdgdgsd</li>
-    <li>gdsgsdgdg</li>
-    <li>gdsdgg<a href="https:
-</ul>
-<img src="https:
-<div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
-    <strong>⚠️ إخلاء مسؤولية:</strong>
-    <p style="margin: 5px 0 0 0; font-size: 0.9em;">
-        هذا الشرح لأغراض تعليمية وتقنية فقط. تعديل ملفات النظام أو IMEI قد يخالف القوانين المحلية. لا نتحمل أي مسؤولية عن أي ضرر قد يلحق بالجهاز نتيجة تطبيق الخطوات بشكل خاطئ. يرجى دائماً أخذ نسخة احتياطية (Backup) قبل البدء.
-    </p>
-</div>
-<p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
-    <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
-    إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
-    <a href="#contact">تواصل معنا للحصول على الخدمة</a>
-</p>
-`
-    },
 });
