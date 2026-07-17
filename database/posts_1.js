@@ -478,4 +478,4 @@ Object.assign(window.postsData, {
 </div>
 `
     },
-} );
+});
