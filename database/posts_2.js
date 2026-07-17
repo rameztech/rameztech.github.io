@@ -237,7 +237,6 @@ Object.assign(window.postsData, {
     <li>كل الشكر للسيد محمد للمساعده بكتابه هذا المنشور <a href="https:
 </ul>
 <img src="https:
-<img src="https:
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
