@@ -18,7 +18,7 @@ Object.assign(window.postsData, {
 </ul>
 
 <div class="youtube-embed">
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https:
 </div>
 
 <h4>خطوات العمل:</h4>
@@ -43,7 +43,7 @@ Object.assign(window.postsData, {
     },
     2: {
         content: `
-<h3>شرح Chimera Tool لتخطي FRP</h3><p>أداة Chimera من أقوى الأدوات لتخطي FRP، وفي هذا الشرح سنتعلم كيفية استخدامها بشكل صحيح.</p><img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=800" alt="Chimera Tool"><h4>مميزات Chimera Tool:</h4><ul><li>دعم واسع للأجهزة</li><li>واجهة سهلة الاستخدام</li><li>تحديثات دورية</li></ul>
+<h3>شرح Chimera Tool لتخطي FRP</h3><p>أداة Chimera من أقوى الأدوات لتخطي FRP، وفي هذا الشرح سنتعلم كيفية استخدامها بشكل صحيح.</p><img src="https:
 `
     },
     3: {
@@ -82,7 +82,7 @@ Object.assign(window.postsData, {
     <li>توصيل الهاتف بدون الضغط على اي شيء</li>
     <li>هذه صوره توضيحيه </li>
 </ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_7_img1_20260108_224729.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https:
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
@@ -115,9 +115,9 @@ Object.assign(window.postsData, {
 
 <ul>
     <li>لتحميل جميع الملفات</li>
-    <li><a href="https://mega.nz/file/RrRiyBoI#3y-6JqHWAfB82q0JvRb-MR3WccxxVEyx3t13bF-zS2c">اضغط هنا</a></li>
+    <li><a href="https:
 </ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_10_img1_20260128_144306.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https:
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
@@ -138,7 +138,7 @@ Object.assign(window.postsData, {
         content: `
 <ul>
     <li>فلش المف المرفق عبر odin بخانه AP</li>
-    <li> <a href="https://mega.nz/file/83YlzToC#cnLJV1-oxJTgewZkkI3HnhiQe4u_7QVJChwnwm0DCJI">اضغط هنا لتحميل الملف </a></li>
+    <li> <a href="https:
 </ul>
 
 <ul>
@@ -155,7 +155,7 @@ Object.assign(window.postsData, {
     <li>تاكد من تفعيل oem</li>
     <li>اعد ضبط المصنع</li>
 </ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_11_img1_20260128_150737.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https:
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
@@ -176,14 +176,14 @@ Object.assign(window.postsData, {
         content: `
 <ul>
     <li>فلش هذه الروم عبر odin</li>
-    <li><a href="https://samfw.com/firmware/SM-A336E/TUR/A336EDXSEGYJ3">اضغط هنا</a></li>
+    <li><a href="https:
 </ul>
 
 <ul>
     <li>توجه الى dft pro</li>
     <li>Reset frp android 16 new</li>
 </ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_12_img1_20260128_152744.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https:
 <p style="background: #fef3c7; padding: 15px; border-radius: 10px; margin-top: 20px;">
     <strong>⚠️ للأجهزة غير المدعومة:</strong><br>
     إذا كان جهازك غير مدعوم في DFT Pro أو الأدوات الأخرى، يمكنك طلب خدمة السيرفر المتقدمة.
@@ -207,7 +207,7 @@ Object.assign(window.postsData, {
     <li>DONE</li>
     
 </ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_13_img1_20260128_155246.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https:
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
@@ -243,7 +243,7 @@ Object.assign(window.postsData, {
     <li>نكتب الايميتين مع تحديد خانة patch Bl lock</li>
     <li>ومبروك عليك اصلاح الايمي بدون مشاكل الكاميرا والفلاش</li>
 </ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_14_img1_20260128_160953.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https:
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
@@ -278,7 +278,7 @@ Object.assign(window.postsData, {
 
 <h3>📥 التحميل</h3>
 <ul>
-    <li><a href="https://mega.nz/file/E7400Ihb#eJAAImk9PO7OuvCLKatLaOJ1gAYOFXU1HK0js7IkS1E">اضغط هنا للتحميل</a></li>
+    <li><a href="https:
 </ul>
 
 <h3>🔐 معلومات الملف</h3>
@@ -303,7 +303,7 @@ Object.assign(window.postsData, {
 </ul>
 
 <p><strong>© 2024 RAMEZ TECH - جميع الحقوق محفوظة</strong></p>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_15_img1_20260206_123137.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https:
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
@@ -347,7 +347,7 @@ Object.assign(window.postsData, {
 </ul>
 
 <p>هذه صورة توضيحية 👇</p>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_16_img1_20260207_113403.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https:
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
@@ -385,8 +385,8 @@ Object.assign(window.postsData, {
 نقوم بتوصيل الجهاز (test point) كما هو موضح بالصوره</li>
     <li>Done</li>
 </ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_17_img1_20260522_202840.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_17_img2_20260522_202842.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https:
+<img src="https:
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
@@ -426,8 +426,8 @@ Object.assign(window.postsData, {
     <li>
 نقوم بتوصيل الجهاز (test point) كما هو موضح بالصوره</li>
 </ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_18_img1_20260522_203845.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_18_img2_20260522_203847.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https:
+<img src="https:
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
@@ -461,7 +461,7 @@ Object.assign(window.postsData, {
     <li>reset frp android 16 new</li>
     <li>بشرط حماية 01/10/2025 وما قبل</li>
 </ul>
-<img src="https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/posts/post_20_img1_20260522_211357.jpg" alt="صورة" style="max-width: 100%; border-radius: 10px; margin: 20px 0;">
+<img src="https:
 <div style="background: #fee2e2; padding: 15px; border-radius: 10px; margin: 20px 0; border: 1px solid #ef4444; color: #991b1b;">
     <strong>⚠️ إخلاء مسؤولية:</strong>
     <p style="margin: 5px 0 0 0; font-size: 0.9em;">
