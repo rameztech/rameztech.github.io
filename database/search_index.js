@@ -199,12 +199,4 @@ window.searchIndex = [
         cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_28_20260612_162323.jpg",
         file: "posts_2.js"
     },
-    { 
-        id: 29, 
-        title: "dvdcdc", 
-        category: "imei", 
-        excerpt: "cdccc",
-        cover: "https://raw.githubusercontent.com/rameztech/rameztech.github.io/main/images/covers/cover_post_29_20260718_023204.jpg",
-        file: "posts_2.js"
-    },
 ];
